@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Handles installation for RajaOngkir module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function commerce_rajaongkir_uninstall() {
+  $items = array(
+    'commerce_rajaongkir_api_key',
+    'commerce_rajaongkir_account_type',
+    'commerce_rajaongkir_province',
+    'commerce_rajaongkir_city',
+    'commerce_rajaongkir_couriers',
+  );
+
+  foreach ($items as $item) {
+    variable_del($item);
+  }
+}

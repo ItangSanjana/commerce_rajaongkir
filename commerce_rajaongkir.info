@@ -1,0 +1,9 @@
+name = Commerce RajaOngkir
+description = Rajanya Ongkos Kirim Terpadu.
+package = Commerce (shipping)
+dependencies[] = commerce
+dependencies[] = commerce_shipping
+dependencies[] = commerce_physical
+dependencies[] = addressfield_rajaongkir
+configure = admin/commerce/config/shipping/methods/commerce-rajaongkir/edit
+core = 7.x
