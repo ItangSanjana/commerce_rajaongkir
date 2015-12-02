@@ -9,11 +9,11 @@
  * Returns commerce_rajaongkir_settings_form().
  */
 function commerce_rajaongkir_settings_form($form, &$form_state) {
-  module_load_include('inc', 'addressfield_rajaongkir', 'addressfield_rajaongkir.administrative_areas');
-  module_load_include('inc', 'addressfield_rajaongkir', 'addressfield_rajaongkir.localities');
+  module_load_include('inc', 'addressfield_id', 'addressfield_id.administrative_areas');
+  module_load_include('inc', 'addressfield_id', 'addressfield_id.localities');
 
   $form = array();
-  $administrative_areas = addressfield_rajaongkir_get_administrative_areas();
+  $administrative_areas = addressfield_id_get_administrative_areas();
 
   if (isset($form_state['values']['commerce_rajaongkir_province'])) {
     $administrative_areas_selected = $form_state['values']['commerce_rajaongkir_province'];
@@ -61,7 +61,7 @@ function commerce_rajaongkir_settings_form($form, &$form_state) {
       'wrapper' => 'commerce-rajaongkir-origin-wrapper',
     ),
     '#default_value' => variable_get('commerce_rajaongkir_city'),
-    '#options' => addressfield_rajaongkir_get_localities($administrative_areas_selected),
+    '#options' => addressfield_id_get_localities($administrative_areas_selected),
     '#title' => t('City'),
     '#type' => 'select',
   );
