@@ -4,6 +4,6 @@ package = Commerce (shipping)
 dependencies[] = commerce
 dependencies[] = commerce_shipping
 dependencies[] = commerce_physical
-dependencies[] = addressfield_rajaongkir
+dependencies[] = addressfield_id
 configure = admin/commerce/config/shipping/methods/commerce-rajaongkir/edit
 core = 7.x
