@@ -11,17 +11,14 @@
 function commerce_rajaongkir_settings_form($form, &$form_state) {
   module_load_include('inc', 'addressfield_id', 'addressfield_id.administrative_areas');
   module_load_include('inc', 'addressfield_id', 'addressfield_id.localities');
-
   $form = array();
   $administrative_areas = addressfield_id_get_administrative_areas();
-
   if (isset($form_state['values']['commerce_rajaongkir_province'])) {
     $administrative_areas_selected = $form_state['values']['commerce_rajaongkir_province'];
   }
   else {
     $administrative_areas_selected = variable_get('commerce_rajaongkir_province');
   }
-
   $form['auth'] = array(
     '#title' => t(' Commerce RajaOngkir authentication'),
     '#type' => 'fieldset',
@@ -38,7 +35,6 @@ function commerce_rajaongkir_settings_form($form, &$form_state) {
     '#title' => t('Account type'),
     '#type' => 'select',
   );
-
   $form['origin'] = array(
     '#prefix' => '<div id="commerce-rajaongkir-origin-wrapper">',
     '#suffix' => '</div>',
@@ -65,18 +61,14 @@ function commerce_rajaongkir_settings_form($form, &$form_state) {
     '#title' => t('City'),
     '#type' => 'select',
   );
-
   $form['services'] = array(
     '#title' => t('Enable shipping services'),
     '#type' => 'fieldset',
   );
-
   $couriers_get = array();
-
   foreach (commerce_rajaongkir_services_get() as $key => $value) {
     $couriers_get[$key] = $key;
   }
-
   $form['services']['commerce_rajaongkir_couriers'] = array(
     '#default_value' => variable_get('commerce_rajaongkir_couriers', array()),
     '#options' => $couriers_get,

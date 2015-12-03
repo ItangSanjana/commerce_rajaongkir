@@ -1,2 +1,2 @@
-# commerce_ongkir
-Commerce RajaOngkos: A Drupal Module.
+# commerce_rajaongkir
+Commerce RajaOngkir: A Drupal Module.

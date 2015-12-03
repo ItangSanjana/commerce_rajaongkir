@@ -6,7 +6,7 @@
  */
 
 /**
- * Returns province().
+ * Returns commerce_rajaongkir_rest_province().
  */
 function commerce_rajaongkir_rest_province($province_id = NULL) {
   $endpoint = 'province';
@@ -17,7 +17,7 @@ function commerce_rajaongkir_rest_province($province_id = NULL) {
 }
 
 /**
- * Returns city().
+ * Returns commerce_rajaongkir_rest_city().
  */
 function commerce_rajaongkir_rest_city($city_id = NULL, $province_id = NULL) {
   $endpoint = 'city';
@@ -29,7 +29,7 @@ function commerce_rajaongkir_rest_city($city_id = NULL, $province_id = NULL) {
 }
 
 /**
- * Returns subdistrict().
+ * Returns commerce_rajaongkir_rest_subdistrict().
  */
 function commerce_rajaongkir_rest_subdistrict($city_id = NULL, $subdistrict_id = NULL) {
   $endpoint = 'subdistrict';
@@ -41,7 +41,7 @@ function commerce_rajaongkir_rest_subdistrict($city_id = NULL, $subdistrict_id =
 }
 
 /**
- * Returns cost().
+ * Returns commerce_rajaongkir_rest_cost().
  */
 function commerce_rajaongkir_rest_cost($origin, $originType, $destination, $destinationType, $weight, $courier, $length, $width, $height, $diameter) {
   $endpoint = 'cost';
@@ -63,7 +63,7 @@ function commerce_rajaongkir_rest_cost($origin, $originType, $destination, $dest
 }
 
 /**
- * Returns internationalorigin().
+ * Returns commerce_rajaongkir_rest_internationalorigin().
  */
 function commerce_rajaongkir_rest_internationalorigin($city_id = NULL, $province_id = NULL) {
   $endpoint = 'internationalOrigin';
@@ -75,7 +75,7 @@ function commerce_rajaongkir_rest_internationalorigin($city_id = NULL, $province
 }
 
 /**
- * Returns internationaldestination().
+ * Returns commerce_rajaongkir_rest_internationaldestination().
  */
 function commerce_rajaongkir_rest_internationaldestination($country_id = NULL) {
   $endpoint = 'internationalDestination';
@@ -86,7 +86,7 @@ function commerce_rajaongkir_rest_internationaldestination($country_id = NULL) {
 }
 
 /**
- * Returns internationalcost().
+ * Returns commerce_rajaongkir_rest_internationalcost().
  */
 function commerce_rajaongkir_rest_internationalcost($origin, $destination, $weight, $courier, $length, $width, $height) {
   $endpoint = 'internationalCost';
@@ -105,7 +105,7 @@ function commerce_rajaongkir_rest_internationalcost($origin, $destination, $weig
 }
 
 /**
- * Returns currency().
+ * Returns commerce_rajaongkir_rest_currency().
  */
 function commerce_rajaongkir_rest_currency() {
   $endpoint = 'currency';
@@ -116,7 +116,7 @@ function commerce_rajaongkir_rest_currency() {
 }
 
 /**
- * Returns waybill().
+ * Returns commerce_rajaongkir_rest_waybill().
  */
 function commerce_rajaongkir_rest_waybill($waybill_number, $courier) {
   $endpoint = 'waybill';
@@ -130,7 +130,7 @@ function commerce_rajaongkir_rest_waybill($waybill_number, $courier) {
 }
 
 /**
- * Returns post().
+ * Returns commerce_rajaongkir_rest_post().
  */
 function commerce_rajaongkir_rest_post($endpoint, $params) {
   $query = drupal_http_build_query($params);
@@ -153,7 +153,7 @@ function commerce_rajaongkir_rest_post($endpoint, $params) {
 }
 
 /**
- * Returns get().
+ * Returns commerce_rajaongkir_rest_get().
  */
 function commerce_rajaongkir_rest_get($endpoint, $params) {
   $query = drupal_http_build_query($params);
