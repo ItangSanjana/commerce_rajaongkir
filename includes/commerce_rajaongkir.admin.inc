@@ -20,7 +20,7 @@ function commerce_rajaongkir_settings_form($form, &$form_state) {
     $administrative_areas_selected = variable_get('commerce_rajaongkir_province');
   }
   $form['auth'] = array(
-    '#title' => t(' Commerce RajaOngkir authentication'),
+    '#title' => t('Commerce RajaOngkir authentication'),
     '#type' => 'fieldset',
   );
   $form['auth']['commerce_rajaongkir_api_key'] = array(
@@ -43,7 +43,7 @@ function commerce_rajaongkir_settings_form($form, &$form_state) {
   );
   $form['origin']['commerce_rajaongkir_province'] = array(
     '#ajax' => array(
-      'callback' => 'ajax_commerce_rajaongkir_origin_callback',
+      'callback' => 'commerce_rajaongkir_origin_ajax_callback',
       'wrapper' => 'commerce-rajaongkir-origin-wrapper',
     ),
     '#default_value' => variable_get('commerce_rajaongkir_province'),
@@ -52,10 +52,6 @@ function commerce_rajaongkir_settings_form($form, &$form_state) {
     '#type' => 'select',
   );
   $form['origin']['commerce_rajaongkir_city'] = array(
-    '#ajax' => array(
-      'callback' => 'ajax_commerce_rajaongkir_origin_callback',
-      'wrapper' => 'commerce-rajaongkir-origin-wrapper',
-    ),
     '#default_value' => variable_get('commerce_rajaongkir_city'),
     '#options' => addressfield_id_get_localities($administrative_areas_selected),
     '#title' => t('City'),
@@ -93,8 +89,8 @@ function commerce_rajaongkir_account_type_get() {
 }
 
 /**
- * Returns ajax_commerce_rajaongkir_origin_callback().
+ * Returns commerce_rajaongkir_origin_ajax_callback().
  */
-function ajax_commerce_rajaongkir_origin_callback($form, $form_state) {
+function commerce_rajaongkir_origin_ajax_callback($form, $form_state) {
   return $form['origin'];
 }
