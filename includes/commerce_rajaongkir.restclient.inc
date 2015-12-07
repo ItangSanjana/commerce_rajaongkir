@@ -43,13 +43,13 @@ function commerce_rajaongkir_rest_subdistrict($city_id = NULL, $subdistrict_id =
 /**
  * Returns commerce_rajaongkir_rest_cost().
  */
-function commerce_rajaongkir_rest_cost($origin, $originType, $destination, $destinationType, $weight, $courier, $length, $width, $height, $diameter) {
+function commerce_rajaongkir_rest_cost($origin, $origintype, $destination, $destinationtype, $weight, $courier, $length, $width, $height, $diameter) {
   $endpoint = 'cost';
   $params = array(
     'origin' => $origin,
-    'originType' => $originType,
+    'originType' => $origintype,
     'destination' => $destination,
-    'destinationType' => $destinationType,
+    'destinationType' => $destinationtype,
     'weight' => $weight,
     'courier' => $courier,
     'length' => $length,
@@ -136,7 +136,8 @@ function commerce_rajaongkir_rest_post($endpoint, $params) {
   $query = drupal_http_build_query($params);
   if (variable_get('commerce_rajaongkir_account_type') == 'pro') {
     $url = 'http://' . variable_get('commerce_rajaongkir_account_type') . '.rajaongkir.com/api/' . $endpoint;
-  } else {
+  }
+  else {
     $url = 'http://rajaongkir.com/api/' . variable_get('commerce_rajaongkir_account_type') . '/' . $endpoint;
   }
   $options = array(
@@ -159,7 +160,8 @@ function commerce_rajaongkir_rest_get($endpoint, $params) {
   $query = drupal_http_build_query($params);
   if (variable_get('commerce_rajaongkir_account_type') == 'pro') {
     $url = 'http://' . variable_get('commerce_rajaongkir_account_type') . '.rajaongkir.com/api/' . $endpoint . '?' . $query;
-  } else {
+  }
+  else {
     $url = 'http://rajaongkir.com/api/' . variable_get('commerce_rajaongkir_account_type') . '/' . $endpoint . '?' . $query;
   }
   $options = array(
