@@ -171,7 +171,17 @@ function commerce_rajaongkir_services_rate($shipping_service, $order) {
     $shipping_address = $order_wrapper->{$field_name}->commerce_customer_address->value();
   }
   else {
-    $shipping_address = addressfield_default_values();
+    $shipping_address = array(
+      'organisation_name' => '',
+      'name_line' => '',
+      'thoroughfare' => '',
+      'premise' => '',
+      'locality' => '',
+      'administrative_area' => '',
+      'postal_code' => '',
+      'country' => '',
+      'phone' => '',
+    );
   }
   $shipping_destination = commerce_rajaongkir_locality_code($shipping_address['locality']);
   $shipping_destination_type = 'city';
@@ -182,7 +192,7 @@ function commerce_rajaongkir_services_rate($shipping_service, $order) {
   $shipping_width = NULL;
   $shipping_height = NULL;
   $shipping_diameter = NULL;
-  $services_cost = array();
+  $rates = array();
   $currency_code = $order_wrapper->commerce_order_total->currency_code->value();
   foreach ($order_wrapper->commerce_line_items as $line_item_wrapper) {
     if (in_array($line_item_wrapper->type->value(), commerce_product_line_item_types())) {
@@ -203,7 +213,7 @@ function commerce_rajaongkir_services_rate($shipping_service, $order) {
         foreach ($cost['rajaongkir']['results'] as $c) {
           foreach ($c['costs'] as $cc) {
             foreach ($cc['cost'] as $ccc) {
-              $services_cost[$cc['service']] = array(
+              $rates[$cc['service']] = array(
                 'amount' => commerce_currency_decimal_to_amount($ccc['value'], $currency_code),
                 'currency_code' => $currency_code,
                 'data' => array(),
@@ -213,11 +223,11 @@ function commerce_rajaongkir_services_rate($shipping_service, $order) {
         }
       }
       else {
-        drupal_set_message($cost['rajaongkir']['status']['description'], 'warning', FALSE);
+        drupal_set_message(t('@notice', array('@notice' => $cost['rajaongkir']['status']['description'])), 'warning', FALSE);
       }
     }
     else {
-      drupal_set_message($cost->error, 'warning', FALSE);
+      drupal_set_message(t('@error', array('@error' => $cost->error)), 'error', FALSE);
     }
   }
   else {
@@ -232,7 +242,7 @@ function commerce_rajaongkir_services_rate($shipping_service, $order) {
             foreach ($cost['rajaongkir']['results'] as $c) {
               foreach ($c['costs'] as $cc) {
                 $cc_cost = $cc['cost'] * $currency_rates;
-                $services_cost[$cc['service']] = array(
+                $rates[$cc['service']] = array(
                   'amount' => commerce_currency_decimal_to_amount($cc_cost, $currency_code),
                   'currency_code' => $currency_code,
                   'data' => array(),
@@ -241,17 +251,17 @@ function commerce_rajaongkir_services_rate($shipping_service, $order) {
             }
           }
           else {
-            drupal_set_message($cost['rajaongkir']['status']['description'], 'warning', FALSE);
+            drupal_set_message(t('@notice', array('@notice' => $cost['rajaongkir']['status']['description'])), 'warning', FALSE);
           }
         }
         else {
-          drupal_set_message($cost->error, 'warning', FALSE);
+          drupal_set_message(t('@error', array('@error' => $cost->error)), 'error', FALSE);
         }
       }
     }
   }
 
-  return isset($services_cost[$shipping_service['title']]) ? $services_cost[$shipping_service['title']] : FALSE;
+  return isset($rates[$shipping_service['title']]) ? $rates[$shipping_service['title']] : FALSE;
 }
 
 /**
