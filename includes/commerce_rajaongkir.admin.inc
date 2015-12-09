@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Handles admin settings page for Commerce Ongkir module.
+ * Handles admin settings page for Commerce RajaOngkir module.
  */
 
 /**
