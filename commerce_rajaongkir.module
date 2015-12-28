@@ -55,17 +55,17 @@ function commerce_rajaongkir_commerce_shipping_method_info() {
  * Implements hook_commerce_shipping_service_info().
  */
 function commerce_rajaongkir_commerce_shipping_service_info() {
-  $couriers_get = variable_get('commerce_rajaongkir_couriers');
+  $couriers_get = variable_get('commerce_rajaongkir_couriers', array());
   $services_get = commerce_rajaongkir_services_get();
   $shipping_services = array();
   if (variable_get('commerce_rajaongkir_account_type') == 'starter') {
     unset($couriers_get['ESL'], $couriers_get['PCP'], $couriers_get['RPX']);
   }
-  foreach ($couriers_get as $key => $value) {
-    if ($value !== 0) {
-      foreach ($services_get[$key] as $key => $value) {
-        $shipping_services[$key] = array(
-          'title' => $value['service'],
+  foreach ($couriers_get as $couriers_key => $couriers_value) {
+    if ($couriers_value !== 0) {
+      foreach ($services_get[$couriers_key] as $services_key => $services_value) {
+        $shipping_services[$services_key] = array(
+          'title' => $services_value['service'],
           'shipping_method' => 'commerce_rajaongkir',
           'price_component' => 'shipping',
           'callbacks' => array(
@@ -83,19 +83,19 @@ function commerce_rajaongkir_commerce_shipping_service_info() {
  * Implements hook_commerce_shipping_service_info_alter().
  */
 function commerce_rajaongkir_commerce_shipping_service_info_alter(&$shipping_services) {
-  $couriers_get = variable_get('commerce_rajaongkir_couriers');
+  $couriers_get = variable_get('commerce_rajaongkir_couriers', array());
   $services_get = commerce_rajaongkir_services_get();
   $couriers_services = array();
-  foreach ($couriers_get as $key => $value) {
-    if ($value !== 0) {
-      foreach ($services_get[$key] as $key => $value) {
-        $couriers_services[$key] = $value;
+  foreach ($couriers_get as $couriers_key => $couriers_value) {
+    if ($couriers_value !== 0) {
+      foreach ($services_get[$couriers_key] as $services_key => $services_value) {
+        $couriers_services[$services_key] = $services_value;
       }
     }
   }
-  foreach ($shipping_services as $key => $value) {
-    $shipping_services[$key]['code'] = $couriers_services[$key]['code'];
-    $shipping_services[$key]['display_title'] = drupal_strtoupper($couriers_services[$key]['code']) . ' ' . $couriers_services[$key]['service'];
+  foreach ($shipping_services as $shipping_services_key => $shipping_services_value) {
+    $shipping_services[$shipping_services_key]['code'] = $couriers_services[$shipping_services_key]['code'];
+    $shipping_services[$shipping_services_key]['display_title'] = drupal_strtoupper($couriers_services[$shipping_services_key]['code']) . ' ' . $couriers_services[$shipping_services_key]['service'];
   }
 }
 
