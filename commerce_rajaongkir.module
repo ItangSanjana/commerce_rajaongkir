@@ -55,7 +55,7 @@ function commerce_rajaongkir_commerce_shipping_method_info() {
  * Implements hook_commerce_shipping_service_info().
  */
 function commerce_rajaongkir_commerce_shipping_service_info() {
-  $couriers_get = variable_get('commerce_rajaongkir_couriers', array());
+  $couriers_get = variable_get('commerce_rajaongkir_couriers');
   $services_get = commerce_rajaongkir_services_get();
   $shipping_services = array();
   if (variable_get('commerce_rajaongkir_account_type') == 'starter') {
@@ -83,7 +83,7 @@ function commerce_rajaongkir_commerce_shipping_service_info() {
  * Implements hook_commerce_shipping_service_info_alter().
  */
 function commerce_rajaongkir_commerce_shipping_service_info_alter(&$shipping_services) {
-  $couriers_get = variable_get('commerce_rajaongkir_couriers', array());
+  $couriers_get = variable_get('commerce_rajaongkir_couriers');
   $services_get = commerce_rajaongkir_services_get();
   $couriers_services = array();
   foreach ($couriers_get as $key => $value) {
@@ -270,7 +270,7 @@ function commerce_rajaongkir_services_rate($shipping_service, $order) {
 function commerce_rajaongkir_country_code($country_code) {
   module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.countries');
   $crcg = commerce_rajaongkir_countries_get();
-  if (isset($crcg[$country_code]) && $crcg[$country_code] != '') {
+  if (isset($crcg[$country_code]) && $crcg[$country_code] !== '') {
     $country_code = $crcg[$country_code];
   }
 
@@ -283,7 +283,7 @@ function commerce_rajaongkir_country_code($country_code) {
 function commerce_rajaongkir_locality_code($locality_code) {
   module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.localities');
   $crlg = commerce_rajaongkir_localities_get();
-  if (isset($crlg[$locality_code]) && $crlg[$locality_code] != '') {
+  if (isset($crlg[$locality_code]) && $crlg[$locality_code] !== '') {
     $locality_code = $crlg[$locality_code];
   }
 
