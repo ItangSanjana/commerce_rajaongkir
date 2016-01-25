@@ -94,8 +94,10 @@ function commerce_rajaongkir_commerce_shipping_service_info_alter(&$shipping_ser
     }
   }
   foreach ($shipping_services as $shipping_services_key => $shipping_services_value) {
-    $shipping_services[$shipping_services_key]['code'] = $couriers_services[$shipping_services_key]['code'];
-    $shipping_services[$shipping_services_key]['display_title'] = drupal_strtoupper($couriers_services[$shipping_services_key]['code']) . ' ' . $couriers_services[$shipping_services_key]['service'];
+    if ($shipping_services_value['shipping_method'] === 'commerce_rajaongkir') {
+      $shipping_services[$shipping_services_key]['code'] = $couriers_services[$shipping_services_key]['code'];
+      $shipping_services[$shipping_services_key]['display_title'] = drupal_strtoupper($couriers_services[$shipping_services_key]['code']) . ' ' . $couriers_services[$shipping_services_key]['service'];
+    }
   }
 }
 
