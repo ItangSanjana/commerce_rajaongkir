@@ -2,11 +2,11 @@
 
 /**
  * @file
- * City list.
+ * Defines helper functions for referring to city data in RajaOngkir.
  */
 
 /**
- * Returns commerce_rajaongkir_localities_get().
+ * Returns an array of RajaOngkir city symbols keyed.
  */
 function commerce_rajaongkir_localities_get() {
   $localities = array(

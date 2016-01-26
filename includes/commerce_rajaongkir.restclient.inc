@@ -6,7 +6,7 @@
  */
 
 /**
- * Returns commerce_rajaongkir_rest_province().
+ * Returns list of available province.
  */
 function commerce_rajaongkir_rest_province($province_id = NULL) {
   $endpoint = 'province';
@@ -17,7 +17,7 @@ function commerce_rajaongkir_rest_province($province_id = NULL) {
 }
 
 /**
- * Returns commerce_rajaongkir_rest_city().
+ * Returns list of available city.
  */
 function commerce_rajaongkir_rest_city($city_id = NULL, $province_id = NULL) {
   $endpoint = 'city';
@@ -29,7 +29,7 @@ function commerce_rajaongkir_rest_city($city_id = NULL, $province_id = NULL) {
 }
 
 /**
- * Returns commerce_rajaongkir_rest_subdistrict().
+ * Returns list of available subdistrict.
  */
 function commerce_rajaongkir_rest_subdistrict($city_id = NULL, $subdistrict_id = NULL) {
   $endpoint = 'subdistrict';
@@ -41,7 +41,7 @@ function commerce_rajaongkir_rest_subdistrict($city_id = NULL, $subdistrict_id =
 }
 
 /**
- * Returns commerce_rajaongkir_rest_cost().
+ * Returns the shipping cost.
  */
 function commerce_rajaongkir_rest_cost($origin, $origintype, $destination, $destinationtype, $weight, $courier, $length, $width, $height, $diameter) {
   $endpoint = 'cost';
@@ -63,7 +63,7 @@ function commerce_rajaongkir_rest_cost($origin, $origintype, $destination, $dest
 }
 
 /**
- * Returns commerce_rajaongkir_rest_internationalorigin().
+ * Returns list of origin city for international shipping.
  */
 function commerce_rajaongkir_rest_internationalorigin($city_id = NULL, $province_id = NULL) {
   $endpoint = 'internationalOrigin';
@@ -75,7 +75,7 @@ function commerce_rajaongkir_rest_internationalorigin($city_id = NULL, $province
 }
 
 /**
- * Returns commerce_rajaongkir_rest_internationaldestination().
+ * Returns list of available country.
  */
 function commerce_rajaongkir_rest_internationaldestination($country_id = NULL) {
   $endpoint = 'internationalDestination';
@@ -86,7 +86,7 @@ function commerce_rajaongkir_rest_internationaldestination($country_id = NULL) {
 }
 
 /**
- * Returns commerce_rajaongkir_rest_internationalcost().
+ * Returns international shipping cost.
  */
 function commerce_rajaongkir_rest_internationalcost($origin, $destination, $weight, $courier, $length, $width, $height) {
   $endpoint = 'internationalCost';
@@ -105,7 +105,7 @@ function commerce_rajaongkir_rest_internationalcost($origin, $destination, $weig
 }
 
 /**
- * Returns commerce_rajaongkir_rest_currency().
+ * Returns currency converter.
  */
 function commerce_rajaongkir_rest_currency() {
   $endpoint = 'currency';
@@ -116,7 +116,7 @@ function commerce_rajaongkir_rest_currency() {
 }
 
 /**
- * Returns commerce_rajaongkir_rest_waybill().
+ * Returns shipping tracking.
  */
 function commerce_rajaongkir_rest_waybill($waybill_number, $courier) {
   $endpoint = 'waybill';
@@ -130,7 +130,8 @@ function commerce_rajaongkir_rest_waybill($waybill_number, $courier) {
 }
 
 /**
- * Returns commerce_rajaongkir_rest_post().
+ * Returns a CURL post containing the rate request JSON for an order for every
+ * enabled RajaOngkir package service.
  */
 function commerce_rajaongkir_rest_post($endpoint, $params) {
   $query = drupal_http_build_query($params);
@@ -154,7 +155,8 @@ function commerce_rajaongkir_rest_post($endpoint, $params) {
 }
 
 /**
- * Returns commerce_rajaongkir_rest_get().
+ * Returns a CURL get containing the rate request JSON for an order for every
+ * enabled RajaOngkir package service.
  */
 function commerce_rajaongkir_rest_get($endpoint, $params) {
   $query = drupal_http_build_query($params);

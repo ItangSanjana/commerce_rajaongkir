@@ -66,8 +66,9 @@ function commerce_rajaongkir_commerce_shipping_service_info() {
       foreach ($services_get[$couriers_key] as $services_key => $services_value) {
         $shipping_services[$services_key] = array(
           'title' => $services_value['service'],
+          'display_title' => drupal_strtoupper($services_value['code']) . ' ' . $services_value['service'],
+          'code' => $services_value['code'],
           'shipping_method' => 'commerce_rajaongkir',
-          'price_component' => 'shipping',
           'callbacks' => array(
             'rate' => 'commerce_rajaongkir_services_rate',
           ),
@@ -80,29 +81,7 @@ function commerce_rajaongkir_commerce_shipping_service_info() {
 }
 
 /**
- * Implements hook_commerce_shipping_service_info_alter().
- */
-function commerce_rajaongkir_commerce_shipping_service_info_alter(&$shipping_services) {
-  $couriers_get = variable_get('commerce_rajaongkir_couriers', array());
-  $services_get = commerce_rajaongkir_services_get();
-  $couriers_services = array();
-  foreach ($couriers_get as $couriers_key => $couriers_value) {
-    if ($couriers_value !== 0) {
-      foreach ($services_get[$couriers_key] as $services_key => $services_value) {
-        $couriers_services[$services_key] = $services_value;
-      }
-    }
-  }
-  foreach ($shipping_services as $shipping_services_key => $shipping_services_value) {
-    if ($shipping_services_value['shipping_method'] === 'commerce_rajaongkir') {
-      $shipping_services[$shipping_services_key]['code'] = $couriers_services[$shipping_services_key]['code'];
-      $shipping_services[$shipping_services_key]['display_title'] = drupal_strtoupper($couriers_services[$shipping_services_key]['code']) . ' ' . $couriers_services[$shipping_services_key]['service'];
-    }
-  }
-}
-
-/**
- * Returns commerce_rajaongkir_services_get().
+ * Returns an options list of package services for the specified carriers.
  */
 function commerce_rajaongkir_services_get() {
   $services = array(
@@ -161,7 +140,8 @@ function commerce_rajaongkir_services_get() {
 }
 
 /**
- * Returns commerce_rajaongkir_services_rate().
+ * Shipping service callback: returns RajaOngkir calculated shipping rates for
+ * a given order.
  */
 function commerce_rajaongkir_services_rate($shipping_service, $order) {
   module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.restclient');
@@ -225,16 +205,16 @@ function commerce_rajaongkir_services_rate($shipping_service, $order) {
         }
       }
       else {
-        drupal_set_message(t('@notice', array('@notice' => $cost['rajaongkir']['status']['description'])), 'warning', FALSE);
+        drupal_set_message(t('Shipping web service is currently not available: @notice', array('@notice' => $cost['rajaongkir']['status']['description'])), 'warning', FALSE);
       }
     }
     else {
-      drupal_set_message(t('@error', array('@error' => $cost->error)), 'error', FALSE);
+      drupal_set_message(t('The request could not be understood by the server: @error', array('@error' => $cost->error)), 'error', FALSE);
     }
   }
   else {
     if (variable_get('commerce_rajaongkir_account_type') == 'pro') {
-      if ($shipping_service['code'] == 'pos' || $shipping_service['code'] == 'tiki') {
+      if ($shipping_courier == 'pos' || $shipping_courier == 'tiki') {
         $shipping_destination = commerce_rajaongkir_country_code($shipping_address['country']);
         $cost = commerce_rajaongkir_rest_internationalcost($shipping_origin, $shipping_destination, $shipping_weight, $shipping_courier, $shipping_length, $shipping_width, $shipping_height);
         if ($cost->code == 200) {
@@ -253,11 +233,11 @@ function commerce_rajaongkir_services_rate($shipping_service, $order) {
             }
           }
           else {
-            drupal_set_message(t('@notice', array('@notice' => $cost['rajaongkir']['status']['description'])), 'warning', FALSE);
+            drupal_set_message(t('Shipping web service is currently not available: @notice', array('@notice' => $cost['rajaongkir']['status']['description'])), 'warning', FALSE);
           }
         }
         else {
-          drupal_set_message(t('@error', array('@error' => $cost->error)), 'error', FALSE);
+          drupal_set_message(t('The request could not be understood by the server: @error', array('@error' => $cost->error)), 'error', FALSE);
         }
       }
     }
@@ -267,12 +247,12 @@ function commerce_rajaongkir_services_rate($shipping_service, $order) {
 }
 
 /**
- * Returns commerce_rajaongkir_country_code().
+ * Returns the RajaOngkir country symbol for the given country code.
  */
 function commerce_rajaongkir_country_code($country_code) {
   module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.countries');
   $crcg = commerce_rajaongkir_countries_get();
-  if (isset($crcg[$country_code]) && $crcg[$country_code] !== '') {
+  if (isset($crcg[$country_code]) && $crcg[$country_code] != '') {
     $country_code = $crcg[$country_code];
   }
 
@@ -280,12 +260,12 @@ function commerce_rajaongkir_country_code($country_code) {
 }
 
 /**
- * Returns commerce_rajaongkir_locality_code().
+ * Returns the RajaOngkir locality symbol for the given locality code.
  */
 function commerce_rajaongkir_locality_code($locality_code) {
   module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.localities');
   $crlg = commerce_rajaongkir_localities_get();
-  if (isset($crlg[$locality_code]) && $crlg[$locality_code] !== '') {
+  if (isset($crlg[$locality_code]) && $crlg[$locality_code] != '') {
     $locality_code = $crlg[$locality_code];
   }
 

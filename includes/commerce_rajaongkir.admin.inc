@@ -6,7 +6,8 @@
  */
 
 /**
- * Returns commerce_rajaongkir_settings_form().
+ * Form callback: builds the settings form used to collect RajaOngkir API
+ * credentials and enable supported shipping services.
  */
 function commerce_rajaongkir_settings_form($form, &$form_state) {
   module_load_include('inc', 'addressfield_id', 'addressfield_id.administrative_areas');
@@ -75,7 +76,7 @@ function commerce_rajaongkir_settings_form($form, &$form_state) {
 }
 
 /**
- * Returns commerce_rajaongkir_account_types_get().
+ * Returns an options list of account type.
  */
 function commerce_rajaongkir_account_type_get() {
   $options = array(
@@ -89,7 +90,7 @@ function commerce_rajaongkir_account_type_get() {
 }
 
 /**
- * Returns commerce_rajaongkir_origin_ajax_callback().
+ * Callback for commerce_rajaongkir_origin.
  */
 function commerce_rajaongkir_origin_ajax_callback($form, $form_state) {
   return $form['origin'];
