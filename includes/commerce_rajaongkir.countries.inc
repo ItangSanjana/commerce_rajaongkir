@@ -2,11 +2,11 @@
 
 /**
  * @file
- * Country list.
+ * Defines helper functions for referring to country data in RajaOngkir.
  */
 
 /**
- * Returns commerce_rajaongkir_countries_get().
+ * Returns an array of RajaOngkir country symbols keyed.
  */
 function commerce_rajaongkir_countries_get() {
   $countries = array(
