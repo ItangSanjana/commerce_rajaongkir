@@ -11,11 +11,16 @@
 function commerce_rajaongkir_help($path, $arg) {
   switch ($path) {
     case 'admin/help#commerce_rajaongkir':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Rajanya Ongkos Kirim Terpadu. For more information, see the online <a href="@faq" target="@blank">FAQ</a>.', array('@faq' => 'http://rajaongkir.com/faq', '@blank' => '_blank')) . '</p>';
 
-      return $output;
+    $output = FALSE;
+    $filepath = dirname(__FILE__) . '/README.txt';
+
+    if (file_exists($filepath)) {
+      $readme = file_get_contents($filepath);
+      $output = '<pre>' . $readme . '</pre>';
+    }
+
+    return $output;
   }
 }
 
@@ -24,6 +29,7 @@ function commerce_rajaongkir_help($path, $arg) {
  */
 function commerce_rajaongkir_menu() {
   $items = array();
+
   $items['admin/commerce/config/shipping/methods/commerce-rajaongkir/edit'] = array(
     'title' => 'Edit',
     'description' => 'Configure Commerce RajaOngkir shipping method.',
@@ -43,9 +49,10 @@ function commerce_rajaongkir_menu() {
  */
 function commerce_rajaongkir_commerce_shipping_method_info() {
   $shipping_methods = array();
+
   $shipping_methods['commerce_rajaongkir'] = array(
     'title' => t('Commerce RajaOngkir'),
-    'description' => t('Rajanya Ongkos Kirim Terpadu.'),
+    'description' => t('Integrates RajaOngkir shipping service API with Commerce shipping.'),
   );
 
   return $shipping_methods;
@@ -55,35 +62,41 @@ function commerce_rajaongkir_commerce_shipping_method_info() {
  * Implements hook_commerce_shipping_service_info().
  */
 function commerce_rajaongkir_commerce_shipping_service_info() {
-  $couriers_get = variable_get('commerce_rajaongkir_couriers', array());
-  $services_get = commerce_rajaongkir_services_get();
-  $shipping_services = array();
+  $couriers = array_diff(variable_get('commerce_rajaongkir_courier', array()), array(0));
+
   if (variable_get('commerce_rajaongkir_account_type') == 'starter') {
-    unset($couriers_get['ESL'], $couriers_get['PCP'], $couriers_get['RPX']);
+    $couriers = array_diff($couriers, array('ESL', 'PCP', 'RPX'));
   }
-  foreach ($couriers_get as $couriers_key => $couriers_value) {
-    if ($couriers_value !== 0) {
-      foreach ($services_get[$couriers_key] as $services_key => $services_value) {
-        $shipping_services[$services_key] = array(
-          'title' => $services_value['service'],
-          'display_title' => drupal_strtoupper($services_value['code']) . ' ' . $services_value['service'],
-          'code' => $services_value['code'],
+
+  $services = array_intersect_key(commerce_rajaongkir_service(), $couriers);
+  $shipping_services = array();
+
+  if ($services) {
+    foreach ($services as $service) {
+      foreach ($service as $key => $value) {
+        $shipping_services[$key] = array(
+          'title' => $value['service'],
+          'display_title' => drupal_strtoupper($value['code']) . ' ' . $value['service'],
+          'code' => $value['code'],
           'shipping_method' => 'commerce_rajaongkir',
           'callbacks' => array(
-            'rate' => 'commerce_rajaongkir_services_rate',
+            'rate' => 'commerce_rajaongkir_service_rate',
           ),
         );
       }
+      unset($key, $value);
     }
+    unset($service);
   }
 
   return $shipping_services;
 }
 
 /**
- * Returns an options list of package services for the specified carriers.
+ * @return
+ *   Service option list.
  */
-function commerce_rajaongkir_services_get() {
+function commerce_rajaongkir_service() {
   $services = array(
     'ESL' => array(
       'ESL.RPX_RDX' => array('code' => t('esl'), 'service' => t('RPX/RDX')),
@@ -140,106 +153,130 @@ function commerce_rajaongkir_services_get() {
 }
 
 /**
- * Shipping service callback: returns RajaOngkir calculated shipping rates for
- * a given order.
+ * @param $shipping_service
+ *   Selected shipping service.
+ * @param $order
+ *   Current order.
+ * @return
+ *   Calculated shipping rates for a given order.
  */
-function commerce_rajaongkir_services_rate($shipping_service, $order) {
-  module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.restclient');
-  $shipping_origin = commerce_rajaongkir_locality_code(variable_get('commerce_rajaongkir_city'));
-  $shipping_origin_type = 'city';
+function commerce_rajaongkir_service_rate($shipping_service, $order) {
+  module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.restful');
+
   $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
   $field_name = commerce_physical_order_shipping_field_name($order);
+
   if (!empty($order_wrapper->{$field_name}->commerce_customer_address)) {
-    $shipping_address = $order_wrapper->{$field_name}->commerce_customer_address->value();
+    $address = $order_wrapper->{$field_name}->commerce_customer_address->value();
   }
   else {
-    $shipping_address = array(
-      'organisation_name' => '',
+    $address = array(
+      'country' => '',
       'name_line' => '',
+      'first_name' => '',
+      'last_name' => '',
+      'organisation_name' => '',
+      'administrative_area' => '',
+      'sub_administrative_area' => '',
+      'locality' => '',
+      'dependent_locality' => '',
+      'postal_code' => '',
       'thoroughfare' => '',
       'premise' => '',
-      'locality' => '',
-      'administrative_area' => '',
-      'postal_code' => '',
-      'country' => '',
-      'phone' => '',
+      'sub_premise' => '',
+      'data' => '',
     );
   }
-  $shipping_destination = commerce_rajaongkir_locality_code($shipping_address['locality']);
+
+  $account_type = variable_get('commerce_rajaongkir_account_type', array());
+  $locality = variable_get('commerce_rajaongkir_locality');
+  $dependent_locality = variable_get('commerce_rajaongkir_dependent_locality');
+  $shipping_origin = commerce_rajaongkir_locality($locality);
+  $shipping_origin_type = 'city';
+  $shipping_destination = commerce_rajaongkir_locality($address['locality']);
   $shipping_destination_type = 'city';
   $weight = commerce_physical_order_weight($order, 'g');
   $shipping_weight = $weight['weight'];
   $shipping_courier = $shipping_service['code'];
-  $shipping_length = NULL;
-  $shipping_width = NULL;
-  $shipping_height = NULL;
-  $shipping_diameter = NULL;
-  $rates = array();
-  $currency_code = $order_wrapper->commerce_order_total->currency_code->value();
-  foreach ($order_wrapper->commerce_line_items as $line_item_wrapper) {
-    if (in_array($line_item_wrapper->type->value(), commerce_product_line_item_types())) {
-      $line_item_dimensions = commerce_physical_product_line_item_dimensions($line_item_wrapper->value());
-      if (!physical_field_is_empty($line_item_dimensions, array('type' => 'physical_dimensions'))) {
-        $converted_dimensions = physical_dimensions_convert($line_item_dimensions, 'cm');
-        $shipping_length = $converted_dimensions['length'] * $line_item_wrapper->quantity->value();
-        $shipping_width = $converted_dimensions['width'] * $line_item_wrapper->quantity->value();
-        $shipping_height = $converted_dimensions['height'] * $line_item_wrapper->quantity->value();
-      }
+  $shipping_length = '';
+  $shipping_width = '';
+  $shipping_height = '';
+  $shipping_diameter = '';
+
+  if ($address['country'] == 'ID') {
+    if ($account_type == 'pro') {
+      $shipping_origin = commerce_rajaongkir_dependent_locality($locality, $dependent_locality);
+      $shipping_origin_type = 'subdistrict';
+      $shipping_destination = commerce_rajaongkir_dependent_locality($address['locality'], $address['dependent_locality']);
+      $shipping_destination_type = 'subdistrict';
     }
-  }
-  if ($shipping_address['country'] == 'ID') {
-    $cost = commerce_rajaongkir_rest_cost($shipping_origin, $shipping_origin_type, $shipping_destination, $shipping_destination_type, $shipping_weight, $shipping_courier, $shipping_length, $shipping_width, $shipping_height, $shipping_diameter);
-    if ($cost->code == 200) {
-      $cost = drupal_json_decode($cost->data);
-      if ($cost['rajaongkir']['status']['code'] == 200) {
-        foreach ($cost['rajaongkir']['results'] as $c) {
-          foreach ($c['costs'] as $cc) {
-            foreach ($cc['cost'] as $ccc) {
-              $rates[$cc['service']] = array(
-                'amount' => commerce_currency_decimal_to_amount($ccc['value'], $currency_code),
-                'currency_code' => $currency_code,
-                'data' => array(),
-              );
-            }
-          }
-        }
-      }
-      else {
-        drupal_set_message(t('Shipping web service is currently not available: @notice', array('@notice' => $cost['rajaongkir']['status']['description'])), 'warning', FALSE);
-      }
-    }
-    else {
-      drupal_set_message(t('The request could not be understood by the server: @error', array('@error' => $cost->error)), 'error', FALSE);
-    }
+    $cost = commerce_rajaongkir_restful_cost($shipping_origin, $shipping_origin_type, $shipping_destination, $shipping_destination_type, $shipping_weight, $shipping_courier, $shipping_length, $shipping_width, $shipping_height, $shipping_diameter);
   }
   else {
-    if (variable_get('commerce_rajaongkir_account_type') == 'pro') {
-      if ($shipping_courier == 'pos' || $shipping_courier == 'tiki') {
-        $shipping_destination = commerce_rajaongkir_country_code($shipping_address['country']);
-        $cost = commerce_rajaongkir_rest_internationalcost($shipping_origin, $shipping_destination, $shipping_weight, $shipping_courier, $shipping_length, $shipping_width, $shipping_height);
-        if ($cost->code == 200) {
-          $cost = drupal_json_decode($cost->data);
-          if ($cost['rajaongkir']['status']['code'] == 200) {
-            $currency_rates = $cost['rajaongkir']['currency']['value'];
-            foreach ($cost['rajaongkir']['results'] as $c) {
-              foreach ($c['costs'] as $cc) {
-                $cc_cost = $cc['cost'] * $currency_rates;
-                $rates[$cc['service']] = array(
-                  'amount' => commerce_currency_decimal_to_amount($cc_cost, $currency_code),
-                  'currency_code' => $currency_code,
+    if ($shipping_courier == 'pos' || $shipping_courier == 'tiki') {
+      $shipping_destination = commerce_rajaongkir_country_code($address['country']);
+      $cost = commerce_rajaongkir_restful_internationalcost($shipping_origin, $shipping_destination, $shipping_weight, $shipping_courier, $shipping_length, $shipping_width, $shipping_height);
+    }
+    else {
+      $cost = FALSE;
+    }
+  }
+
+  $rates = array();
+
+  if ($cost) {
+    if (isset($cost->data) && $cost->data) {
+      $cost_data = drupal_json_decode($cost->data);
+      $rajaongkir = $cost_data['rajaongkir'];
+      $status = $rajaongkir['status'];
+
+      if ($status['code'] == 200) {
+        $results = $rajaongkir['results'];
+        $currency_rates = isset($rajaongkir['currency']['value']) ? $rajaongkir['currency']['value'] : NULL;
+        $rates_timeout = variable_get('commerce_rajaongkir_rates_timeout', 60);
+        $rates = commerce_shipping_rates_cache_get('commerce_rajaongkir', $order, $rates_timeout);
+
+        if (empty($rates)) {
+          foreach ($results as $result) {
+            foreach ($result['costs'] as $rcost) {
+              if ($address['country'] == 'ID') {
+                foreach ($rcost['cost'] as $rcost_cost) {
+                  $rates[$rcost['service']] = array(
+                    'amount' => commerce_currency_decimal_to_amount($rcost_cost['value'], 'IDR'),
+                    'currency_code' => 'IDR',
+                    'data' => array(),
+                  );
+                }
+                unset($rcost_cost);
+              }
+              else {
+                $rcost_rates = $rcost['cost'] * $currency_rates;
+                $rcost_rates = ceil($rcost_rates);
+                $rates[$rcost['service']] = array(
+                  'amount' => commerce_currency_decimal_to_amount($rcost_rates, 'IDR'),
+                  'currency_code' => 'IDR',
                   'data' => array(),
                 );
               }
             }
+            unset($rcost);
           }
-          else {
-            drupal_set_message(t('Shipping web service is currently not available: @notice', array('@notice' => $cost['rajaongkir']['status']['description'])), 'warning', FALSE);
-          }
-        }
-        else {
-          drupal_set_message(t('The request could not be understood by the server: @error', array('@error' => $cost->error)), 'error', FALSE);
+          unset($result);
+
+          commerce_shipping_rates_cache_set('commerce_rajaongkir', $order, $rates);
         }
       }
+      else {
+        if ($status['description']) {
+          drupal_set_message(t('Shipping service warning: @warning', array('@warning' => $status['description'])), 'warning', FALSE);
+        }
+        else {
+          drupal_set_message(t('HTTP request error: @error', array('@error' => $cost->error)), 'error', FALSE);
+        }
+      }
+    }
+    else {
+      drupal_set_message(t('HTTP request error: @error', array('@error' => $cost->error)), 'error', FALSE);
     }
   }
 
@@ -247,27 +284,85 @@ function commerce_rajaongkir_services_rate($shipping_service, $order) {
 }
 
 /**
- * Returns the RajaOngkir country symbol for the given country code.
+ * @param $country
+ *   Selected country.
+ * @return
+ *   Code for selected country.
  */
-function commerce_rajaongkir_country_code($country_code) {
-  module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.countries');
-  $crcg = commerce_rajaongkir_countries_get();
-  if (isset($crcg[$country_code]) && $crcg[$country_code] != '') {
-    $country_code = $crcg[$country_code];
+function commerce_rajaongkir_country_code($country) {
+  module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.country');
+
+  $countries = commerce_rajaongkir_country();
+  $country_code = FALSE;
+
+  if ($country) {
+    $country_code = $countries[$country];
   }
 
   return $country_code;
 }
 
 /**
- * Returns the RajaOngkir locality symbol for the given locality code.
+ * @param $locality
+ *   Selected Locality.
+ * @return
+ *   Code for selected Locality.
  */
-function commerce_rajaongkir_locality_code($locality_code) {
-  module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.localities');
-  $crlg = commerce_rajaongkir_localities_get();
-  if (isset($crlg[$locality_code]) && $crlg[$locality_code] != '') {
-    $locality_code = $crlg[$locality_code];
+function commerce_rajaongkir_locality($locality) {
+  module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.locality_block_list');
+
+  $locality_blocks = commerce_rajaongkir_locality_block();
+  $locality_code = FALSE;
+
+  if ($locality) {
+    $code = array();
+
+    foreach ($locality_blocks as $locality_block) {
+      foreach ($locality_block as $localities => $dependent_localities) {
+        $code[$localities] = $dependent_localities;
+      }
+      unset($localities, $dependent_localities);
+    }
+    unset($locality_block);
+
+    $code = array_keys($code);
+    sort($code);
+    array_unshift($code, '');
+    unset($code[0]);
+    $code = array_flip($code);
+    $locality_code = $code[$locality];
   }
 
   return $locality_code;
+}
+
+/**
+ * @param $locality
+ *   Selected Locality.
+ * @param $dependent_locality
+ *   Selected dependent locality.
+ * @return
+ *   Code for selected dependent locality.
+ */
+function commerce_rajaongkir_dependent_locality($locality, $dependent_locality) {
+  module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.locality_block_list');
+
+  $locality_blocks = commerce_rajaongkir_locality_block();
+  $dependent_locality_code = FALSE;
+
+  if ($locality && $dependent_locality) {
+    $code = array();
+
+    foreach ($locality_blocks as $locality_block) {
+      foreach ($locality_block as $localities => $dependent_localities) {
+        $code[$localities] = $dependent_localities;
+      }
+      unset($localities, $dependent_localities);
+    }
+    unset($locality_block);
+
+    $dependent_locality_code = $code[$locality][$dependent_locality];
+  }
+
+  return $dependent_locality_code;
 }

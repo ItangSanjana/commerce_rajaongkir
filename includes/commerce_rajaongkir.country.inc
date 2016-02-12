@@ -8,7 +8,7 @@
 /**
  * Returns an array of RajaOngkir country symbols keyed.
  */
-function commerce_rajaongkir_countries_get() {
+function commerce_rajaongkir_country() {
   $countries = array(
     'AD' => 189,
     'AE' => 178,

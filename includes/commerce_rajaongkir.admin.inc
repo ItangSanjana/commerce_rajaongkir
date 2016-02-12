@@ -6,22 +6,42 @@
  */
 
 /**
- * Form callback: builds the settings form used to collect RajaOngkir API
- * credentials and enable supported shipping services.
+ * Form callback.
+ *
+ * Builds the settings form used to collect RajaOngkir API credentials and
+ * enable supported shipping couriers.
+ *
+ * @param $form
+ *   Form
+ * @param $form_state
+ *   Form_state.
+ * @return
+ *   Form.
  */
 function commerce_rajaongkir_settings_form($form, &$form_state) {
-  module_load_include('inc', 'addressfield_id', 'addressfield_id.administrative_areas');
-  module_load_include('inc', 'addressfield_id', 'addressfield_id.localities');
-  $form = array();
-  $administrative_areas = addressfield_id_get_administrative_areas();
-  if (isset($form_state['values']['commerce_rajaongkir_province'])) {
-    $administrative_areas_selected = $form_state['values']['commerce_rajaongkir_province'];
+  module_load_include('inc', 'addressfield_id', 'addressfield_id.locality_block');
+
+  $options_account_type = array_change_key_case(commerce_rajaongkir_account_type());
+  $options_courier = array_keys(commerce_rajaongkir_service());
+
+  if (isset($form_state['values']['commerce_rajaongkir_administrative_area'])) {
+    $administrative_area_selected = $form_state['values']['commerce_rajaongkir_administrative_area'];
   }
   else {
-    $administrative_areas_selected = variable_get('commerce_rajaongkir_province');
+    $administrative_area_selected = variable_get('commerce_rajaongkir_administrative_area');
   }
+
+  if (isset($form_state['values']['commerce_rajaongkir_locality'])) {
+    $locality_selected = $form_state['values']['commerce_rajaongkir_locality'];
+  }
+  else {
+    $locality_selected = variable_get('commerce_rajaongkir_locality');
+  }
+
+  $form = array();
+
   $form['auth'] = array(
-    '#title' => t('Commerce RajaOngkir authentication'),
+    '#title' => t('Authentication'),
     '#type' => 'fieldset',
   );
   $form['auth']['commerce_rajaongkir_api_key'] = array(
@@ -32,65 +52,100 @@ function commerce_rajaongkir_settings_form($form, &$form_state) {
   );
   $form['auth']['commerce_rajaongkir_account_type'] = array(
     '#default_value' => variable_get('commerce_rajaongkir_account_type'),
-    '#options' => commerce_rajaongkir_account_type_get(),
+    '#empty_value' => '',
+    '#options' => $options_account_type,
     '#title' => t('Account type'),
     '#type' => 'select',
   );
+
+  $form['rate'] = array(
+    '#title' => t('Rate request settings'),
+    '#type' => 'fieldset',
+  );
+  $form['rate']['commerce_rajaongkir_rates_timeout'] = array(
+    '#default_value' => variable_get('commerce_rajaongkir_rates_timeout', 60),
+    '#description' => t('Default to 60 seconds. Set to 0 during testing to avoid caching failed rate request responses.'),
+    '#field_suffix' => t('seconds'),
+    '#title' => t('Cached rates timeout'),
+    '#type' => 'textfield',
+  );
+
+  $form['courier'] = array(
+    '#title' => t('Available shipping couriers'),
+    '#type' => 'fieldset',
+  );
+  $form['courier']['commerce_rajaongkir_courier'] = array(
+    '#default_value' => variable_get('commerce_rajaongkir_courier', array()),
+    '#empty_value' => '',
+    '#options' => drupal_map_assoc($options_courier),
+    '#title' => t('Shipping couriers'),
+    '#type' => 'checkboxes',
+  );
+
   $form['origin'] = array(
     '#prefix' => '<div id="commerce-rajaongkir-origin-wrapper">',
     '#suffix' => '</div>',
     '#title' => t('Origin shipping address'),
     '#type' => 'fieldset',
   );
-  $form['origin']['commerce_rajaongkir_province'] = array(
+  $form['origin']['commerce_rajaongkir_administrative_area'] = array(
     '#ajax' => array(
       'callback' => 'commerce_rajaongkir_origin_ajax_callback',
       'wrapper' => 'commerce-rajaongkir-origin-wrapper',
     ),
-    '#default_value' => variable_get('commerce_rajaongkir_province'),
-    '#options' => $administrative_areas,
+    '#default_value' => variable_get('commerce_rajaongkir_administrative_area'),
+    '#empty_value' => '',
+    '#options' => addressfield_id_administrative_area(),
     '#title' => t('Province'),
     '#type' => 'select',
   );
-  $form['origin']['commerce_rajaongkir_city'] = array(
-    '#default_value' => variable_get('commerce_rajaongkir_city'),
-    '#options' => addressfield_id_get_localities($administrative_areas_selected),
-    '#title' => t('City'),
+  $form['origin']['commerce_rajaongkir_locality'] = array(
+    '#ajax' => array(
+      'callback' => 'commerce_rajaongkir_origin_ajax_callback',
+      'wrapper' => 'commerce-rajaongkir-origin-wrapper',
+    ),
+    '#default_value' => variable_get('commerce_rajaongkir_locality'),
+    '#empty_value' => '',
+    '#options' => addressfield_id_locality($administrative_area_selected),
+    '#title' => t('City/regency'),
     '#type' => 'select',
   );
-  $form['services'] = array(
-    '#title' => t('Enable shipping services'),
-    '#type' => 'fieldset',
-  );
-  $couriers_get = array();
-  foreach (commerce_rajaongkir_services_get() as $key => $value) {
-    $couriers_get[$key] = $key;
-  }
-  $form['services']['commerce_rajaongkir_couriers'] = array(
-    '#default_value' => variable_get('commerce_rajaongkir_couriers', array()),
-    '#options' => $couriers_get,
-    '#type' => 'checkboxes',
+  $form['origin']['commerce_rajaongkir_dependent_locality'] = array(
+    '#default_value' => variable_get('commerce_rajaongkir_dependent_locality'),
+    '#empty_value' => '',
+    '#options' => addressfield_id_dependent_locality($locality_selected),
+    '#title' => t('District/Kecamatan'),
+    '#type' => 'select',
   );
 
   return system_settings_form($form);
 }
 
 /**
- * Returns an options list of account type.
+ * Options list of account type.
+ *
+ * @return
+ *   Account type.
  */
-function commerce_rajaongkir_account_type_get() {
-  $options = array(
-    '' => t('- Select -'),
-    'starter' => t('Starter'),
-    'basic' => t('Basic'),
-    'pro' => t('Pro'),
-  );
+function commerce_rajaongkir_account_type() {
+  $account_types = drupal_map_assoc(array(
+    t('Starter'),
+    t('Basic'),
+    t('Pro'),
+  ));
 
-  return $options;
+  return $account_types;
 }
 
 /**
  * Callback for commerce_rajaongkir_origin.
+ *
+ * @param $form
+ *   Form
+ * @param $form_state
+ *   Form_state.
+ * @return
+ *   Form origin.
  */
 function commerce_rajaongkir_origin_ajax_callback($form, $form_state) {
   return $form['origin'];
