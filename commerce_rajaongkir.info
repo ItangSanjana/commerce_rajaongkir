@@ -1,5 +1,5 @@
 name = Commerce RajaOngkir
-description = Rajanya Ongkos Kirim Terpadu.
+description = Integrates RajaOngkir shipping service API with Commerce shipping.
 package = Commerce (shipping)
 dependencies[] = commerce_shipping
 dependencies[] = commerce_physical
