@@ -134,12 +134,8 @@ function commerce_rajaongkir_restful_internationaldestination($country_id = NULL
 /**
  * @param $origin
  *   Origin shipping address.
- * @param $origintype
- *   Origin shipping address trype.
  * @param $destination
  *   Shipping destination address.
- * @param $destinationtype
- *   Shipping destination address type.
  * @param $weight
  *   Shipping weight.
  * @param $courier
@@ -150,8 +146,6 @@ function commerce_rajaongkir_restful_internationaldestination($country_id = NULL
  *   Product width.
  * @param $height
  *   Product height.
- * @param $diameter
- *   Product diameter.
  * @return
  *   Shiping cost/rates result.
  */
@@ -184,6 +178,13 @@ function commerce_rajaongkir_restful_currency() {
 
 /**
  * Returns shipping tracking.
+ *
+ * @param $waybill_number
+ *   Waybill number.
+ * @param $courier
+ *   Courier.
+ * @return
+ *   Shiping waybill/tracking information.
  */
 function commerce_rajaongkir_restful_waybill($waybill_number, $courier) {
   $endpoint = 'waybill';
@@ -197,10 +198,14 @@ function commerce_rajaongkir_restful_waybill($waybill_number, $courier) {
 }
 
 /**
- * Returns a CURL post.
+ * CURL post.
  *
- * Containing the rate request JSON for an order for every enabled RajaOngkir
- * package service.
+ * @param $endpoint
+ *   Endpoint.
+ * @param $params
+ *   Params.
+ * @return
+ *   CURL post results.
  */
 function commerce_rajaongkir_restful_post($endpoint, $params) {
   $account_type = variable_get('commerce_rajaongkir_account_type', array());
@@ -231,11 +236,15 @@ function commerce_rajaongkir_restful_post($endpoint, $params) {
 }
 
 /**
- * Returns a CURL get.
- *
- * Containing the rate request JSON for an order for every enabled RajaOngkir
- * package service.
- */
+* CURL get.
+*
+* @param $endpoint
+*   Endpoint.
+* @param $params
+*   Params.
+* @return
+*   CURL get results.
+*/
 function commerce_rajaongkir_restful_get($endpoint, $params) {
   $account_type = variable_get('commerce_rajaongkir_account_type', array());
   $query = drupal_http_build_query($params);

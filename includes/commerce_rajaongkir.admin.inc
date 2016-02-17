@@ -8,21 +8,21 @@
 /**
  * Form callback.
  *
- * Builds the settings form used to collect RajaOngkir API credentials and
- * enable supported shipping couriers.
+ * Settings form used to collect RajaOngkir API credentials and enable supported
+ * shipping couriers.
  *
  * @param $form
- *   Form
+ *   Drupal form API.
  * @param $form_state
- *   Form_state.
+ *   Form state.
  * @return
- *   Form.
+ *   Admin settings form.
  */
 function commerce_rajaongkir_settings_form($form, &$form_state) {
-  module_load_include('inc', 'addressfield_id', 'addressfield_id.locality_block');
+  module_load_include('inc', 'addressfield_id', 'includes/addressfield_id.locality_block');
 
-  $options_account_type = array_change_key_case(commerce_rajaongkir_account_type());
-  $options_courier = array_keys(commerce_rajaongkir_service());
+  $option_account_types = array_change_key_case(commerce_rajaongkir_account_type());
+  $option_couriers = array_keys(commerce_rajaongkir_service());
 
   if (isset($form_state['values']['commerce_rajaongkir_administrative_area'])) {
     $administrative_area_selected = $form_state['values']['commerce_rajaongkir_administrative_area'];
@@ -53,7 +53,7 @@ function commerce_rajaongkir_settings_form($form, &$form_state) {
   $form['auth']['commerce_rajaongkir_account_type'] = array(
     '#default_value' => variable_get('commerce_rajaongkir_account_type'),
     '#empty_value' => '',
-    '#options' => $options_account_type,
+    '#options' => $option_account_types,
     '#title' => t('Account type'),
     '#type' => 'select',
   );
@@ -77,7 +77,7 @@ function commerce_rajaongkir_settings_form($form, &$form_state) {
   $form['courier']['commerce_rajaongkir_courier'] = array(
     '#default_value' => variable_get('commerce_rajaongkir_courier', array()),
     '#empty_value' => '',
-    '#options' => drupal_map_assoc($options_courier),
+    '#options' => drupal_map_assoc($option_couriers),
     '#title' => t('Shipping couriers'),
     '#type' => 'checkboxes',
   );
@@ -122,7 +122,7 @@ function commerce_rajaongkir_settings_form($form, &$form_state) {
 }
 
 /**
- * Options list of account type.
+ * Option list of account type.
  *
  * @return
  *   Account type.
@@ -138,7 +138,7 @@ function commerce_rajaongkir_account_type() {
 }
 
 /**
- * Callback for commerce_rajaongkir_origin.
+ * AJAX callback for commerce_rajaongkir_origin.
  *
  * @param $form
  *   Form
