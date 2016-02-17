@@ -203,13 +203,21 @@ function commerce_rajaongkir_service_rate($shipping_service, $order) {
   $shipping_height = '';
   $shipping_diameter = '';
 
-  if ($address['country'] == 'ID') {
-    if ($account_type == 'pro') {
-      $shipping_origin = commerce_rajaongkir_dependent_locality($locality, $dependent_locality);
-      $shipping_origin_type = 'subdistrict';
-      $shipping_destination = commerce_rajaongkir_dependent_locality($address['locality'], $address['dependent_locality']);
-      $shipping_destination_type = 'subdistrict';
+  foreach ($order_wrapper->commerce_line_items as $line_item_wrapper) {
+    if (in_array($line_item_wrapper->type->value(), commerce_product_line_item_types())) {
+      $line_item_dimensions = commerce_physical_product_line_item_dimensions($line_item_wrapper->value());
+
+      if (!physical_field_is_empty($line_item_dimensions, array('type' => 'physical_dimensions'))) {
+        $converted_dimensions = physical_dimensions_convert($line_item_dimensions, 'cm');
+        $shipping_length = $converted_dimensions['length'] * $line_item_wrapper->quantity->value();
+        $shipping_width = $converted_dimensions['width'] * $line_item_wrapper->quantity->value();
+        $shipping_height = $converted_dimensions['height'] * $line_item_wrapper->quantity->value();
+        $shipping_diameter = $converted_dimensions['length'] * $converted_dimensions['width'] * $converted_dimensions['height'] * $line_item_wrapper->quantity->value();
+      }
     }
+  }
+
+  if ($address['country'] == 'ID') {
     $cost = commerce_rajaongkir_restful_cost($shipping_origin, $shipping_origin_type, $shipping_destination, $shipping_destination_type, $shipping_weight, $shipping_courier, $shipping_length, $shipping_width, $shipping_height, $shipping_diameter);
   }
   else {
@@ -234,12 +242,12 @@ function commerce_rajaongkir_service_rate($shipping_service, $order) {
         $results = $rajaongkir['results'];
         $currency_rates = isset($rajaongkir['currency']['value']) ? $rajaongkir['currency']['value'] : NULL;
         $rates_timeout = variable_get('commerce_rajaongkir_rates_timeout', 60);
-        $rates = commerce_shipping_rates_cache_get('commerce_rajaongkir', $order, $rates_timeout);
+        $rates = commerce_shipping_rates_cache_get('commerce_rajaongkir_' . $shipping_service['title'], $order, $rates_timeout);
 
         if (empty($rates)) {
           foreach ($results as $result) {
             foreach ($result['costs'] as $rcost) {
-              if ($address['country'] == 'ID') {
+              if (is_array($rcost['cost'])) {
                 foreach ($rcost['cost'] as $rcost_cost) {
                   $rates[$rcost['service']] = array(
                     'amount' => commerce_currency_decimal_to_amount($rcost_cost['value'], 'IDR'),
@@ -263,20 +271,22 @@ function commerce_rajaongkir_service_rate($shipping_service, $order) {
           }
           unset($result);
 
-          commerce_shipping_rates_cache_set('commerce_rajaongkir', $order, $rates);
+          if ($rates) {
+            commerce_shipping_rates_cache_set('commerce_rajaongkir_' . $shipping_service['title'], $order, $rates);
+          }
         }
       }
       else {
         if ($status['description']) {
-          drupal_set_message(t('Shipping service warning: @warning', array('@warning' => $status['description'])), 'warning', FALSE);
+          drupal_set_message(t('Commerce RajaOngkir warning: @warning', array('@warning' => $status['description'])), 'warning', FALSE);
         }
         else {
-          drupal_set_message(t('HTTP request error: @error', array('@error' => $cost->error)), 'error', FALSE);
+          drupal_set_message(t('Commerce RajaOngkir HTTP request error: @error', array('@error' => $cost->error)), 'error', FALSE);
         }
       }
     }
     else {
-      drupal_set_message(t('HTTP request error: @error', array('@error' => $cost->error)), 'error', FALSE);
+      drupal_set_message(t('Commerce RajaOngkir HTTP request error II: @error', array('@error' => $cost->error)), 'error', FALSE);
     }
   }
 

@@ -12,21 +12,21 @@
 function commerce_rajaongkir_locality_block() {
   $locality_blocks = array(
     "Bali" => array(
-      "Badung (Kabupaten)" => array(
+      "Badung" => array(
         "Abiansemal" => 258,
         "Kuta" => 259,
         "Kuta Selatan" => 260,
         "Kuta Utara" => 261,
         "Mengwi" => 262,
         "Petang" => 263,
-       ),
-      "Bangli (Kabupaten)" => array(
+      ),
+      "Bangli" => array(
         "Bangli" => 472,
         "Kintamani" => 473,
         "Susut" => 474,
         "Tembuku" => 475,
-       ),
-      "Buleleng (Kabupaten)" => array(
+      ),
+      "Buleleng" => array(
         "Banjar" => 1279,
         "Buleleng" => 1280,
         "Busungbiu" => 1281,
@@ -36,14 +36,14 @@ function commerce_rajaongkir_locality_block() {
         "Seririt" => 1285,
         "Sukasada" => 1286,
         "Tejakula" => 1287,
-       ),
-      "Denpasar (Kota)" => array(
+      ),
+      "Denpasar" => array(
         "Denpasar Barat" => 1573,
         "Denpasar Selatan" => 1574,
         "Denpasar Timur" => 1575,
         "Denpasar Utara" => 1576,
-       ),
-      "Gianyar (Kabupaten)" => array(
+      ),
+      "Gianyar" => array(
         "Belah Batuh (Blahbatuh)" => 1764,
         "Gianyar" => 1765,
         "Payangan" => 1766,
@@ -51,15 +51,15 @@ function commerce_rajaongkir_locality_block() {
         "Tampak Siring" => 1768,
         "Tegallalang" => 1769,
         "Ubud" => 1770,
-       ),
-      "Jembrana (Kabupaten)" => array(
+      ),
+      "Jembrana" => array(
         "Jembrana" => 2232,
         "Melaya" => 2233,
         "Mendoyo" => 2234,
         "Negara" => 2235,
         "Pekutatan" => 2236,
-       ),
-      "Karangasem (Kabupaten)" => array(
+      ),
+      "Karangasem" => array(
         "Abang" => 2370,
         "Bebandem" => 2371,
         "Karang Asem" => 2372,
@@ -68,14 +68,14 @@ function commerce_rajaongkir_locality_block() {
         "Rendang" => 2375,
         "Selat" => 2376,
         "Sidemen" => 2377,
-       ),
-      "Klungkung (Kabupaten)" => array(
+      ),
+      "Klungkung" => array(
         "Banjarangkan" => 2748,
         "Dawan" => 2749,
         "Klungkung" => 2750,
         "Nusapenida" => 2751,
-       ),
-      "Tabanan (Kabupaten)" => array(
+      ),
+      "Tabanan" => array(
         "Baturiti" => 6179,
         "Kediri" => 6180,
         "Kerambitan" => 6181,
@@ -86,10 +86,10 @@ function commerce_rajaongkir_locality_block() {
         "Selemadeg / Salamadeg Timur" => 6186,
         "Selemadeg / Salemadeg Barat" => 6187,
         "Tabanan" => 6188,
-       ),
+      ),
     ),
     "Bangka Belitung" => array(
-      "Bangka (Kabupaten)" => array(
+      "Bangka" => array(
         "Bakam" => 426,
         "Belinyu" => 427,
         "Mendo Barat" => 428,
@@ -98,16 +98,16 @@ function commerce_rajaongkir_locality_block() {
         "Puding Besar" => 431,
         "Riau Silip" => 432,
         "Sungai Liat" => 433,
-       ),
-      "Bangka Barat (Kabupaten)" => array(
+      ),
+      "Bangka Barat" => array(
         "Jebus" => 434,
         "Kelapa" => 435,
         "Mentok (Muntok)" => 436,
         "Parittiga" => 437,
         "Simpang Teritip" => 438,
         "Tempilang" => 439,
-       ),
-      "Bangka Selatan (Kabupaten)" => array(
+      ),
+      "Bangka Selatan" => array(
         "Air Gegas" => 440,
         "Kepulauan Pongok" => 441,
         "Lepar Pongok" => 442,
@@ -116,23 +116,23 @@ function commerce_rajaongkir_locality_block() {
         "Simpang Rimba" => 445,
         "Toboali" => 446,
         "Tukak Sadai" => 447,
-       ),
-      "Bangka Tengah (Kabupaten)" => array(
+      ),
+      "Bangka Tengah" => array(
         "Koba" => 448,
         "Lubuk Besar" => 449,
         "Namang" => 450,
         "Pangkalan Baru" => 451,
         "Simpang Katis" => 452,
         "Sungai Selan" => 453,
-       ),
-      "Belitung (Kabupaten)" => array(
+      ),
+      "Belitung" => array(
         "Badau" => 761,
         "Membalong" => 762,
         "Selat Nasik" => 763,
         "Sijuk" => 764,
         "Tanjung Pandan" => 765,
-       ),
-      "Belitung Timur (Kabupaten)" => array(
+      ),
+      "Belitung Timur" => array(
         "Damar" => 766,
         "Dendang" => 767,
         "Gantung" => 768,
@@ -140,8 +140,8 @@ function commerce_rajaongkir_locality_block() {
         "Manggar" => 770,
         "Simpang Pesak" => 771,
         "Simpang Renggiang" => 772,
-       ),
-      "Pangkal Pinang (Kota)" => array(
+      ),
+      "Pangkal Pinang" => array(
         "Bukit Intan" => 4713,
         "Gabek" => 4714,
         "Gerunggang" => 4715,
@@ -149,10 +149,10 @@ function commerce_rajaongkir_locality_block() {
         "Pangkal Balam" => 4717,
         "Rangkui" => 4718,
         "Taman Sari" => 4719,
-       ),
+      ),
     ),
     "Banten" => array(
-      "Cilegon (Kota)" => array(
+      "Cilegon" => array(
         "Cibeber" => 1461,
         "Cilegon" => 1462,
         "Citangkil" => 1463,
@@ -161,8 +161,8 @@ function commerce_rajaongkir_locality_block() {
         "Jombang" => 1466,
         "Pulomerak" => 1467,
         "Purwakarta" => 1468,
-       ),
-      "Lebak (Kabupaten)" => array(
+      ),
+      "Lebak" => array(
         "Banjarsari" => 3298,
         "Bayah" => 3299,
         "Bojongmanik" => 3300,
@@ -191,8 +191,8 @@ function commerce_rajaongkir_locality_block() {
         "Sobang" => 3323,
         "Wanasalam" => 3324,
         "Warunggunung" => 3325,
-       ),
-      "Pandeglang (Kabupaten)" => array(
+      ),
+      "Pandeglang" => array(
         "Angsana" => 4655,
         "Banjar" => 4656,
         "Bojong" => 4657,
@@ -228,7 +228,7 @@ function commerce_rajaongkir_locality_block() {
         "Sobang" => 4687,
         "Sukaresmi" => 4688,
         "Sumur" => 4689,
-       ),
+      ),
       "Serang (Kabupaten)" => array(
         "Anyar" => 5540,
         "Bandung" => 5541,
@@ -259,7 +259,7 @@ function commerce_rajaongkir_locality_block() {
         "Tirtayasa" => 5566,
         "Tunjung Teja" => 5567,
         "Waringin Kurung" => 5568,
-       ),
+      ),
       "Serang (Kota)" => array(
         "Cipocok Jaya" => 5569,
         "Curug" => 5570,
@@ -267,7 +267,7 @@ function commerce_rajaongkir_locality_block() {
         "Serang" => 5572,
         "Taktakan" => 5573,
         "Walantaka" => 5574,
-       ),
+      ),
       "Tangerang (Kabupaten)" => array(
         "Balaraja" => 6268,
         "Cikupa" => 6269,
@@ -298,7 +298,7 @@ function commerce_rajaongkir_locality_block() {
         "Sukamulya" => 6294,
         "Teluknaga" => 6295,
         "Tigaraksa" => 6296,
-       ),
+      ),
       "Tangerang (Kota)" => array(
         "Batuceper" => 6297,
         "Benda" => 6298,
@@ -313,8 +313,8 @@ function commerce_rajaongkir_locality_block() {
         "Periuk" => 6307,
         "Pinang (Penang)" => 6308,
         "Tangerang" => 6309,
-       ),
-      "Tangerang Selatan (Kota)" => array(
+      ),
+      "Tangerang Selatan" => array(
         "Ciputat" => 6310,
         "Ciputat Timur" => 6311,
         "Pamulang" => 6312,
@@ -322,10 +322,10 @@ function commerce_rajaongkir_locality_block() {
         "Serpong" => 6314,
         "Serpong Utara" => 6315,
         "Setu" => 6316,
-       ),
+      ),
     ),
     "Bengkulu" => array(
-      "Bengkulu (Kota)" => array(
+      "Bengkulu" => array(
         "Gading Cempaka" => 832,
         "Kampung Melayu" => 833,
         "Muara Bangka Hulu" => 834,
@@ -335,8 +335,8 @@ function commerce_rajaongkir_locality_block() {
         "Singaran Pati" => 838,
         "Sungai Serut" => 839,
         "Teluk Segara" => 840,
-       ),
-      "Bengkulu Selatan (Kabupaten)" => array(
+      ),
+      "Bengkulu Selatan" => array(
         "Air Nipis" => 841,
         "Bunga Mas" => 842,
         "Kedurang" => 843,
@@ -348,8 +348,8 @@ function commerce_rajaongkir_locality_block() {
         "Pinoraya" => 849,
         "Seginim" => 850,
         "Ulu Manna" => 851,
-       ),
-      "Bengkulu Tengah (Kabupaten)" => array(
+      ),
+      "Bengkulu Tengah" => array(
         "Bang Haji" => 852,
         "Karang Tinggi" => 853,
         "Merigi Kelindang" => 854,
@@ -360,8 +360,8 @@ function commerce_rajaongkir_locality_block() {
         "Pondok Kubang" => 859,
         "Taba Penanjung" => 860,
         "Talang Empat" => 861,
-       ),
-      "Bengkulu Utara (Kabupaten)" => array(
+      ),
+      "Bengkulu Utara" => array(
         "Air Besi" => 862,
         "Air Napal" => 863,
         "Air Padang" => 864,
@@ -379,8 +379,8 @@ function commerce_rajaongkir_locality_block() {
         "Putri Hijau" => 876,
         "Tanjung Agung Palik" => 877,
         "Ulok Kupai" => 878,
-       ),
-      "Kaur (Kabupaten)" => array(
+      ),
+      "Kaur" => array(
         "Kaur Selatan" => 2450,
         "Kaur Tengah" => 2451,
         "Kaur Utara" => 2452,
@@ -396,8 +396,8 @@ function commerce_rajaongkir_locality_block() {
         "Semidang Gumai (Gumay)" => 2462,
         "Tanjung Kemuning" => 2463,
         "Tetap (Muara Tetap)" => 2464,
-       ),
-      "Kepahiang (Kabupaten)" => array(
+      ),
+      "Kepahiang" => array(
         "Bermani Ilir" => 2563,
         "Kebawetan (Kabawetan)" => 2564,
         "Kepahiang" => 2565,
@@ -406,8 +406,8 @@ function commerce_rajaongkir_locality_block() {
         "Seberang Musi" => 2568,
         "Tebat Karai" => 2569,
         "Ujan Mas" => 2570,
-       ),
-      "Lebong (Kabupaten)" => array(
+      ),
+      "Lebong" => array(
         "Amen" => 3326,
         "Bingin Kuning" => 3327,
         "Lebong Atas" => 3328,
@@ -420,8 +420,8 @@ function commerce_rajaongkir_locality_block() {
         "Rimbo Pengadang" => 3335,
         "Topos" => 3336,
         "Uram Jaya" => 3337,
-       ),
-      "Muko Muko (Kabupaten)" => array(
+      ),
+      "Muko Muko" => array(
         "Air Dikit" => 4142,
         "Air Majunto" => 4143,
         "Air Rami" => 4144,
@@ -437,8 +437,8 @@ function commerce_rajaongkir_locality_block() {
         "Teras Terunjam" => 4154,
         "V Koto" => 4155,
         "XIV Koto" => 4156,
-       ),
-      "Rejang Lebong (Kabupaten)" => array(
+      ),
+      "Rejang Lebong" => array(
         "Bermani Ulu" => 5274,
         "Bermani Ulu Raya" => 5275,
         "Binduriang" => 5276,
@@ -454,8 +454,8 @@ function commerce_rajaongkir_locality_block() {
         "Sindang Beliti Ulu" => 5286,
         "Sindang Daratan" => 5287,
         "Sindang Kelingi" => 5288,
-       ),
-      "Seluma (Kabupaten)" => array(
+      ),
+      "Seluma" => array(
         "Air Periukan" => 5465,
         "Ilir Talo" => 5466,
         "Lubuk Sandi" => 5467,
@@ -470,10 +470,10 @@ function commerce_rajaongkir_locality_block() {
         "Talo" => 5476,
         "Talo Kecil" => 5477,
         "Ulu Talo" => 5478,
-       ),
+      ),
     ),
     "DI Yogyakarta" => array(
-      "Bantul (Kabupaten)" => array(
+      "Bantul" => array(
         "Bambang Lipuro" => 537,
         "Banguntapan" => 538,
         "Bantul" => 539,
@@ -491,8 +491,8 @@ function commerce_rajaongkir_locality_block() {
         "Sedayu" => 551,
         "Sewon" => 552,
         "Srandakan" => 553,
-       ),
-      "Gunung Kidul (Kabupaten)" => array(
+      ),
+      "Gunung Kidul" => array(
         "Gedang Sari" => 1865,
         "Girisubo" => 1866,
         "Karangmojo" => 1867,
@@ -511,8 +511,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanjungsari" => 1880,
         "Tepus" => 1881,
         "Wonosari" => 1882,
-       ),
-      "Kulon Progo (Kabupaten)" => array(
+      ),
+      "Kulon Progo" => array(
         "Galur" => 2930,
         "Girimulyo" => 2931,
         "Kalibawang" => 2932,
@@ -525,8 +525,8 @@ function commerce_rajaongkir_locality_block() {
         "Sentolo" => 2939,
         "Temon" => 2940,
         "Wates" => 2941,
-       ),
-      "Sleman (Kabupaten)" => array(
+      ),
+      "Sleman" => array(
         "Berbah" => 5779,
         "Cangkringan" => 5780,
         "Depok" => 5781,
@@ -544,8 +544,8 @@ function commerce_rajaongkir_locality_block() {
         "Sleman" => 5793,
         "Tempel" => 5794,
         "Turi" => 5795,
-       ),
-      "Yogyakarta (Kota)" => array(
+      ),
+      "Yogyakarta" => array(
         "Danurejan" => 6981,
         "Gedong Tengen" => 6982,
         "Gondokusuman" => 6983,
@@ -560,10 +560,10 @@ function commerce_rajaongkir_locality_block() {
         "Tegalrejo" => 6992,
         "Umbulharjo" => 6993,
         "Wirobrajan" => 6994,
-       ),
+      ),
     ),
     "DKI Jakarta" => array(
-      "Jakarta Barat (Kota)" => array(
+      "Jakarta Barat" => array(
         "Cengkareng" => 2087,
         "Grogol Petamburan" => 2088,
         "Kalideres" => 2089,
@@ -572,8 +572,8 @@ function commerce_rajaongkir_locality_block() {
         "Palmerah" => 2092,
         "Taman Sari" => 2093,
         "Tambora" => 2094,
-       ),
-      "Jakarta Pusat (Kota)" => array(
+      ),
+      "Jakarta Pusat" => array(
         "Cempaka Putih" => 2095,
         "Gambir" => 2096,
         "Johar Baru" => 2097,
@@ -582,8 +582,8 @@ function commerce_rajaongkir_locality_block() {
         "Sawah Besar" => 2100,
         "Senen" => 2101,
         "Tanah Abang" => 2102,
-       ),
-      "Jakarta Selatan (Kota)" => array(
+      ),
+      "Jakarta Selatan" => array(
         "Cilandak" => 2103,
         "Jagakarsa" => 2104,
         "Kebayoran Baru" => 2105,
@@ -594,8 +594,8 @@ function commerce_rajaongkir_locality_block() {
         "Pesanggrahan" => 2110,
         "Setia Budi" => 2111,
         "Tebet" => 2112,
-       ),
-      "Jakarta Timur (Kota)" => array(
+      ),
+      "Jakarta Timur" => array(
         "Cakung" => 2113,
         "Cipayung" => 2114,
         "Ciracas" => 2115,
@@ -606,22 +606,22 @@ function commerce_rajaongkir_locality_block() {
         "Matraman" => 2120,
         "Pasar Rebo" => 2121,
         "Pulo Gadung" => 2122,
-       ),
-      "Jakarta Utara (Kota)" => array(
+      ),
+      "Jakarta Utara" => array(
         "Cilincing" => 2123,
         "Kelapa Gading" => 2124,
         "Koja" => 2125,
         "Pademangan" => 2126,
         "Penjaringan" => 2127,
         "Tanjung Priok" => 2128,
-       ),
-      "Kepulauan Seribu (Kabupaten)" => array(
+      ),
+      "Kepulauan Seribu" => array(
         "Kepulauan Seribu Selatan" => 2622,
         "Kepulauan Seribu Utara" => 2623,
-       ),
+      ),
     ),
     "Gorontalo" => array(
-      "Boalemo (Kabupaten)" => array(
+      "Boalemo" => array(
         "Botumoita (Botumoito)" => 1015,
         "Dulupi" => 1016,
         "Mananggu" => 1017,
@@ -629,8 +629,8 @@ function commerce_rajaongkir_locality_block() {
         "Paguyaman Pantai" => 1019,
         "Tilamuta" => 1020,
         "Wonosari" => 1021,
-       ),
-      "Bone Bolango (Kabupaten)" => array(
+      ),
+      "Bone Bolango" => array(
         "Bone" => 1199,
         "Bone Raya" => 1200,
         "Bonepantai" => 1201,
@@ -649,7 +649,7 @@ function commerce_rajaongkir_locality_block() {
         "Suwawa Timur" => 1214,
         "Tapa" => 1215,
         "Tilongkabila" => 1216,
-       ),
+      ),
       "Gorontalo (Kabupaten)" => array(
         "Asparaga" => 1771,
         "Batudaa" => 1772,
@@ -670,7 +670,7 @@ function commerce_rajaongkir_locality_block() {
         "Tibawa" => 1787,
         "Tilango" => 1788,
         "Tolangohula" => 1789,
-       ),
+      ),
       "Gorontalo (Kota)" => array(
         "Dumbo Raya" => 1790,
         "Dungingi" => 1791,
@@ -681,8 +681,8 @@ function commerce_rajaongkir_locality_block() {
         "Kota Timur" => 1796,
         "Kota Utara" => 1797,
         "Sipatana" => 1798,
-       ),
-      "Gorontalo Utara (Kabupaten)" => array(
+      ),
+      "Gorontalo Utara" => array(
         "Anggrek" => 1799,
         "Atinggola" => 1800,
         "Biau" => 1801,
@@ -694,8 +694,8 @@ function commerce_rajaongkir_locality_block() {
         "Sumalata Timur" => 1807,
         "Tolinggula" => 1808,
         "Tomolito" => 1809,
-       ),
-      "Pohuwato (Kabupaten)" => array(
+      ),
+      "Pohuwato" => array(
         "Buntulia" => 5042,
         "Dengilo" => 5043,
         "Duhiadaa" => 5044,
@@ -709,10 +709,10 @@ function commerce_rajaongkir_locality_block() {
         "Randangan" => 5052,
         "Taluditi (Taluduti)" => 5053,
         "Wanggarasi" => 5054,
-       ),
+      ),
     ),
     "Jambi" => array(
-      "Batang Hari (Kabupaten)" => array(
+      "Batang Hari" => array(
         "Bajubang" => 700,
         "Batin XXIV" => 701,
         "Maro Sebo Ilir" => 702,
@@ -721,8 +721,8 @@ function commerce_rajaongkir_locality_block() {
         "Muara Bulian" => 705,
         "Muara Tembesi" => 706,
         "Pemayung" => 707,
-       ),
-      "Bungo (Kabupaten)" => array(
+      ),
+      "Bungo" => array(
         "Bathin II Babeko" => 1308,
         "Bathin II Pelayang" => 1309,
         "Bathin III" => 1310,
@@ -740,8 +740,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanah Sepenggal" => 1322,
         "Tanah Sepenggal Lintas" => 1323,
         "Tanah Tumbuh" => 1324,
-       ),
-      "Jambi (Kota)" => array(
+      ),
+      "Jambi" => array(
         "Danau Teluk" => 2129,
         "Jambi Selatan" => 2130,
         "Jambi Timur" => 2131,
@@ -750,8 +750,8 @@ function commerce_rajaongkir_locality_block() {
         "Pasar Jambi" => 2134,
         "Pelayangan" => 2135,
         "Telanaipura" => 2136,
-       ),
-      "Kerinci (Kabupaten)" => array(
+      ),
+      "Kerinci" => array(
         "Air Hangat" => 2686,
         "Air Hangat Barat" => 2687,
         "Air Hangat Timur" => 2688,
@@ -768,8 +768,8 @@ function commerce_rajaongkir_locality_block() {
         "Sitinjau Laut" => 2699,
         "Siulak" => 2700,
         "Siulak Mukai" => 2701,
-       ),
-      "Merangin (Kabupaten)" => array(
+      ),
+      "Merangin" => array(
         "Bangko" => 3938,
         "Bangko Barat" => 3939,
         "Batang Masumai" => 3940,
@@ -794,8 +794,8 @@ function commerce_rajaongkir_locality_block() {
         "Tabir Timur" => 3959,
         "Tabir Ulu" => 3960,
         "Tiang Pumpung" => 3961,
-       ),
-      "Muaro Jambi (Kabupaten)" => array(
+      ),
+      "Muaro Jambi" => array(
         "Bahar Selatan" => 4131,
         "Bahar Utara" => 4132,
         "Jambi Luar Kota" => 4133,
@@ -807,8 +807,8 @@ function commerce_rajaongkir_locality_block() {
         "Sungai Bahar" => 4139,
         "Sungai Gelam" => 4140,
         "Taman Rajo / Rejo" => 4141,
-       ),
-      "Sarolangun (Kabupaten)" => array(
+      ),
+      "Sarolangun" => array(
         "Air Hitam" => 5433,
         "Batang Asai" => 5434,
         "Bathin VIII (Batin VIII)" => 5435,
@@ -819,8 +819,8 @@ function commerce_rajaongkir_locality_block() {
         "Pelawan" => 5440,
         "Sarolangun" => 5441,
         "Singkut" => 5442,
-       ),
-      "Sungaipenuh (Kota)" => array(
+      ),
+      "Sungaipenuh" => array(
         "Hamparan Rawang" => 6118,
         "Koto Baru" => 6119,
         "Kumun Debai" => 6120,
@@ -829,8 +829,8 @@ function commerce_rajaongkir_locality_block() {
         "Sungai Bungkal" => 6123,
         "Sungai Penuh" => 6124,
         "Tanah Kampung" => 6125,
-       ),
-      "Tanjung Jabung Barat (Kabupaten)" => array(
+      ),
+      "Tanjung Jabung Barat" => array(
         "Batang Asam" => 6343,
         "Betara" => 6344,
         "Bram Itam" => 6345,
@@ -844,8 +844,8 @@ function commerce_rajaongkir_locality_block() {
         "Tebing Tinggi" => 6353,
         "Tungkal Ilir" => 6354,
         "Tungkal Ulu" => 6355,
-       ),
-      "Tanjung Jabung Timur (Kabupaten)" => array(
+      ),
+      "Tanjung Jabung Timur" => array(
         "Berbak" => 6356,
         "Dendang" => 6357,
         "Geragai" => 6358,
@@ -857,8 +857,8 @@ function commerce_rajaongkir_locality_block() {
         "Nipah Panjang" => 6364,
         "Rantau Rasau" => 6365,
         "Sadu" => 6366,
-       ),
-      "Tebo (Kabupaten)" => array(
+      ),
+      "Tebo" => array(
         "Muara Tabir" => 6490,
         "Rimbo Bujang" => 6491,
         "Rimbo Ilir" => 6492,
@@ -871,7 +871,7 @@ function commerce_rajaongkir_locality_block() {
         "Tengah Ilir" => 6499,
         "VII Koto" => 6500,
         "VII Koto Ilir" => 6501,
-       ),
+      ),
     ),
     "Jawa Barat" => array(
       "Bandung (Kabupaten)" => array(
@@ -906,7 +906,7 @@ function commerce_rajaongkir_locality_block() {
         "Rancaekek" => 335,
         "Solokan Jeruk" => 336,
         "Soreang" => 337,
-       ),
+      ),
       "Bandung (Kota)" => array(
         "Andir" => 338,
         "Antapani (Cicadas)" => 339,
@@ -938,8 +938,8 @@ function commerce_rajaongkir_locality_block() {
         "Sukasari" => 365,
         "Sumur Bandung" => 366,
         "Ujung Berung" => 367,
-       ),
-      "Bandung Barat (Kabupaten)" => array(
+      ),
+      "Bandung Barat" => array(
         "Batujajar" => 368,
         "Cihampelas" => 369,
         "Cikalong Wetan" => 370,
@@ -956,13 +956,13 @@ function commerce_rajaongkir_locality_block() {
         "Rongga" => 381,
         "Saguling" => 382,
         "Sindangkerta" => 383,
-       ),
+      ),
       "Banjar (Kota)" => array(
         "Banjar" => 495,
         "Langensari" => 496,
         "Pataruman" => 497,
         "Purwaharja" => 498,
-       ),
+      ),
       "Bekasi (Kabupaten)" => array(
         "Babelan" => 726,
         "Bojongmangu" => 727,
@@ -987,7 +987,7 @@ function commerce_rajaongkir_locality_block() {
         "Tambun Selatan" => 746,
         "Tambun Utara" => 747,
         "Tarumajaya" => 748,
-       ),
+      ),
       "Bekasi (Kota)" => array(
         "Bantar Gebang" => 749,
         "Bekasi Barat" => 750,
@@ -1001,7 +1001,7 @@ function commerce_rajaongkir_locality_block() {
         "Pondok Gede" => 758,
         "Pondok Melati" => 759,
         "Rawalumbu" => 760,
-       ),
+      ),
       "Bogor (Kabupaten)" => array(
         "Babakan Madang" => 1022,
         "Bojonggede" => 1023,
@@ -1043,7 +1043,7 @@ function commerce_rajaongkir_locality_block() {
         "Tanjungsari" => 1059,
         "Tenjo" => 1060,
         "Tenjolaya" => 1061,
-       ),
+      ),
       "Bogor (Kota)" => array(
         "Bogor Barat - Kota" => 1062,
         "Bogor Selatan - Kota" => 1063,
@@ -1051,8 +1051,8 @@ function commerce_rajaongkir_locality_block() {
         "Bogor Timur - Kota" => 1065,
         "Bogor Utara - Kota" => 1066,
         "Tanah Sereal" => 1067,
-       ),
-      "Ciamis (Kabupaten)" => array(
+      ),
+      "Ciamis" => array(
         "Banjarsari" => 1379,
         "Baregbeg" => 1380,
         "Ciamis" => 1381,
@@ -1079,8 +1079,8 @@ function commerce_rajaongkir_locality_block() {
         "Sukadana" => 1402,
         "Sukamantri" => 1403,
         "Tambaksari" => 1404,
-       ),
-      "Cianjur (Kabupaten)" => array(
+      ),
+      "Cianjur" => array(
         "Agrabinta" => 1405,
         "Bojongpicung" => 1406,
         "Campaka" => 1407,
@@ -1113,12 +1113,12 @@ function commerce_rajaongkir_locality_block() {
         "Takokak" => 1434,
         "Tanggeung" => 1435,
         "Warungkondang" => 1436,
-       ),
-      "Cimahi (Kota)" => array(
+      ),
+      "Cimahi" => array(
         "Cimahi Selatan" => 1469,
         "Cimahi Tengah" => 1470,
         "Cimahi Utara" => 1471,
-       ),
+      ),
       "Cirebon (Kabupaten)" => array(
         "Arjawinangun" => 1472,
         "Astanajapura" => 1473,
@@ -1160,15 +1160,15 @@ function commerce_rajaongkir_locality_block() {
         "Tengah Tani" => 1509,
         "Waled" => 1510,
         "Weru" => 1511,
-       ),
+      ),
       "Cirebon (Kota)" => array(
         "Harjamukti" => 1512,
         "Kejaksan" => 1513,
         "Kesambi" => 1514,
         "Lemahwungkuk" => 1515,
         "Pekalipan" => 1516,
-       ),
-      "Depok (Kota)" => array(
+      ),
+      "Depok" => array(
         "Beji" => 1577,
         "Bojongsari" => 1578,
         "Cilodong" => 1579,
@@ -1180,8 +1180,8 @@ function commerce_rajaongkir_locality_block() {
         "Sawangan" => 1585,
         "Sukmajaya" => 1586,
         "Tapos" => 1587,
-       ),
-      "Garut (Kabupaten)" => array(
+      ),
+      "Garut" => array(
         "Banjarwangi" => 1711,
         "Banyuresmi" => 1712,
         "Bayongbong" => 1713,
@@ -1224,8 +1224,8 @@ function commerce_rajaongkir_locality_block() {
         "Tarogong Kaler" => 1750,
         "Tarogong Kidul" => 1751,
         "Wanaraja" => 1752,
-       ),
-      "Indramayu (Kabupaten)" => array(
+      ),
+      "Indramayu" => array(
         "Anjatan" => 2050,
         "Arahan" => 2051,
         "Balongan" => 2052,
@@ -1257,8 +1257,8 @@ function commerce_rajaongkir_locality_block() {
         "Trisi/Terisi" => 2078,
         "Tukdana" => 2079,
         "Widasari" => 2080,
-       ),
-      "Karawang (Kabupaten)" => array(
+      ),
+      "Karawang" => array(
         "Banyusari" => 2378,
         "Batujaya" => 2379,
         "Ciampel" => 2380,
@@ -1289,8 +1289,8 @@ function commerce_rajaongkir_locality_block() {
         "Tempuran" => 2405,
         "Tirtajaya" => 2406,
         "Tirtamulya" => 2407,
-       ),
-      "Kuningan (Kabupaten)" => array(
+      ),
+      "Kuningan" => array(
         "Ciawigebang" => 2942,
         "Cibeureum" => 2943,
         "Cibingbin" => 2944,
@@ -1323,8 +1323,8 @@ function commerce_rajaongkir_locality_block() {
         "Selajambe" => 2971,
         "Sindangagung" => 2972,
         "Subang" => 2973,
-       ),
-      "Majalengka (Kabupaten)" => array(
+      ),
+      "Majalengka" => array(
         "Argapura" => 3553,
         "Banjaran" => 3554,
         "Bantarujeg" => 3555,
@@ -1351,8 +1351,8 @@ function commerce_rajaongkir_locality_block() {
         "Sukahaji" => 3576,
         "Sumberjaya" => 3577,
         "Talaga" => 3578,
-       ),
-      "Pangandaran (Kabupaten)" => array(
+      ),
+      "Pangandaran" => array(
         "Cigugur" => 4690,
         "Cijulang" => 4691,
         "Cimerak" => 4692,
@@ -1363,8 +1363,8 @@ function commerce_rajaongkir_locality_block() {
         "Pangandaran" => 4697,
         "Parigi" => 4698,
         "Sidamulih" => 4699,
-       ),
-      "Purwakarta (Kabupaten)" => array(
+      ),
+      "Purwakarta" => array(
         "Babakancikao" => 5217,
         "Bojong" => 5218,
         "Bungursari" => 5219,
@@ -1382,8 +1382,8 @@ function commerce_rajaongkir_locality_block() {
         "Sukatani" => 5231,
         "Tegal Waru" => 5232,
         "Wanayasa" => 5233,
-       ),
-      "Subang (Kabupaten)" => array(
+      ),
+      "Subang" => array(
         "Binong" => 5883,
         "Blanakan" => 5884,
         "Ciasem" => 5885,
@@ -1414,7 +1414,7 @@ function commerce_rajaongkir_locality_block() {
         "Sukasari" => 5910,
         "Tambakdahan" => 5911,
         "Tanjungsiang" => 5912,
-       ),
+      ),
       "Sukabumi (Kabupaten)" => array(
         "Bantargadung" => 5918,
         "Bojong Genteng" => 5919,
@@ -1463,7 +1463,7 @@ function commerce_rajaongkir_locality_block() {
         "Tegal Buleud" => 5962,
         "Waluran" => 5963,
         "Warung Kiara" => 5964,
-       ),
+      ),
       "Sukabumi (Kota)" => array(
         "Baros" => 5965,
         "Cibeureum" => 5966,
@@ -1472,8 +1472,8 @@ function commerce_rajaongkir_locality_block() {
         "Gunung Puyuh" => 5969,
         "Lembursitu" => 5970,
         "Warudoyong" => 5971,
-       ),
-      "Sumedang (Kabupaten)" => array(
+      ),
+      "Sumedang" => array(
         "Buahdua" => 6065,
         "Cibugel" => 6066,
         "Cimalaka" => 6067,
@@ -1500,7 +1500,7 @@ function commerce_rajaongkir_locality_block() {
         "Tomo" => 6088,
         "Ujungjaya" => 6089,
         "Wado" => 6090,
-       ),
+      ),
       "Tasikmalaya (Kabupaten)" => array(
         "Bantarkalong" => 6436,
         "Bojongasih" => 6437,
@@ -1541,7 +1541,7 @@ function commerce_rajaongkir_locality_block() {
         "Sukaresik" => 6472,
         "Tanjungjaya" => 6473,
         "Taraju" => 6474,
-       ),
+      ),
       "Tasikmalaya (Kota)" => array(
         "Bungursari" => 6475,
         "Cibeureum" => 6476,
@@ -1553,10 +1553,10 @@ function commerce_rajaongkir_locality_block() {
         "Purbaratu" => 6482,
         "Tamansari" => 6483,
         "Tawang" => 6484,
-       ),
+      ),
     ),
     "Jawa Tengah" => array(
-      "Banjarnegara (Kabupaten)" => array(
+      "Banjarnegara" => array(
         "Banjarmangu" => 509,
         "Banjarnegara" => 510,
         "Batur" => 511,
@@ -1577,8 +1577,8 @@ function commerce_rajaongkir_locality_block() {
         "Susukan" => 526,
         "Wanadadi (Wonodadi)" => 527,
         "Wanayasa" => 528,
-       ),
-      "Banyumas (Kabupaten)" => array(
+      ),
+      "Banyumas" => array(
         "Ajibarang" => 573,
         "Banyumas" => 574,
         "Baturaden" => 575,
@@ -1606,8 +1606,8 @@ function commerce_rajaongkir_locality_block() {
         "Sumpiuh" => 597,
         "Tambak" => 598,
         "Wangon" => 599,
-       ),
-      "Batang (Kabupaten)" => array(
+      ),
+      "Batang" => array(
         "Bandar" => 685,
         "Banyuputih" => 686,
         "Batang" => 687,
@@ -1623,8 +1623,8 @@ function commerce_rajaongkir_locality_block() {
         "Tulis" => 697,
         "Warungasem" => 698,
         "Wonotunggal" => 699,
-       ),
-      "Blora (Kabupaten)" => array(
+      ),
+      "Blora" => array(
         "Banjarejo" => 999,
         "Blora kota" => 1000,
         "Bogorejo" => 1001,
@@ -1641,8 +1641,8 @@ function commerce_rajaongkir_locality_block() {
         "Sambong" => 1012,
         "Todanan" => 1013,
         "Tunjungan" => 1014,
-       ),
-      "Boyolali (Kabupaten)" => array(
+      ),
+      "Boyolali" => array(
         "Ampel" => 1240,
         "Andong" => 1241,
         "Banyudono" => 1242,
@@ -1662,8 +1662,8 @@ function commerce_rajaongkir_locality_block() {
         "Simo" => 1256,
         "Teras" => 1257,
         "Wonosegoro" => 1258,
-       ),
-      "Brebes (Kabupaten)" => array(
+      ),
+      "Brebes" => array(
         "Banjarharjo" => 1259,
         "Bantarkawung" => 1260,
         "Brebes" => 1261,
@@ -1681,8 +1681,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanjung" => 1273,
         "Tonjong" => 1274,
         "Wanasari" => 1275,
-       ),
-      "Cilacap (Kabupaten)" => array(
+      ),
+      "Cilacap" => array(
         "Adipala" => 1437,
         "Bantarsari" => 1438,
         "Binangun" => 1439,
@@ -1707,8 +1707,8 @@ function commerce_rajaongkir_locality_block() {
         "Sampang" => 1458,
         "Sidareja" => 1459,
         "Wanareja" => 1460,
-       ),
-      "Demak (Kabupaten)" => array(
+      ),
+      "Demak" => array(
         "Bonang" => 1559,
         "Demak" => 1560,
         "Dempet" => 1561,
@@ -1723,8 +1723,8 @@ function commerce_rajaongkir_locality_block() {
         "Sayung" => 1570,
         "Wedung" => 1571,
         "Wonosalam" => 1572,
-       ),
-      "Grobogan (Kabupaten)" => array(
+      ),
+      "Grobogan" => array(
         "Brati" => 1846,
         "Gabus" => 1847,
         "Geyer" => 1848,
@@ -1744,8 +1744,8 @@ function commerce_rajaongkir_locality_block() {
         "Tegowanu" => 1862,
         "Toroh" => 1863,
         "Wirosari" => 1864,
-       ),
-      "Jepara (Kabupaten)" => array(
+      ),
+      "Jepara" => array(
         "Bangsri" => 2248,
         "Batealit" => 2249,
         "Donorojo" => 2250,
@@ -1762,8 +1762,8 @@ function commerce_rajaongkir_locality_block() {
         "Pecangaan" => 2261,
         "Tahunan" => 2262,
         "Welahan" => 2263,
-       ),
-      "Karanganyar (Kabupaten)" => array(
+      ),
+      "Karanganyar" => array(
         "Colomadu" => 2353,
         "Gondangrejo" => 2354,
         "Jaten" => 2355,
@@ -1781,8 +1781,8 @@ function commerce_rajaongkir_locality_block() {
         "Ngargoyoso" => 2367,
         "Tasikmadu" => 2368,
         "Tawangmangu" => 2369,
-       ),
-      "Kebumen (Kabupaten)" => array(
+      ),
+      "Kebumen" => array(
         "Adimulyo" => 2471,
         "Alian/Aliyan" => 2472,
         "Ambal" => 2473,
@@ -1809,8 +1809,8 @@ function commerce_rajaongkir_locality_block() {
         "Sadang" => 2494,
         "Sempor" => 2495,
         "Sruweng" => 2496,
-       ),
-      "Kendal (Kabupaten)" => array(
+      ),
+      "Kendal" => array(
         "Boja" => 2533,
         "Brangsong" => 2534,
         "Cepiring" => 2535,
@@ -1831,8 +1831,8 @@ function commerce_rajaongkir_locality_block() {
         "Singorojo" => 2550,
         "Sukorejo" => 2551,
         "Weleri" => 2552,
-       ),
-      "Klaten (Kabupaten)" => array(
+      ),
+      "Klaten" => array(
         "Bayat" => 2722,
         "Cawas" => 2723,
         "Ceper" => 2724,
@@ -1859,8 +1859,8 @@ function commerce_rajaongkir_locality_block() {
         "Tulung" => 2745,
         "Wedi" => 2746,
         "Wonosari" => 2747,
-       ),
-      "Kudus (Kabupaten)" => array(
+      ),
+      "Kudus" => array(
         "Bae" => 2921,
         "Dawe" => 2922,
         "Gebog" => 2923,
@@ -1870,7 +1870,7 @@ function commerce_rajaongkir_locality_block() {
         "Kudus Kota" => 2927,
         "Mejobo" => 2928,
         "Undaan" => 2929,
-       ),
+      ),
       "Magelang (Kabupaten)" => array(
         "Bandongan" => 3511,
         "Borobudur" => 3512,
@@ -1893,13 +1893,13 @@ function commerce_rajaongkir_locality_block() {
         "Tegalrejo" => 3529,
         "Tempuran" => 3530,
         "Windusari" => 3531,
-       ),
+      ),
       "Magelang (Kota)" => array(
         "Magelang Selatan" => 3532,
         "Magelang Tengah" => 3533,
         "Magelang Utara" => 3534,
-       ),
-      "Pati (Kabupaten)" => array(
+      ),
+      "Pati" => array(
         "Batangan" => 4821,
         "Cluwak" => 4822,
         "Dukuhseti" => 4823,
@@ -1921,7 +1921,7 @@ function commerce_rajaongkir_locality_block() {
         "Trangkil" => 4839,
         "Wedarijaksa" => 4840,
         "Winong" => 4841,
-       ),
+      ),
       "Pekalongan (Kabupaten)" => array(
         "Bojong" => 4891,
         "Buaran" => 4892,
@@ -1942,14 +1942,14 @@ function commerce_rajaongkir_locality_block() {
         "Wiradesa" => 4907,
         "Wonokerto" => 4908,
         "Wonopringgo" => 4909,
-       ),
+      ),
       "Pekalongan (Kota)" => array(
         "Pekalongan Barat" => 4910,
         "Pekalongan Selatan" => 4911,
         "Pekalongan Timur" => 4912,
         "Pekalongan Utara" => 4913,
-       ),
-      "Pemalang (Kabupaten)" => array(
+      ),
+      "Pemalang" => array(
         "Ampelgading" => 4938,
         "Bantarbolang" => 4939,
         "Belik" => 4940,
@@ -1964,8 +1964,8 @@ function commerce_rajaongkir_locality_block() {
         "Ulujami" => 4949,
         "Warungpring" => 4950,
         "Watukumpul" => 4951,
-       ),
-      "Purbalingga (Kabupaten)" => array(
+      ),
+      "Purbalingga" => array(
         "Bobotsari" => 5199,
         "Bojongsari" => 5200,
         "Bukateja" => 5201,
@@ -1984,8 +1984,8 @@ function commerce_rajaongkir_locality_block() {
         "Pengadegan" => 5214,
         "Purbalingga" => 5215,
         "Rembang" => 5216,
-       ),
-      "Purworejo (Kabupaten)" => array(
+      ),
+      "Purworejo" => array(
         "Bagelen" => 5234,
         "Banyuurip" => 5235,
         "Bayan" => 5236,
@@ -2002,8 +2002,8 @@ function commerce_rajaongkir_locality_block() {
         "Pituruh" => 5247,
         "Purwodadi" => 5248,
         "Purworejo" => 5249,
-       ),
-      "Rembang (Kabupaten)" => array(
+      ),
+      "Rembang" => array(
         "Bulu" => 5289,
         "Gunem" => 5290,
         "Kaliori" => 5291,
@@ -2018,13 +2018,13 @@ function commerce_rajaongkir_locality_block() {
         "Sluke" => 5300,
         "Sulang" => 5301,
         "Sumber" => 5302,
-       ),
-      "Salatiga (Kota)" => array(
+      ),
+      "Salatiga" => array(
         "Argomulyo" => 5352,
         "Sidomukti" => 5353,
         "Sidorejo" => 5354,
         "Tingkir" => 5355,
-       ),
+      ),
       "Semarang (Kabupaten)" => array(
         "Ambarawa" => 5479,
         "Bancak" => 5480,
@@ -2045,7 +2045,7 @@ function commerce_rajaongkir_locality_block() {
         "Tuntang" => 5495,
         "Ungaran Barat" => 5496,
         "Ungaran Timur" => 5497,
-       ),
+      ),
       "Semarang (Kota)" => array(
         "Banyumanik" => 5498,
         "Candisari" => 5499,
@@ -2063,8 +2063,8 @@ function commerce_rajaongkir_locality_block() {
         "Semarang Utara" => 5511,
         "Tembalang" => 5512,
         "Tugu" => 5513,
-       ),
-      "Sragen (Kabupaten)" => array(
+      ),
+      "Sragen" => array(
         "Gemolong" => 5863,
         "Gesi" => 5864,
         "Gondang" => 5865,
@@ -2085,8 +2085,8 @@ function commerce_rajaongkir_locality_block() {
         "Sumberlawang" => 5880,
         "Tangen" => 5881,
         "Tanon" => 5882,
-       ),
-      "Sukoharjo (Kabupaten)" => array(
+      ),
+      "Sukoharjo" => array(
         "Baki" => 5977,
         "Bendosari" => 5978,
         "Bulu" => 5979,
@@ -2099,14 +2099,14 @@ function commerce_rajaongkir_locality_block() {
         "Sukoharjo" => 5986,
         "Tawangsari" => 5987,
         "Weru" => 5988,
-       ),
-      "Surakarta (Solo) (Kota)" => array(
+      ),
+      "Surakarta (Solo)" => array(
         "Banjarsari" => 6162,
         "Jebres" => 6163,
         "Laweyan" => 6164,
         "Pasar Kliwon" => 6165,
         "Serengan" => 6166,
-       ),
+      ),
       "Tegal (Kabupaten)" => array(
         "Adiwerna" => 6502,
         "Balapulang" => 6503,
@@ -2126,14 +2126,14 @@ function commerce_rajaongkir_locality_block() {
         "Talang" => 6517,
         "Tarub" => 6518,
         "Warurejo" => 6519,
-       ),
+      ),
       "Tegal (Kota)" => array(
         "Margadana" => 6520,
         "Tegal Barat" => 6521,
         "Tegal Selatan" => 6522,
         "Tegal Timur" => 6523,
-       ),
-      "Temanggung (Kabupaten)" => array(
+      ),
+      "Temanggung" => array(
         "Bansari" => 6561,
         "Bejen" => 6562,
         "Bulu" => 6563,
@@ -2154,8 +2154,8 @@ function commerce_rajaongkir_locality_block() {
         "Tlogomulyo" => 6578,
         "Tretep" => 6579,
         "Wonoboyo" => 6580,
-       ),
-      "Wonogiri (Kabupaten)" => array(
+      ),
+      "Wonogiri" => array(
         "Baturetno" => 6885,
         "Batuwarno" => 6886,
         "Bulukerto" => 6887,
@@ -2181,8 +2181,8 @@ function commerce_rajaongkir_locality_block() {
         "Tirtomoyo" => 6907,
         "Wonogiri" => 6908,
         "Wuryantoro" => 6909,
-       ),
-      "Wonosobo (Kabupaten)" => array(
+      ),
+      "Wonosobo" => array(
         "Garung" => 6910,
         "Kalibawang" => 6911,
         "Kalikajar" => 6912,
@@ -2198,10 +2198,10 @@ function commerce_rajaongkir_locality_block() {
         "Wadaslintang" => 6922,
         "Watumalang" => 6923,
         "Wonosobo" => 6924,
-       ),
+      ),
     ),
     "Jawa Timur" => array(
-      "Bangkalan (Kabupaten)" => array(
+      "Bangkalan" => array(
         "Arosbaya" => 454,
         "Bangkalan" => 455,
         "Blega" => 456,
@@ -2220,8 +2220,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanah Merah" => 469,
         "Tanjungbumi" => 470,
         "Tragah" => 471,
-       ),
-      "Banyuwangi (Kabupaten)" => array(
+      ),
+      "Banyuwangi" => array(
         "Bangorejo" => 600,
         "Banyuwangi" => 601,
         "Cluring" => 602,
@@ -2246,12 +2246,12 @@ function commerce_rajaongkir_locality_block() {
         "Tegaldlimo" => 621,
         "Tegalsari" => 622,
         "Wongsorejo" => 623,
-       ),
-      "Batu (Kota)" => array(
+      ),
+      "Batu" => array(
         "Batu" => 708,
         "Bumiaji" => 709,
         "Junrejo" => 710,
-       ),
+      ),
       "Blitar (Kabupaten)" => array(
         "Bakung" => 974,
         "Binangun" => 975,
@@ -2275,13 +2275,13 @@ function commerce_rajaongkir_locality_block() {
         "Wlingi" => 993,
         "Wonodadi" => 994,
         "Wonotirto" => 995,
-       ),
+      ),
       "Blitar (Kota)" => array(
         "Kepanjen Kidul" => 996,
         "Sanan Wetan" => 997,
         "Sukorejo" => 998,
-       ),
-      "Bojonegoro (Kabupaten)" => array(
+      ),
+      "Bojonegoro" => array(
         "Balen" => 1068,
         "Baureno" => 1069,
         "Bojonegoro" => 1070,
@@ -2310,8 +2310,8 @@ function commerce_rajaongkir_locality_block() {
         "Tambakrejo" => 1093,
         "Temayang" => 1094,
         "Trucuk" => 1095,
-       ),
-      "Bondowoso (Kabupaten)" => array(
+      ),
+      "Bondowoso" => array(
         "Binakal" => 1149,
         "Bondowoso" => 1150,
         "Botolinggo" => 1151,
@@ -2335,8 +2335,8 @@ function commerce_rajaongkir_locality_block() {
         "Tlogosari" => 1169,
         "Wonosari" => 1170,
         "Wringin" => 1171,
-       ),
-      "Gresik (Kabupaten)" => array(
+      ),
+      "Gresik" => array(
         "Balong Panggang" => 1828,
         "Benjeng" => 1829,
         "Bungah" => 1830,
@@ -2355,8 +2355,8 @@ function commerce_rajaongkir_locality_block() {
         "Tambak" => 1843,
         "Ujung Pangkah" => 1844,
         "Wringin Anom" => 1845,
-       ),
-      "Jember (Kabupaten)" => array(
+      ),
+      "Jember" => array(
         "Ajung" => 2201,
         "Ambulu" => 2202,
         "Arjasa" => 2203,
@@ -2388,8 +2388,8 @@ function commerce_rajaongkir_locality_block() {
         "Tempurejo" => 2229,
         "Umbulsari" => 2230,
         "Wuluhan" => 2231,
-       ),
-      "Jombang (Kabupaten)" => array(
+      ),
+      "Jombang" => array(
         "Bandar Kedung Mulyo" => 2264,
         "Bareng" => 2265,
         "Diwek" => 2266,
@@ -2411,7 +2411,7 @@ function commerce_rajaongkir_locality_block() {
         "Sumobito" => 2282,
         "Tembelang" => 2283,
         "Wonosalam" => 2284,
-       ),
+      ),
       "Kediri (Kabupaten)" => array(
         "Badas" => 2497,
         "Banyakan" => 2498,
@@ -2439,13 +2439,13 @@ function commerce_rajaongkir_locality_block() {
         "Semen" => 2520,
         "Tarokan" => 2521,
         "Wates" => 2522,
-       ),
+      ),
       "Kediri (Kota)" => array(
         "Kediri Kota" => 2523,
         "Mojoroto" => 2524,
         "Pesantren" => 2525,
-       ),
-      "Lamongan (Kabupaten)" => array(
+      ),
+      "Lamongan" => array(
         "Babat" => 3113,
         "Bluluk" => 3114,
         "Brondong" => 3115,
@@ -2473,8 +2473,8 @@ function commerce_rajaongkir_locality_block() {
         "Sukorame" => 3137,
         "Tikung" => 3138,
         "Turi" => 3139,
-       ),
-      "Lumajang (Kabupaten)" => array(
+      ),
+      "Lumajang" => array(
         "Candipuro" => 3427,
         "Gucialit" => 3428,
         "Jatiroto" => 3429,
@@ -2496,7 +2496,7 @@ function commerce_rajaongkir_locality_block() {
         "Tempeh" => 3445,
         "Tempursari" => 3446,
         "Yosowilangun" => 3447,
-       ),
+      ),
       "Madiun (Kabupaten)" => array(
         "Balerejo" => 3493,
         "Dagangan" => 3494,
@@ -2513,13 +2513,13 @@ function commerce_rajaongkir_locality_block() {
         "Sawahan" => 3505,
         "Wonoasri" => 3506,
         "Wungu" => 3507,
-       ),
+      ),
       "Madiun (Kota)" => array(
         "Kartoharjo" => 3508,
         "Manguharjo" => 3509,
         "Taman" => 3510,
-       ),
-      "Magetan (Kabupaten)" => array(
+      ),
+      "Magetan" => array(
         "Barat" => 3535,
         "Bendo" => 3536,
         "Karangrejo" => 3537,
@@ -2538,7 +2538,7 @@ function commerce_rajaongkir_locality_block() {
         "Sidorejo" => 3550,
         "Sukomoro" => 3551,
         "Takeran" => 3552,
-       ),
+      ),
       "Malang (Kabupaten)" => array(
         "Ampelgading" => 3601,
         "Bantur" => 3602,
@@ -2573,14 +2573,14 @@ function commerce_rajaongkir_locality_block() {
         "Wagir" => 3631,
         "Wajak" => 3632,
         "Wonosari" => 3633,
-       ),
+      ),
       "Malang (Kota)" => array(
         "Blimbing" => 3634,
         "Kedungkandang" => 3635,
         "Klojen" => 3636,
         "Lowokwaru" => 3637,
         "Sukun" => 3638,
-       ),
+      ),
       "Mojokerto (Kabupaten)" => array(
         "Bangsal" => 4070,
         "Dawar Blandong" => 4071,
@@ -2600,12 +2600,12 @@ function commerce_rajaongkir_locality_block() {
         "Sooko" => 4085,
         "Trawas" => 4086,
         "Trowulan" => 4087,
-       ),
+      ),
       "Mojokerto (Kota)" => array(
         "Magersari" => 4088,
         "Prajurit Kulon" => 4089,
-       ),
-      "Nganjuk (Kabupaten)" => array(
+      ),
+      "Nganjuk" => array(
         "Bagor" => 4323,
         "Baron" => 4324,
         "Berbek" => 4325,
@@ -2626,8 +2626,8 @@ function commerce_rajaongkir_locality_block() {
         "Sukomoro" => 4340,
         "Tanjunganom" => 4341,
         "Wilangan" => 4342,
-       ),
-      "Ngawi (Kabupaten)" => array(
+      ),
+      "Ngawi" => array(
         "Bringin" => 4343,
         "Geneng" => 4344,
         "Gerih" => 4345,
@@ -2647,8 +2647,8 @@ function commerce_rajaongkir_locality_block() {
         "Pitu" => 4359,
         "Sine" => 4360,
         "Widodaren" => 4361,
-       ),
-      "Pacitan (Kabupaten)" => array(
+      ),
+      "Pacitan" => array(
         "Arjosari" => 4522,
         "Bandar" => 4523,
         "Donorojo" => 4524,
@@ -2661,8 +2661,8 @@ function commerce_rajaongkir_locality_block() {
         "Sudimoro" => 4531,
         "Tegalombo" => 4532,
         "Tulakan" => 4533,
-       ),
-      "Pamekasan (Kabupaten)" => array(
+      ),
+      "Pamekasan" => array(
         "Batumarmar" => 4642,
         "Galis" => 4643,
         "Kadur" => 4644,
@@ -2676,7 +2676,7 @@ function commerce_rajaongkir_locality_block() {
         "Proppo" => 4652,
         "Tlanakan" => 4653,
         "Waru" => 4654,
-       ),
+      ),
       "Pasuruan (Kabupaten)" => array(
         "Bangil" => 4793,
         "Beji" => 4794,
@@ -2702,14 +2702,14 @@ function commerce_rajaongkir_locality_block() {
         "Tutur" => 4814,
         "Winongan" => 4815,
         "Wonorejo" => 4816,
-       ),
+      ),
       "Pasuruan (Kota)" => array(
         "Bugul Kidul" => 4817,
         "Gadingrejo" => 4818,
         "Panggungrejo" => 4819,
         "Purworejo" => 4820,
-       ),
-      "Ponorogo (Kabupaten)" => array(
+      ),
+      "Ponorogo" => array(
         "Babadan" => 5071,
         "Badegan" => 5072,
         "Balong" => 5073,
@@ -2731,7 +2731,7 @@ function commerce_rajaongkir_locality_block() {
         "Slahung" => 5089,
         "Sooko" => 5090,
         "Sukorejo" => 5091,
-       ),
+      ),
       "Probolinggo (Kabupaten)" => array(
         "Bantaran" => 5141,
         "Banyu Anyar" => 5142,
@@ -2757,15 +2757,15 @@ function commerce_rajaongkir_locality_block() {
         "Tiris" => 5162,
         "Tongas" => 5163,
         "Wonomerto" => 5164,
-       ),
+      ),
       "Probolinggo (Kota)" => array(
         "Kademangan" => 5165,
         "Kanigaran" => 5166,
         "Kedopok (Kedopak)" => 5167,
         "Mayangan" => 5168,
         "Wonoasih" => 5169,
-       ),
-      "Sampang (Kabupaten)" => array(
+      ),
+      "Sampang" => array(
         "Banyuates" => 5394,
         "Camplong" => 5395,
         "Jrengik" => 5396,
@@ -2780,8 +2780,8 @@ function commerce_rajaongkir_locality_block() {
         "Sreseh" => 5405,
         "Tambelangan" => 5406,
         "Torjun" => 5407,
-       ),
-      "Sidoarjo (Kabupaten)" => array(
+      ),
+      "Sidoarjo" => array(
         "Balongbendo" => 5631,
         "Buduran" => 5632,
         "Candi" => 5633,
@@ -2800,8 +2800,8 @@ function commerce_rajaongkir_locality_block() {
         "Tulangan" => 5646,
         "Waru" => 5647,
         "Wonoayu" => 5648,
-       ),
-      "Situbondo (Kabupaten)" => array(
+      ),
+      "Situbondo" => array(
         "Arjasa" => 5762,
         "Asembagus" => 5763,
         "Banyuglugur" => 5764,
@@ -2819,8 +2819,8 @@ function commerce_rajaongkir_locality_block() {
         "Situbondo" => 5776,
         "Suboh" => 5777,
         "Sumbermalang" => 5778,
-       ),
-      "Sumenep (Kabupaten)" => array(
+      ),
+      "Sumenep" => array(
         "Ambunten" => 6091,
         "Arjasa" => 6092,
         "Batang Batang" => 6093,
@@ -2848,8 +2848,8 @@ function commerce_rajaongkir_locality_block() {
         "Sapeken" => 6115,
         "Saronggi" => 6116,
         "Talango" => 6117,
-       ),
-      "Surabaya (Kota)" => array(
+      ),
+      "Surabaya" => array(
         "Asemrowo" => 6131,
         "Benowo" => 6132,
         "Bubutan" => 6133,
@@ -2881,8 +2881,8 @@ function commerce_rajaongkir_locality_block() {
         "Wiyung" => 6159,
         "Wonocolo" => 6160,
         "Wonokromo" => 6161,
-       ),
-      "Trenggalek (Kabupaten)" => array(
+      ),
+      "Trenggalek" => array(
         "Bendungan" => 6759,
         "Dongko" => 6760,
         "Durenan" => 6761,
@@ -2897,8 +2897,8 @@ function commerce_rajaongkir_locality_block() {
         "Trenggalek" => 6770,
         "Tugu" => 6771,
         "Watulimo" => 6772,
-       ),
-      "Tuban (Kabupaten)" => array(
+      ),
+      "Tuban" => array(
         "Bancar" => 6778,
         "Bangilan" => 6779,
         "Grabagan" => 6780,
@@ -2919,8 +2919,8 @@ function commerce_rajaongkir_locality_block() {
         "Tambakboyo" => 6795,
         "Tuban" => 6796,
         "Widang" => 6797,
-       ),
-      "Tulungagung (Kabupaten)" => array(
+      ),
+      "Tulungagung" => array(
         "Bandung" => 6821,
         "Besuki" => 6822,
         "Boyolangu" => 6823,
@@ -2940,10 +2940,10 @@ function commerce_rajaongkir_locality_block() {
         "Sumbergempol" => 6837,
         "Tanggung Gunung" => 6838,
         "Tulungagung" => 6839,
-       ),
+      ),
     ),
     "Kalimantan Barat" => array(
-      "Bengkayang (Kabupaten)" => array(
+      "Bengkayang" => array(
         "Bengkayang" => 815,
         "Capkala" => 816,
         "Jagoi Babang" => 817,
@@ -2961,8 +2961,8 @@ function commerce_rajaongkir_locality_block() {
         "Suti Semarang" => 829,
         "Teriak" => 830,
         "Tujuh Belas" => 831,
-       ),
-      "Kapuas Hulu (Kabupaten)" => array(
+      ),
+      "Kapuas Hulu" => array(
         "Badau" => 2330,
         "Batang Lupar" => 2331,
         "Bika" => 2332,
@@ -2986,16 +2986,16 @@ function commerce_rajaongkir_locality_block() {
         "Silat Hilir" => 2350,
         "Silat Hulu" => 2351,
         "Suhaid" => 2352,
-       ),
-      "Kayong Utara (Kabupaten)" => array(
+      ),
+      "Kayong Utara" => array(
         "Kepulauan Karimata" => 2465,
         "Pulau Maya (Pulau Maya Karimata)" => 2466,
         "Seponti" => 2467,
         "Simpang Hilir" => 2468,
         "Sukadana" => 2469,
         "Teluk Batang" => 2470,
-       ),
-      "Ketapang (Kabupaten)" => array(
+      ),
+      "Ketapang" => array(
         "Air Upas" => 2702,
         "Benua Kayong" => 2703,
         "Delta Pawan" => 2704,
@@ -3016,8 +3016,8 @@ function commerce_rajaongkir_locality_block() {
         "Sungai Laur" => 2719,
         "Sungai Melayu Rayak" => 2720,
         "Tumbang Titi" => 2721,
-       ),
-      "Kubu Raya (Kabupaten)" => array(
+      ),
+      "Kubu Raya" => array(
         "Batu Ampar" => 2912,
         "Kuala Mandor-B" => 2913,
         "Kubu" => 2914,
@@ -3027,8 +3027,8 @@ function commerce_rajaongkir_locality_block() {
         "Sei/Sungai Raya" => 2918,
         "Teluk/Telok Pakedai" => 2919,
         "Terentang" => 2920,
-       ),
-      "Landak (Kabupaten)" => array(
+      ),
+      "Landak" => array(
         "Air Besar" => 3247,
         "Banyuke Hulu" => 3248,
         "Jelimpo" => 3249,
@@ -3042,8 +3042,8 @@ function commerce_rajaongkir_locality_block() {
         "Sebangki" => 3257,
         "Sengah Temila" => 3258,
         "Sompak" => 3259,
-       ),
-      "Melawi (Kabupaten)" => array(
+      ),
+      "Melawi" => array(
         "Belimbing" => 3927,
         "Belimbing Hulu" => 3928,
         "Ella Hilir" => 3929,
@@ -3055,7 +3055,7 @@ function commerce_rajaongkir_locality_block() {
         "Sokan" => 3935,
         "Tanah Pinoh" => 3936,
         "Tanah Pinoh Barat" => 3937,
-       ),
+      ),
       "Pontianak (Kabupaten)" => array(
         "Anjongan" => 5092,
         "Mempawah Hilir" => 5093,
@@ -3066,7 +3066,7 @@ function commerce_rajaongkir_locality_block() {
         "Sei/Sungai Pinyuh" => 5098,
         "Siantan" => 5099,
         "Toho" => 5100,
-       ),
+      ),
       "Pontianak (Kota)" => array(
         "Pontianak Barat" => 5101,
         "Pontianak Kota" => 5102,
@@ -3074,8 +3074,8 @@ function commerce_rajaongkir_locality_block() {
         "Pontianak Tenggara" => 5104,
         "Pontianak Timur" => 5105,
         "Pontianak Utara" => 5106,
-       ),
-      "Sambas (Kabupaten)" => array(
+      ),
+      "Sambas" => array(
         "Galing" => 5366,
         "Jawai" => 5367,
         "Jawai Selatan" => 5368,
@@ -3095,8 +3095,8 @@ function commerce_rajaongkir_locality_block() {
         "Tebas" => 5382,
         "Tekarang" => 5383,
         "Teluk Keramat" => 5384,
-       ),
-      "Sanggau (Kabupaten)" => array(
+      ),
+      "Sanggau" => array(
         "Balai" => 5408,
         "Beduai (Beduwai)" => 5409,
         "Bonti" => 5410,
@@ -3112,8 +3112,8 @@ function commerce_rajaongkir_locality_block() {
         "Tayan Hilir" => 5420,
         "Tayan Hulu" => 5421,
         "Toba" => 5422,
-       ),
-      "Sekadau (Kabupaten)" => array(
+      ),
+      "Sekadau" => array(
         "Belitang" => 5447,
         "Belitang Hilir" => 5448,
         "Belitang Hulu" => 5449,
@@ -3121,15 +3121,15 @@ function commerce_rajaongkir_locality_block() {
         "Nanga Taman" => 5451,
         "Sekadau Hilir" => 5452,
         "Sekadau Hulu" => 5453,
-       ),
-      "Singkawang (Kota)" => array(
+      ),
+      "Singkawang" => array(
         "Singkawang Barat" => 5734,
         "Singkawang Selatan" => 5735,
         "Singkawang Tengah" => 5736,
         "Singkawang Timur" => 5737,
         "Singkawang Utara" => 5738,
-       ),
-      "Sintang (Kabupaten)" => array(
+      ),
+      "Sintang" => array(
         "Ambalau" => 5748,
         "Binjai Hulu" => 5749,
         "Dedai" => 5750,
@@ -3144,10 +3144,10 @@ function commerce_rajaongkir_locality_block() {
         "Sintang" => 5759,
         "Sungai Tebelian" => 5760,
         "Tempunak" => 5761,
-       ),
+      ),
     ),
     "Kalimantan Selatan" => array(
-      "Balangan (Kabupaten)" => array(
+      "Balangan" => array(
         "Awayan" => 264,
         "Batu Mandi" => 265,
         "Halong" => 266,
@@ -3156,7 +3156,7 @@ function commerce_rajaongkir_locality_block() {
         "Paringin" => 269,
         "Paringin Selatan" => 270,
         "Tebing Tinggi" => 271,
-       ),
+      ),
       "Banjar (Kabupaten)" => array(
         "Aluh-Aluh" => 476,
         "Aranio" => 477,
@@ -3177,22 +3177,22 @@ function commerce_rajaongkir_locality_block() {
         "Simpang Empat" => 492,
         "Tatah Makmur" => 493,
         "Telaga Bauntung" => 494,
-       ),
-      "Banjarbaru (Kota)" => array(
+      ),
+      "Banjarbaru" => array(
         "Banjar Baru Selatan" => 499,
         "Banjar Baru Utara" => 500,
         "Cempaka" => 501,
         "Landasan Ulin" => 502,
         "Liang Anggang" => 503,
-       ),
-      "Banjarmasin (Kota)" => array(
+      ),
+      "Banjarmasin" => array(
         "Banjarmasin Barat" => 504,
         "Banjarmasin Selatan" => 505,
         "Banjarmasin Tengah" => 506,
         "Banjarmasin Timur" => 507,
         "Banjarmasin Utara" => 508,
-       ),
-      "Barito Kuala (Kabupaten)" => array(
+      ),
+      "Barito Kuala" => array(
         "Alalak" => 624,
         "Anjir Muara" => 625,
         "Anjir Pasar" => 626,
@@ -3210,8 +3210,8 @@ function commerce_rajaongkir_locality_block() {
         "Tabunganen" => 638,
         "Tamban" => 639,
         "Wanaraya" => 640,
-       ),
-      "Hulu Sungai Selatan (Kabupaten)" => array(
+      ),
+      "Hulu Sungai Selatan" => array(
         "Angkinang" => 1974,
         "Daha Barat" => 1975,
         "Daha Selatan" => 1976,
@@ -3223,8 +3223,8 @@ function commerce_rajaongkir_locality_block() {
         "Simpur" => 1982,
         "Sungai Raya" => 1983,
         "Telaga Langsat" => 1984,
-       ),
-      "Hulu Sungai Tengah (Kabupaten)" => array(
+      ),
+      "Hulu Sungai Tengah" => array(
         "Barabai" => 1985,
         "Batang Alai Selatan" => 1986,
         "Batang Alai Timur" => 1987,
@@ -3236,8 +3236,8 @@ function commerce_rajaongkir_locality_block() {
         "Labuan Amas Utara" => 1993,
         "Limpasu" => 1994,
         "Pandawan" => 1995,
-       ),
-      "Hulu Sungai Utara (Kabupaten)" => array(
+      ),
+      "Hulu Sungai Utara" => array(
         "Amuntai Selatan" => 1996,
         "Amuntai Tengah" => 1997,
         "Amuntai Utara" => 1998,
@@ -3248,8 +3248,8 @@ function commerce_rajaongkir_locality_block() {
         "Paminggir" => 2003,
         "Sungai Pandan" => 2004,
         "Sungai Tabukan" => 2005,
-       ),
-      "Kotabaru (Kabupaten)" => array(
+      ),
+      "Kotabaru" => array(
         "Hampang" => 2849,
         "Kelumpang Barat" => 2850,
         "Kelumpang Hilir" => 2851,
@@ -3271,8 +3271,8 @@ function commerce_rajaongkir_locality_block() {
         "Pulau Sembilan" => 2867,
         "Sampanahan" => 2868,
         "Sungai Durian" => 2869,
-       ),
-      "Tabalong (Kabupaten)" => array(
+      ),
+      "Tabalong" => array(
         "Banua Lawas" => 6167,
         "Bintang Ara" => 6168,
         "Haruai" => 6169,
@@ -3285,8 +3285,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanjung" => 6176,
         "Tanta" => 6177,
         "Upau" => 6178,
-       ),
-      "Tanah Bumbu (Kabupaten)" => array(
+      ),
+      "Tanah Bumbu" => array(
         "Angsana" => 6233,
         "Batulicin" => 6234,
         "Karang Bintang" => 6235,
@@ -3297,8 +3297,8 @@ function commerce_rajaongkir_locality_block() {
         "Satui" => 6240,
         "Simpang Empat" => 6241,
         "Sungai Loban" => 6242,
-       ),
-      "Tanah Laut (Kabupaten)" => array(
+      ),
+      "Tanah Laut" => array(
         "Bajuin" => 6257,
         "Bati-Bati" => 6258,
         "Batu Ampar" => 6259,
@@ -3310,8 +3310,8 @@ function commerce_rajaongkir_locality_block() {
         "Pelaihari" => 6265,
         "Takisung" => 6266,
         "Tambang Ulang" => 6267,
-       ),
-      "Tapin (Kabupaten)" => array(
+      ),
+      "Tapin" => array(
         "Bakarangan" => 6420,
         "Binuang" => 6421,
         "Bungur" => 6422,
@@ -3324,18 +3324,18 @@ function commerce_rajaongkir_locality_block() {
         "Tapin Selatan" => 6429,
         "Tapin Tengah" => 6430,
         "Tapin Utara" => 6431,
-       ),
+      ),
     ),
     "Kalimantan Tengah" => array(
-      "Barito Selatan (Kabupaten)" => array(
+      "Barito Selatan" => array(
         "Dusun Hilir" => 641,
         "Dusun Selatan" => 642,
         "Dusun Utara" => 643,
         "Gunung Bintang Awai" => 644,
         "Jenamas" => 645,
         "Karau Kuala" => 646,
-       ),
-      "Barito Timur (Kabupaten)" => array(
+      ),
+      "Barito Timur" => array(
         "Awang" => 647,
         "Benua Lima" => 648,
         "Dusun Tengah" => 649,
@@ -3346,8 +3346,8 @@ function commerce_rajaongkir_locality_block() {
         "Patangkep Tutui" => 654,
         "Pematang Karau" => 655,
         "Raren Batuah" => 656,
-       ),
-      "Barito Utara (Kabupaten)" => array(
+      ),
+      "Barito Utara" => array(
         "Gunung Purei" => 657,
         "Gunung Timang" => 658,
         "Lahei" => 659,
@@ -3357,8 +3357,8 @@ function commerce_rajaongkir_locality_block() {
         "Teweh Selatan" => 663,
         "Teweh Tengah" => 664,
         "Teweh Timur" => 665,
-       ),
-      "Gunung Mas (Kabupaten)" => array(
+      ),
+      "Gunung Mas" => array(
         "Damang Batu" => 1883,
         "Kahayan Hulu Utara" => 1884,
         "Kurun" => 1885,
@@ -3371,8 +3371,8 @@ function commerce_rajaongkir_locality_block() {
         "Rungan Hulu" => 1892,
         "Sepang (Sepang Simin)" => 1893,
         "Tewah" => 1894,
-       ),
-      "Kapuas (Kabupaten)" => array(
+      ),
+      "Kapuas" => array(
         "Basarang" => 2313,
         "Bataguh" => 2314,
         "Dadahup" => 2315,
@@ -3390,8 +3390,8 @@ function commerce_rajaongkir_locality_block() {
         "Selat" => 2327,
         "Tamban Catur" => 2328,
         "Timpah" => 2329,
-       ),
-      "Katingan (Kabupaten)" => array(
+      ),
+      "Katingan" => array(
         "Bukit Raya" => 2437,
         "Kamipang" => 2438,
         "Katingan Hilir" => 2439,
@@ -3405,16 +3405,16 @@ function commerce_rajaongkir_locality_block() {
         "Sanaman Mantikei (Senamang Mantikei)" => 2447,
         "Tasik Payawan" => 2448,
         "Tewang Sanggalang Garing (Sangalang)" => 2449,
-       ),
-      "Kotawaringin Barat (Kabupaten)" => array(
+      ),
+      "Kotawaringin Barat" => array(
         "Arut Selatan" => 2874,
         "Arut Utara" => 2875,
         "Kotawaringin Lama" => 2876,
         "Kumai" => 2877,
         "Pangkalan Banteng" => 2878,
         "Pangkalan Lada" => 2879,
-       ),
-      "Kotawaringin Timur (Kabupaten)" => array(
+      ),
+      "Kotawaringin Timur" => array(
         "Antang Kalang" => 2880,
         "Baamang" => 2881,
         "Bukit Santuei" => 2882,
@@ -3432,8 +3432,8 @@ function commerce_rajaongkir_locality_block() {
         "Telawang" => 2894,
         "Teluk Sampit" => 2895,
         "Tualan Hulu" => 2896,
-       ),
-      "Lamandau (Kabupaten)" => array(
+      ),
+      "Lamandau" => array(
         "Batangkawa" => 3105,
         "Belantikan Raya" => 3106,
         "Bulik" => 3107,
@@ -3442,8 +3442,8 @@ function commerce_rajaongkir_locality_block() {
         "Lamandau" => 3110,
         "Menthobi Raya" => 3111,
         "Sematu Jaya" => 3112,
-       ),
-      "Murung Raya (Kabupaten)" => array(
+      ),
+      "Murung Raya" => array(
         "Barito Tuhup Raya" => 4190,
         "Laung Tuhup" => 4191,
         "Murung" => 4192,
@@ -3454,15 +3454,15 @@ function commerce_rajaongkir_locality_block() {
         "Tanah Siang" => 4197,
         "Tanah Siang Selatan" => 4198,
         "Uut Murung" => 4199,
-       ),
-      "Palangka Raya (Kota)" => array(
+      ),
+      "Palangka Raya" => array(
         "Bukit Batu" => 4604,
         "Jekan Raya" => 4605,
         "Pahandut" => 4606,
         "Rakumpit" => 4607,
         "Sebangau" => 4608,
-       ),
-      "Pulang Pisau (Kabupaten)" => array(
+      ),
+      "Pulang Pisau" => array(
         "Banama Tingang" => 5170,
         "Jabiren Raya" => 5171,
         "Kahayan Hilir" => 5172,
@@ -3471,8 +3471,8 @@ function commerce_rajaongkir_locality_block() {
         "Maliku" => 5175,
         "Pandih Batu" => 5176,
         "Sebangau Kuala" => 5177,
-       ),
-      "Seruyan (Kabupaten)" => array(
+      ),
+      "Seruyan" => array(
         "Batu Ampar" => 5592,
         "Danau Seluluk" => 5593,
         "Danau Sembuluh" => 5594,
@@ -3483,25 +3483,25 @@ function commerce_rajaongkir_locality_block() {
         "Seruyan Raya" => 5599,
         "Seruyan Tengah" => 5600,
         "Suling Tambun" => 5601,
-       ),
-      "Sukamara (Kabupaten)" => array(
+      ),
+      "Sukamara" => array(
         "Balai Riam" => 5972,
         "Jelai" => 5973,
         "Pantai Lunci" => 5974,
         "Permata Kecubung" => 5975,
         "Sukamara" => 5976,
-       ),
+      ),
     ),
     "Kalimantan Timur" => array(
-      "Balikpapan (Kota)" => array(
+      "Balikpapan" => array(
         "Balikpapan Barat" => 272,
         "Balikpapan Kota" => 273,
         "Balikpapan Selatan" => 274,
         "Balikpapan Tengah" => 275,
         "Balikpapan Timur" => 276,
         "Balikpapan Utara" => 277,
-       ),
-      "Berau (Kabupaten)" => array(
+      ),
+      "Berau" => array(
         "Batu Putih" => 879,
         "Biatan" => 880,
         "Biduk-Biduk" => 881,
@@ -3515,13 +3515,13 @@ function commerce_rajaongkir_locality_block() {
         "Talisayan" => 889,
         "Tanjung Redeb" => 890,
         "Teluk Bayur" => 891,
-       ),
-      "Bontang (Kota)" => array(
+      ),
+      "Bontang" => array(
         "Bontang Barat" => 1217,
         "Bontang Selatan" => 1218,
         "Bontang Utara" => 1219,
-       ),
-      "Kutai Barat (Kabupaten)" => array(
+      ),
+      "Kutai Barat" => array(
         "Barong Tongkok" => 3004,
         "Bentian Besar" => 3005,
         "Bongan" => 3006,
@@ -3543,8 +3543,8 @@ function commerce_rajaongkir_locality_block() {
         "Sekolaq Darat" => 3022,
         "Siluq Ngurai" => 3023,
         "Tering" => 3024,
-       ),
-      "Kutai Kartanegara (Kabupaten)" => array(
+      ),
+      "Kutai Kartanegara" => array(
         "Anggana" => 3025,
         "Kembang Janggut" => 3026,
         "Kenohan" => 3027,
@@ -3563,8 +3563,8 @@ function commerce_rajaongkir_locality_block() {
         "Tabang" => 3040,
         "Tenggarong" => 3041,
         "Tenggarong Seberang" => 3042,
-       ),
-      "Kutai Timur (Kabupaten)" => array(
+      ),
+      "Kutai Timur" => array(
         "Batu Ampar" => 3043,
         "Bengalon" => 3044,
         "Busang" => 3045,
@@ -3583,8 +3583,8 @@ function commerce_rajaongkir_locality_block() {
         "Sangkulirang" => 3058,
         "Telen" => 3059,
         "Teluk Pandan" => 3060,
-       ),
-      "Paser (Kabupaten)" => array(
+      ),
+      "Paser" => array(
         "Batu Engau" => 4783,
         "Batu Sopang" => 4784,
         "Kuaro" => 4785,
@@ -3595,14 +3595,14 @@ function commerce_rajaongkir_locality_block() {
         "Pasir Belengkong" => 4790,
         "Tanah Grogot" => 4791,
         "Tanjung Harapan" => 4792,
-       ),
-      "Penajam Paser Utara (Kabupaten)" => array(
+      ),
+      "Penajam Paser Utara" => array(
         "Babulu" => 4960,
         "Penajam" => 4961,
         "Sepaku" => 4962,
         "Waru" => 4963,
-       ),
-      "Samarinda (Kota)" => array(
+      ),
+      "Samarinda" => array(
         "Loa Janan Ilir" => 5356,
         "Palaran" => 5357,
         "Samarinda Ilir" => 5358,
@@ -3613,10 +3613,10 @@ function commerce_rajaongkir_locality_block() {
         "Sambutan" => 5363,
         "Sungai Kunjang" => 5364,
         "Sungai Pinang" => 5365,
-       ),
+      ),
     ),
     "Kalimantan Utara" => array(
-      "Bulungan (Bulongan) (Kabupaten)" => array(
+      "Bulungan (Bulongan)" => array(
         "Peso" => 1298,
         "Peso Hilir/Ilir" => 1299,
         "Pulau Bunyu" => 1300,
@@ -3627,8 +3627,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanjung Palas Timur" => 1305,
         "Tanjung Palas Utara" => 1306,
         "Tanjung Selor" => 1307,
-       ),
-      "Malinau (Kabupaten)" => array(
+      ),
+      "Malinau" => array(
         "Bahau Hulu" => 3639,
         "Kayan Hilir" => 3640,
         "Kayan Hulu" => 3641,
@@ -3644,8 +3644,8 @@ function commerce_rajaongkir_locality_block() {
         "Pujungan" => 3651,
         "Sungai Boh" => 3652,
         "Sungai Tubu" => 3653,
-       ),
-      "Nunukan (Kabupaten)" => array(
+      ),
+      "Nunukan" => array(
         "Krayan" => 4422,
         "Krayan Selatan" => 4423,
         "Lumbis" => 4424,
@@ -3661,22 +3661,22 @@ function commerce_rajaongkir_locality_block() {
         "Sei Menggaris" => 4434,
         "Sembakung" => 4435,
         "Tulin Onsoi" => 4436,
-       ),
-      "Tana Tidung (Kabupaten)" => array(
+      ),
+      "Tana Tidung" => array(
         "Betayau" => 6210,
         "Sesayap" => 6211,
         "Sesayap Hilir" => 6212,
         "Tana Lia (Tanah Lia)" => 6213,
-       ),
-      "Tarakan (Kota)" => array(
+      ),
+      "Tarakan" => array(
         "Tarakan Barat" => 6432,
         "Tarakan Tengah" => 6433,
         "Tarakan Timur" => 6434,
         "Tarakan Utara" => 6435,
-       ),
+      ),
     ),
     "Kepulauan Riau" => array(
-      "Batam (Kota)" => array(
+      "Batam" => array(
         "Batam Kota" => 673,
         "Batu Aji" => 674,
         "Batu Ampar" => 675,
@@ -3689,8 +3689,8 @@ function commerce_rajaongkir_locality_block() {
         "Sagulung" => 682,
         "Sei/Sungai Beduk" => 683,
         "Sekupang" => 684,
-       ),
-      "Bintan (Kabupaten)" => array(
+      ),
+      "Bintan" => array(
         "Bintan Pesisir" => 939,
         "Bintan Timur" => 940,
         "Bintan Utara" => 941,
@@ -3701,8 +3701,8 @@ function commerce_rajaongkir_locality_block() {
         "Teluk Bintan" => 946,
         "Teluk Sebong" => 947,
         "Toapaya" => 948,
-       ),
-      "Karimun (Kabupaten)" => array(
+      ),
+      "Karimun" => array(
         "Belat" => 2408,
         "Buru" => 2409,
         "Durai" => 2410,
@@ -3715,8 +3715,8 @@ function commerce_rajaongkir_locality_block() {
         "Moro" => 2417,
         "Tebing" => 2418,
         "Ungar" => 2419,
-       ),
-      "Kepulauan Anambas (Kabupaten)" => array(
+      ),
+      "Kepulauan Anambas" => array(
         "Jemaja" => 2571,
         "Jemaja Timur" => 2572,
         "Palmatak" => 2573,
@@ -3724,8 +3724,8 @@ function commerce_rajaongkir_locality_block() {
         "Siantan Selatan" => 2575,
         "Siantan Tengah" => 2576,
         "Siantan Timur" => 2577,
-       ),
-      "Lingga (Kabupaten)" => array(
+      ),
+      "Lingga" => array(
         "Lingga" => 3364,
         "Lingga Timur" => 3365,
         "Lingga Utara" => 3366,
@@ -3734,8 +3734,8 @@ function commerce_rajaongkir_locality_block() {
         "Singkep" => 3369,
         "Singkep Barat" => 3370,
         "Singkep Pesisir" => 3371,
-       ),
-      "Natuna (Kabupaten)" => array(
+      ),
+      "Natuna" => array(
         "Bunguran Barat" => 4267,
         "Bunguran Selatan" => 4268,
         "Bunguran Tengah" => 4269,
@@ -3748,16 +3748,16 @@ function commerce_rajaongkir_locality_block() {
         "Serasan" => 4276,
         "Serasan Timur" => 4277,
         "Subi" => 4278,
-       ),
-      "Tanjung Pinang (Kota)" => array(
+      ),
+      "Tanjung Pinang" => array(
         "Bukit Bestari" => 6367,
         "Tanjung Pinang Barat" => 6368,
         "Tanjung Pinang Kota" => 6369,
         "Tanjung Pinang Timur" => 6370,
-       ),
+      ),
     ),
     "Lampung" => array(
-      "Bandar Lampung (Kota)" => array(
+      "Bandar Lampung" => array(
         "Bumi Waras" => 287,
         "Enggal" => 288,
         "Kedamaian" => 289,
@@ -3778,8 +3778,8 @@ function commerce_rajaongkir_locality_block() {
         "Telukbetung Timur" => 304,
         "Telukbetung Utara" => 305,
         "Way Halim" => 306,
-       ),
-      "Lampung Barat (Kabupaten)" => array(
+      ),
+      "Lampung Barat" => array(
         "Air Hitam" => 3140,
         "Balik Bukit" => 3141,
         "Bandar Negeri Suoh" => 3142,
@@ -3795,8 +3795,8 @@ function commerce_rajaongkir_locality_block() {
         "Sumber Jaya" => 3152,
         "Suoh" => 3153,
         "Way Tenong" => 3154,
-       ),
-      "Lampung Selatan (Kabupaten)" => array(
+      ),
+      "Lampung Selatan" => array(
         "Bakauheni" => 3155,
         "Candipuro" => 3156,
         "Jati Agung" => 3157,
@@ -3814,8 +3814,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanjung Sari" => 3169,
         "Way Panji" => 3170,
         "Way Sulan" => 3171,
-       ),
-      "Lampung Tengah (Kabupaten)" => array(
+      ),
+      "Lampung Tengah" => array(
         "Anak Ratu Aji" => 3172,
         "Anak Tuha" => 3173,
         "Bandar Mataram" => 3174,
@@ -3844,8 +3844,8 @@ function commerce_rajaongkir_locality_block() {
         "Trimurjo" => 3197,
         "Way Pangubuan (Pengubuan)" => 3198,
         "Way Seputih" => 3199,
-       ),
-      "Lampung Timur (Kabupaten)" => array(
+      ),
+      "Lampung Timur" => array(
         "Bandar Sribawono" => 3200,
         "Batanghari" => 3201,
         "Batanghari Nuban" => 3202,
@@ -3870,8 +3870,8 @@ function commerce_rajaongkir_locality_block() {
         "Waway Karya" => 3221,
         "Way Bungur (Purbolinggo Utara)" => 3222,
         "Way Jepara" => 3223,
-       ),
-      "Lampung Utara (Kabupaten)" => array(
+      ),
+      "Lampung Utara" => array(
         "Abung Barat" => 3224,
         "Abung Kunang" => 3225,
         "Abung Pekurun" => 3226,
@@ -3895,8 +3895,8 @@ function commerce_rajaongkir_locality_block() {
         "Sungkai Tengah" => 3244,
         "Sungkai Utara" => 3245,
         "Tanjung Raja" => 3246,
-       ),
-      "Mesuji (Kabupaten)" => array(
+      ),
+      "Mesuji" => array(
         "Mesuji" => 3982,
         "Mesuji Timur" => 3983,
         "Panca Jaya" => 3984,
@@ -3904,15 +3904,15 @@ function commerce_rajaongkir_locality_block() {
         "Simpang Pematang" => 3986,
         "Tanjung Raya" => 3987,
         "Way Serdang" => 3988,
-       ),
-      "Metro (Kota)" => array(
+      ),
+      "Metro" => array(
         "Metro Barat" => 3989,
         "Metro Pusat" => 3990,
         "Metro Selatan" => 3991,
         "Metro Timur" => 3992,
         "Metro Utara" => 3993,
-       ),
-      "Pesawaran (Kabupaten)" => array(
+      ),
+      "Pesawaran" => array(
         "Gedong Tataan (Gedung Tataan)" => 4964,
         "Kedondong" => 4965,
         "Marga Punduh" => 4966,
@@ -3922,8 +3922,8 @@ function commerce_rajaongkir_locality_block() {
         "Tegineneng" => 4970,
         "Way Khilau" => 4971,
         "Way Lima" => 4972,
-       ),
-      "Pesisir Barat (Kabupaten)" => array(
+      ),
+      "Pesisir Barat" => array(
         "Bengkunat" => 4973,
         "Bengkunat Belimbing" => 4974,
         "Karya Penggawa" => 4975,
@@ -3935,8 +3935,8 @@ function commerce_rajaongkir_locality_block() {
         "Pesisir Utara" => 4981,
         "Pulau Pisang" => 4982,
         "Way Krui" => 4983,
-       ),
-      "Pringsewu (Kabupaten)" => array(
+      ),
+      "Pringsewu" => array(
         "Adi Luwih" => 5132,
         "Ambarawa" => 5133,
         "Banyumas" => 5134,
@@ -3946,8 +3946,8 @@ function commerce_rajaongkir_locality_block() {
         "Pardasuka" => 5138,
         "Pringsewu" => 5139,
         "Sukoharjo" => 5140,
-       ),
-      "Tanggamus (Kabupaten)" => array(
+      ),
+      "Tanggamus" => array(
         "Air Naningan" => 6317,
         "Bandar Negeri Semuong" => 6318,
         "Bulok" => 6319,
@@ -3968,8 +3968,8 @@ function commerce_rajaongkir_locality_block() {
         "Talang Padang" => 6334,
         "Ulubelu" => 6335,
         "Wonosobo" => 6336,
-       ),
-      "Tulang Bawang (Kabupaten)" => array(
+      ),
+      "Tulang Bawang" => array(
         "Banjar Agung" => 6798,
         "Banjar Baru" => 6799,
         "Banjar Margo" => 6800,
@@ -3985,8 +3985,8 @@ function commerce_rajaongkir_locality_block() {
         "Rawa Pitu" => 6810,
         "Rawajitu Selatan" => 6811,
         "Rawajitu Timur" => 6812,
-       ),
-      "Tulang Bawang Barat (Kabupaten)" => array(
+      ),
+      "Tulang Bawang Barat" => array(
         "Gunung Agung" => 6813,
         "Gunung Terang" => 6814,
         "Lambu Kibang" => 6815,
@@ -3995,8 +3995,8 @@ function commerce_rajaongkir_locality_block() {
         "Tulang Bawang Udik" => 6818,
         "Tumijajar" => 6819,
         "Way Kenanga" => 6820,
-       ),
-      "Way Kanan (Kabupaten)" => array(
+      ),
+      "Way Kanan" => array(
         "Bahuga" => 6871,
         "Banjit" => 6872,
         "Baradatu" => 6873,
@@ -4011,17 +4011,17 @@ function commerce_rajaongkir_locality_block() {
         "Pakuan Ratu" => 6882,
         "Rebang Tangkas" => 6883,
         "Way Tuba" => 6884,
-       ),
+      ),
     ),
     "Maluku" => array(
-      "Ambon (Kota)" => array(
+      "Ambon" => array(
         "Baguala" => 209,
         "Leitimur Selatan" => 210,
         "Nusaniwe (Nusanive)" => 211,
         "Sirimau" => 212,
         "Teluk Ambon" => 213,
-       ),
-      "Buru (Kabupaten)" => array(
+      ),
+      "Buru" => array(
         "Airbuaya" => 1336,
         "Batabual" => 1337,
         "Fena Leisela" => 1338,
@@ -4032,16 +4032,16 @@ function commerce_rajaongkir_locality_block() {
         "Waeapo" => 1343,
         "Waelata" => 1344,
         "Waplau" => 1345,
-       ),
-      "Buru Selatan (Kabupaten)" => array(
+      ),
+      "Buru Selatan" => array(
         "Ambalau" => 1346,
         "Fena Fafan" => 1347,
         "Kepala Madan" => 1348,
         "Leksula" => 1349,
         "Namrole" => 1350,
         "Waesama" => 1351,
-       ),
-      "Kepulauan Aru (Kabupaten)" => array(
+      ),
+      "Kepulauan Aru" => array(
         "Aru Selatan" => 2578,
         "Aru Selatan Timur" => 2579,
         "Aru Selatan Utara" => 2580,
@@ -4052,8 +4052,8 @@ function commerce_rajaongkir_locality_block() {
         "Aru Utara Timur Batuley" => 2585,
         "Pulau-Pulau Aru" => 2586,
         "Sir-Sir" => 2587,
-       ),
-      "Maluku Barat Daya (Kabupaten)" => array(
+      ),
+      "Maluku Barat Daya" => array(
         "Damer" => 3654,
         "Dawelor Dawera" => 3655,
         "Kepulauan Romang" => 3656,
@@ -4071,8 +4071,8 @@ function commerce_rajaongkir_locality_block() {
         "Wetar Barat" => 3668,
         "Wetar Timur" => 3669,
         "Wetar Utara" => 3670,
-       ),
-      "Maluku Tengah (Kabupaten)" => array(
+      ),
+      "Maluku Tengah" => array(
         "Amahai" => 3671,
         "Banda" => 3672,
         "Leihitu" => 3673,
@@ -4091,8 +4091,8 @@ function commerce_rajaongkir_locality_block() {
         "Teluk Elpaputih" => 3686,
         "Telutih" => 3687,
         "Teon Nila Serua" => 3688,
-       ),
-      "Maluku Tenggara (Kabupaten)" => array(
+      ),
+      "Maluku Tenggara" => array(
         "Hoat Sorbay" => 3689,
         "Kei Besar" => 3690,
         "Kei Besar Selatan" => 3691,
@@ -4104,8 +4104,8 @@ function commerce_rajaongkir_locality_block() {
         "Kei Kecil Timur" => 3697,
         "Kei Kecil Timur Selatan" => 3698,
         "Manyeuw" => 3699,
-       ),
-      "Maluku Tenggara Barat (Kabupaten)" => array(
+      ),
+      "Maluku Tenggara Barat" => array(
         "Kormomolin" => 3700,
         "Molu Maru" => 3701,
         "Nirunmas" => 3702,
@@ -4116,8 +4116,8 @@ function commerce_rajaongkir_locality_block() {
         "Wertamrian" => 3707,
         "Wuarlabobar" => 3708,
         "Yaru" => 3709,
-       ),
-      "Seram Bagian Barat (Kabupaten)" => array(
+      ),
+      "Seram Bagian Barat" => array(
         "Amalatu" => 5514,
         "Elpaputih" => 5515,
         "Huamual" => 5516,
@@ -4129,8 +4129,8 @@ function commerce_rajaongkir_locality_block() {
         "Seram Barat" => 5522,
         "Taniwel" => 5523,
         "Taniwel Timur" => 5524,
-       ),
-      "Seram Bagian Timur (Kabupaten)" => array(
+      ),
+      "Seram Bagian Timur" => array(
         "Bula" => 5525,
         "Bula Barat" => 5526,
         "Gorom Timur" => 5527,
@@ -4146,17 +4146,17 @@ function commerce_rajaongkir_locality_block() {
         "Tutuk Tolu" => 5537,
         "Wakate" => 5538,
         "Werinama" => 5539,
-       ),
-      "Tual (Kota)" => array(
+      ),
+      "Tual" => array(
         "Kur Selatan" => 6773,
         "Pulau Dullah Selatan" => 6774,
         "Pulau Dullah Utara" => 6775,
         "Pulau Tayando Tam" => 6776,
         "Pulau-Pulau Kur" => 6777,
-       ),
+      ),
     ),
     "Maluku Utara" => array(
-      "Halmahera Barat (Kabupaten)" => array(
+      "Halmahera Barat" => array(
         "Ibu" => 1901,
         "Ibu Selatan" => 1902,
         "Ibu Utara" => 1903,
@@ -4165,8 +4165,8 @@ function commerce_rajaongkir_locality_block() {
         "Loloda" => 1906,
         "Sahu" => 1907,
         "Sahu Timur" => 1908,
-       ),
-      "Halmahera Selatan (Kabupaten)" => array(
+      ),
+      "Halmahera Selatan" => array(
         "Bacan" => 1909,
         "Bacan Barat" => 1910,
         "Bacan Barat Utara" => 1911,
@@ -4197,8 +4197,8 @@ function commerce_rajaongkir_locality_block() {
         "Obi Selatan" => 1936,
         "Obi Timur" => 1937,
         "Obi Utara" => 1938,
-       ),
-      "Halmahera Tengah (Kabupaten)" => array(
+      ),
+      "Halmahera Tengah" => array(
         "Patani" => 1939,
         "Patani Barat" => 1940,
         "Patani Utara" => 1941,
@@ -4207,8 +4207,8 @@ function commerce_rajaongkir_locality_block() {
         "Weda Selatan" => 1944,
         "Weda Tengah" => 1945,
         "Weda Utara" => 1946,
-       ),
-      "Halmahera Timur (Kabupaten)" => array(
+      ),
+      "Halmahera Timur" => array(
         "Kota Maba" => 1947,
         "Maba" => 1948,
         "Maba Selatan" => 1949,
@@ -4219,8 +4219,8 @@ function commerce_rajaongkir_locality_block() {
         "Wasile Tengah" => 1954,
         "Wasile Timur" => 1955,
         "Wasile Utara" => 1956,
-       ),
-      "Halmahera Utara (Kabupaten)" => array(
+      ),
+      "Halmahera Utara" => array(
         "Galela" => 1957,
         "Galela Barat" => 1958,
         "Galela Selatan" => 1959,
@@ -4238,8 +4238,8 @@ function commerce_rajaongkir_locality_block() {
         "Tobelo Tengah" => 1971,
         "Tobelo Timur" => 1972,
         "Tobelo Utara" => 1973,
-       ),
-      "Kepulauan Sula (Kabupaten)" => array(
+      ),
+      "Kepulauan Sula" => array(
         "Lede" => 2634,
         "Mangoli Barat" => 2635,
         "Mangoli Selatan" => 2636,
@@ -4259,15 +4259,15 @@ function commerce_rajaongkir_locality_block() {
         "Taliabu Timur" => 2650,
         "Taliabu Timur Selatan" => 2651,
         "Taliabu Utara" => 2652,
-       ),
-      "Pulau Morotai (Kabupaten)" => array(
+      ),
+      "Pulau Morotai" => array(
         "Morotai Jaya" => 5178,
         "Morotai Selatan" => 5179,
         "Morotai Selatan Barat" => 5180,
         "Morotai Timur" => 5181,
         "Morotai Utara" => 5182,
-       ),
-      "Ternate (Kota)" => array(
+      ),
+      "Ternate" => array(
         "Moti (Pulau Moti)" => 6581,
         "Pulau Batang Dua" => 6582,
         "Pulau Hiri" => 6583,
@@ -4275,8 +4275,8 @@ function commerce_rajaongkir_locality_block() {
         "Ternate Selatan (Kota)" => 6585,
         "Ternate Tengah (Kota)" => 6586,
         "Ternate Utara (Kota)" => 6587,
-       ),
-      "Tidore Kepulauan (Kota)" => array(
+      ),
+      "Tidore Kepulauan" => array(
         "Oba" => 6588,
         "Oba Selatan" => 6589,
         "Oba Tengah" => 6590,
@@ -4285,10 +4285,10 @@ function commerce_rajaongkir_locality_block() {
         "Tidore Selatan" => 6593,
         "Tidore Timur (Pulau Tidore)" => 6594,
         "Tidore Utara" => 6595,
-       ),
+      ),
     ),
     "Nanggroe Aceh Darussalam (NAD)" => array(
-      "Aceh Barat (Kabupaten)" => array(
+      "Aceh Barat" => array(
         "Arongan Lambalek" => 1,
         "Bubon" => 2,
         "Johan Pahlawan" => 3,
@@ -4301,8 +4301,8 @@ function commerce_rajaongkir_locality_block() {
         "Woyla" => 10,
         "Woyla Barat" => 11,
         "Woyla Timur" => 12,
-       ),
-      "Aceh Barat Daya (Kabupaten)" => array(
+      ),
+      "Aceh Barat Daya" => array(
         "Babah Rot" => 13,
         "Blang Pidie" => 14,
         "Jeumpa" => 15,
@@ -4312,8 +4312,8 @@ function commerce_rajaongkir_locality_block() {
         "Setia" => 19,
         "Susoh" => 20,
         "Tangan-Tangan" => 21,
-       ),
-      "Aceh Besar (Kabupaten)" => array(
+      ),
+      "Aceh Besar" => array(
         "Baitussalam" => 22,
         "Blank Bintang" => 23,
         "Darul Imarah" => 24,
@@ -4337,8 +4337,8 @@ function commerce_rajaongkir_locality_block() {
         "Seulimeum" => 42,
         "Simpang Tiga" => 43,
         "Suka Makmur" => 44,
-       ),
-      "Aceh Jaya (Kabupaten)" => array(
+      ),
+      "Aceh Jaya" => array(
         "Darul Hikmah" => 45,
         "Indra Jaya" => 46,
         "Jaya" => 47,
@@ -4348,8 +4348,8 @@ function commerce_rajaongkir_locality_block() {
         "Sampoiniet" => 51,
         "Setia Bakti" => 52,
         "Teunom" => 53,
-       ),
-      "Aceh Selatan (Kabupaten)" => array(
+      ),
+      "Aceh Selatan" => array(
         "Bakongan" => 54,
         "Bakongan Timur" => 55,
         "Kluet Selatan" => 56,
@@ -4368,8 +4368,8 @@ function commerce_rajaongkir_locality_block() {
         "Trumon" => 69,
         "Trumon Tengah" => 70,
         "Trumon Timur" => 71,
-       ),
-      "Aceh Singkil (Kabupaten)" => array(
+      ),
+      "Aceh Singkil" => array(
         "Danau Paris" => 72,
         "Gunung Meriah (Mariah)" => 73,
         "Kota Baharu" => 74,
@@ -4381,8 +4381,8 @@ function commerce_rajaongkir_locality_block() {
         "Singkil Utara" => 80,
         "Singkohor" => 81,
         "Suro Makmur" => 82,
-       ),
-      "Aceh Tamiang (Kabupaten)" => array(
+      ),
+      "Aceh Tamiang" => array(
         "Banda Mulia" => 83,
         "Bandar Pusaka" => 84,
         "Bendahara" => 85,
@@ -4395,8 +4395,8 @@ function commerce_rajaongkir_locality_block() {
         "Seruway" => 92,
         "Tamiang Hulu" => 93,
         "Tenggulun" => 94,
-       ),
-      "Aceh Tengah (Kabupaten)" => array(
+      ),
+      "Aceh Tengah" => array(
         "Atu Lintang" => 95,
         "Bebesen" => 96,
         "Bies" => 97,
@@ -4411,8 +4411,8 @@ function commerce_rajaongkir_locality_block() {
         "Pegasing" => 106,
         "Rusip Antara" => 107,
         "Silih Nara" => 108,
-       ),
-      "Aceh Tenggara (Kabupaten)" => array(
+      ),
+      "Aceh Tenggara" => array(
         "Babul Makmur" => 109,
         "Babul Rahmah" => 110,
         "Babussalam" => 111,
@@ -4429,8 +4429,8 @@ function commerce_rajaongkir_locality_block() {
         "Leuser" => 122,
         "Semadam" => 123,
         "Tanah Alas" => 124,
-       ),
-      "Aceh Timur (Kabupaten)" => array(
+      ),
+      "Aceh Timur" => array(
         "Banda Alam" => 125,
         "Birem Bayeun" => 126,
         "Darul Aman" => 127,
@@ -4455,8 +4455,8 @@ function commerce_rajaongkir_locality_block() {
         "Simpang Jernih" => 146,
         "Simpang Ulim" => 147,
         "Sungai Raya" => 148,
-       ),
-      "Aceh Utara (Kabupaten)" => array(
+      ),
+      "Aceh Utara" => array(
         "Baktiya" => 149,
         "Baktiya Barat" => 150,
         "Banda Baro" => 151,
@@ -4484,8 +4484,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanah Jambo Aye" => 173,
         "Tanah Luas" => 174,
         "Tanah Pasir" => 175,
-       ),
-      "Banda Aceh (Kota)" => array(
+      ),
+      "Banda Aceh" => array(
         "Baiturrahman" => 278,
         "Banda Raya" => 279,
         "Jaya Baru" => 280,
@@ -4495,8 +4495,8 @@ function commerce_rajaongkir_locality_block() {
         "Meuraxa" => 284,
         "Syiah Kuala" => 285,
         "Ulee Kareng" => 286,
-       ),
-      "Bener Meriah (Kabupaten)" => array(
+      ),
+      "Bener Meriah" => array(
         "Bandar" => 797,
         "Bener Kelipah" => 798,
         "Bukit" => 799,
@@ -4507,8 +4507,8 @@ function commerce_rajaongkir_locality_block() {
         "Syiah Utama" => 804,
         "Timang Gajah" => 805,
         "Wih Pesam" => 806,
-       ),
-      "Bireuen (Kabupaten)" => array(
+      ),
+      "Bireuen" => array(
         "Ganda Pura" => 949,
         "Jangka" => 950,
         "Jeumpa" => 951,
@@ -4526,8 +4526,8 @@ function commerce_rajaongkir_locality_block() {
         "Peusangan Siblah Krueng" => 963,
         "Samalanga" => 964,
         "Simpang Mamplam" => 965,
-       ),
-      "Gayo Lues (Kabupaten)" => array(
+      ),
+      "Gayo Lues" => array(
         "Blang Jerango" => 1753,
         "Blang Kejeren" => 1754,
         "Blang Pegayon" => 1755,
@@ -4539,21 +4539,21 @@ function commerce_rajaongkir_locality_block() {
         "Rikit Gaib" => 1761,
         "Terangun (Terangon)" => 1762,
         "Teripe/Tripe Jaya" => 1763,
-       ),
-      "Langsa (Kota)" => array(
+      ),
+      "Langsa" => array(
         "Langsa Barat" => 3283,
         "Langsa Baro" => 3284,
         "Langsa Kota" => 3285,
         "Langsa Lama" => 3286,
         "Langsa Timur" => 3287,
-       ),
-      "Lhokseumawe (Kota)" => array(
+      ),
+      "Lhokseumawe" => array(
         "Banda Sakti" => 3347,
         "Blang Mangat" => 3348,
         "Muara Dua" => 3349,
         "Muara Satu" => 3350,
-       ),
-      "Nagan Raya (Kabupaten)" => array(
+      ),
+      "Nagan Raya" => array(
         "Beutong" => 4250,
         "Beutong Ateuh Banggalang" => 4251,
         "Darul Makmur" => 4252,
@@ -4564,8 +4564,8 @@ function commerce_rajaongkir_locality_block() {
         "Suka Makmue" => 4257,
         "Tadu Raya" => 4258,
         "Tripa Makmur" => 4259,
-       ),
-      "Pidie (Kabupaten)" => array(
+      ),
+      "Pidie" => array(
         "Batee" => 4999,
         "Delima" => 5000,
         "Geumpang" => 5001,
@@ -4589,8 +4589,8 @@ function commerce_rajaongkir_locality_block() {
         "Tangse" => 5019,
         "Tiro/Truseb" => 5020,
         "Titeue" => 5021,
-       ),
-      "Pidie Jaya (Kabupaten)" => array(
+      ),
+      "Pidie Jaya" => array(
         "Bandar Baru" => 5022,
         "Bandar Dua" => 5023,
         "Jangka Buya" => 5024,
@@ -4599,12 +4599,12 @@ function commerce_rajaongkir_locality_block() {
         "Panteraja" => 5027,
         "Trienggadeng" => 5028,
         "Ulim" => 5029,
-       ),
-      "Sabang (Kota)" => array(
+      ),
+      "Sabang" => array(
         "Sukajaya" => 5344,
         "Sukakarya" => 5345,
-       ),
-      "Simeulue (Kabupaten)" => array(
+      ),
+      "Simeulue" => array(
         "Alapan (Alafan)" => 5724,
         "Salang" => 5725,
         "Simeuleu Barat" => 5726,
@@ -4615,14 +4615,14 @@ function commerce_rajaongkir_locality_block() {
         "Teupah Barat" => 5731,
         "Teupah Selatan" => 5732,
         "Teupah Tengah" => 5733,
-       ),
-      "Subulussalam (Kota)" => array(
+      ),
+      "Subulussalam" => array(
         "Longkib" => 5913,
         "Penanggalan" => 5914,
         "Rundeng" => 5915,
         "Simpang Kiri" => 5916,
         "Sultan Daulat" => 5917,
-       ),
+      ),
     ),
     "Nusa Tenggara Barat (NTB)" => array(
       "Bima (Kabupaten)" => array(
@@ -4644,15 +4644,15 @@ function commerce_rajaongkir_locality_block() {
         "Wawo" => 926,
         "Wera" => 927,
         "Woha" => 928,
-       ),
+      ),
       "Bima (Kota)" => array(
         "Asakota" => 929,
         "Mpunda" => 930,
         "Raba" => 931,
         "Rasanae Barat" => 932,
         "Rasanae Timur" => 933,
-       ),
-      "Dompu (Kabupaten)" => array(
+      ),
+      "Dompu" => array(
         "Dompu" => 1609,
         "Hu'u" => 1610,
         "Kempo" => 1611,
@@ -4661,8 +4661,8 @@ function commerce_rajaongkir_locality_block() {
         "Pajo" => 1614,
         "Pekat" => 1615,
         "Woja" => 1616,
-       ),
-      "Lombok Barat (Kabupaten)" => array(
+      ),
+      "Lombok Barat" => array(
         "Batu Layar" => 3372,
         "Gerung" => 3373,
         "Gunungsari" => 3374,
@@ -4673,8 +4673,8 @@ function commerce_rajaongkir_locality_block() {
         "Lingsar" => 3379,
         "Narmada" => 3380,
         "Sekotong" => 3381,
-       ),
-      "Lombok Tengah (Kabupaten)" => array(
+      ),
+      "Lombok Tengah" => array(
         "Batukliang" => 3382,
         "Batukliang Utara" => 3383,
         "Janapria" => 3384,
@@ -4687,8 +4687,8 @@ function commerce_rajaongkir_locality_block() {
         "Praya Timur" => 3391,
         "Pringgarata" => 3392,
         "Pujut" => 3393,
-       ),
-      "Lombok Timur (Kabupaten)" => array(
+      ),
+      "Lombok Timur" => array(
         "Aikmel" => 3394,
         "Jerowaru" => 3395,
         "Keruak" => 3396,
@@ -4709,23 +4709,23 @@ function commerce_rajaongkir_locality_block() {
         "Suralaga" => 3411,
         "Terara" => 3412,
         "Wanasaba" => 3413,
-       ),
-      "Lombok Utara (Kabupaten)" => array(
+      ),
+      "Lombok Utara" => array(
         "Bayan" => 3414,
         "Gangga" => 3415,
         "Kayangan" => 3416,
         "Pemenang" => 3417,
         "Tanjung" => 3418,
-       ),
-      "Mataram (Kota)" => array(
+      ),
+      "Mataram" => array(
         "Ampenan" => 3876,
         "Cakranegara" => 3877,
         "Mataram" => 3878,
         "Sandubaya (Sandujaya)" => 3879,
         "Sekarbela" => 3880,
         "Selaparang (Selaprang)" => 3881,
-       ),
-      "Sumbawa (Kabupaten)" => array(
+      ),
+      "Sumbawa" => array(
         "Alas" => 6033,
         "Alas Barat" => 6034,
         "Batulanteh" => 6035,
@@ -4750,8 +4750,8 @@ function commerce_rajaongkir_locality_block() {
         "Tarano" => 6054,
         "Unter Iwes (Unterwiris)" => 6055,
         "Utan" => 6056,
-       ),
-      "Sumbawa Barat (Kabupaten)" => array(
+      ),
+      "Sumbawa Barat" => array(
         "Brang Ene" => 6057,
         "Brang Rea" => 6058,
         "Jereweh" => 6059,
@@ -4760,10 +4760,10 @@ function commerce_rajaongkir_locality_block() {
         "Sateluk (Seteluk)" => 6062,
         "Sekongkang" => 6063,
         "Taliwang" => 6064,
-       ),
+      ),
     ),
     "Nusa Tenggara Timur (NTT)" => array(
-      "Alor (Kabupaten)" => array(
+      "Alor" => array(
         "Alor Barat Daya" => 192,
         "Alor Barat Laut" => 193,
         "Alor Selatan" => 194,
@@ -4781,8 +4781,8 @@ function commerce_rajaongkir_locality_block() {
         "Pulau Pura" => 206,
         "Pureman" => 207,
         "Teluk Mutiara" => 208,
-       ),
-      "Belu (Kabupaten)" => array(
+      ),
+      "Belu" => array(
         "Atambua Barat" => 773,
         "Atambua Kota" => 774,
         "Atambua Selatan" => 775,
@@ -4807,8 +4807,8 @@ function commerce_rajaongkir_locality_block() {
         "Tasifeto Timur" => 794,
         "Weliman" => 795,
         "Wewiku" => 796,
-       ),
-      "Ende (Kabupaten)" => array(
+      ),
+      "Ende" => array(
         "Detukeli" => 1650,
         "Detusoko" => 1651,
         "Ende" => 1652,
@@ -4830,8 +4830,8 @@ function commerce_rajaongkir_locality_block() {
         "Wewaria" => 1668,
         "Wolojita" => 1669,
         "Wolowaru" => 1670,
-       ),
-      "Flores Timur (Kabupaten)" => array(
+      ),
+      "Flores Timur" => array(
         "Adonara" => 1692,
         "Adonara Barat" => 1693,
         "Adonara Tengah" => 1694,
@@ -4851,7 +4851,7 @@ function commerce_rajaongkir_locality_block() {
         "Witihama (Watihama)" => 1708,
         "Wotan Ulumado" => 1709,
         "Wulanggitang" => 1710,
-       ),
+      ),
       "Kupang (Kabupaten)" => array(
         "Amabi Oefeto" => 2974,
         "Amabi Oefeto Timur" => 2975,
@@ -4877,7 +4877,7 @@ function commerce_rajaongkir_locality_block() {
         "Sulamu" => 2995,
         "Taebenu" => 2996,
         "Takari" => 2997,
-       ),
+      ),
       "Kupang (Kota)" => array(
         "Alak" => 2998,
         "Kelapa Lima" => 2999,
@@ -4885,8 +4885,8 @@ function commerce_rajaongkir_locality_block() {
         "Kota Raja" => 3001,
         "Maulafa" => 3002,
         "Oebobo" => 3003,
-       ),
-      "Lembata (Kabupaten)" => array(
+      ),
+      "Lembata" => array(
         "Atadei" => 3338,
         "Buyasuri (Buyasari)" => 3339,
         "Ile Ape" => 3340,
@@ -4896,8 +4896,8 @@ function commerce_rajaongkir_locality_block() {
         "Nubatukan" => 3344,
         "Omesuri" => 3345,
         "Wulandoni (Wulandioni)" => 3346,
-       ),
-      "Manggarai (Kabupaten)" => array(
+      ),
+      "Manggarai" => array(
         "Cibal" => 3802,
         "Cibal Barat" => 3803,
         "Langke Rembong" => 3804,
@@ -4909,8 +4909,8 @@ function commerce_rajaongkir_locality_block() {
         "Satar Mese" => 3810,
         "Satar Mese Barat" => 3811,
         "Wae Rii" => 3812,
-       ),
-      "Manggarai Barat (Kabupaten)" => array(
+      ),
+      "Manggarai Barat" => array(
         "Boleng" => 3813,
         "Komodo" => 3814,
         "Kuwus" => 3815,
@@ -4921,8 +4921,8 @@ function commerce_rajaongkir_locality_block() {
         "Ndoso" => 3820,
         "Sano Nggoang" => 3821,
         "Welak" => 3822,
-       ),
-      "Manggarai Timur (Kabupaten)" => array(
+      ),
+      "Manggarai Timur" => array(
         "Borong" => 3823,
         "Elar" => 3824,
         "Elar Selatan" => 3825,
@@ -4932,8 +4932,8 @@ function commerce_rajaongkir_locality_block() {
         "Poco Ranaka Timur" => 3829,
         "Rana Mese" => 3830,
         "Sambi Rampas" => 3831,
-       ),
-      "Nagekeo (Kabupaten)" => array(
+      ),
+      "Nagekeo" => array(
         "Aesesa" => 4260,
         "Aesesa Selatan" => 4261,
         "Boawae" => 4262,
@@ -4941,8 +4941,8 @@ function commerce_rajaongkir_locality_block() {
         "Mauponggo" => 4264,
         "Nangaroro" => 4265,
         "Wolowae" => 4266,
-       ),
-      "Ngada (Kabupaten)" => array(
+      ),
+      "Ngada" => array(
         "Aimere" => 4311,
         "Bajawa" => 4312,
         "Bajawa Utara" => 4313,
@@ -4955,8 +4955,8 @@ function commerce_rajaongkir_locality_block() {
         "Riung Barat" => 4320,
         "Soa" => 4321,
         "Wolomeze (Riung Selatan)" => 4322,
-       ),
-      "Rote Ndao (Kabupaten)" => array(
+      ),
+      "Rote Ndao" => array(
         "Landu Leko" => 5334,
         "Lobalain" => 5335,
         "Ndao Nuse" => 5336,
@@ -4967,16 +4967,16 @@ function commerce_rajaongkir_locality_block() {
         "Rote Selatan" => 5341,
         "Rote Tengah" => 5342,
         "Rote Timur" => 5343,
-       ),
-      "Sabu Raijua (Kabupaten)" => array(
+      ),
+      "Sabu Raijua" => array(
         "Hawu Mehara" => 5346,
         "Raijua" => 5347,
         "Sabu Barat" => 5348,
         "Sabu Liae" => 5349,
         "Sabu Tengah" => 5350,
         "Sabu Timur" => 5351,
-       ),
-      "Sikka (Kabupaten)" => array(
+      ),
+      "Sikka" => array(
         "Alok" => 5672,
         "Alok Barat" => 5673,
         "Alok Timur" => 5674,
@@ -4998,16 +4998,16 @@ function commerce_rajaongkir_locality_block() {
         "Tana Wawo" => 5690,
         "Waiblama" => 5691,
         "Waigete" => 5692,
-       ),
-      "Sumba Barat (Kabupaten)" => array(
+      ),
+      "Sumba Barat" => array(
         "Kota Waikabubak" => 5989,
         "Lamboya" => 5990,
         "Lamboya Barat" => 5991,
         "Loli" => 5992,
         "Tana Righu" => 5993,
         "Wanokaka" => 5994,
-       ),
-      "Sumba Barat Daya (Kabupaten)" => array(
+      ),
+      "Sumba Barat Daya" => array(
         "Kodi" => 5995,
         "Kodi Balaghar" => 5996,
         "Kodi Bangedo" => 5997,
@@ -5019,15 +5019,15 @@ function commerce_rajaongkir_locality_block() {
         "Wewewa Tengah (Wewera Tengah)" => 6003,
         "Wewewa Timur" => 6004,
         "Wewewa Utara" => 6005,
-       ),
-      "Sumba Tengah (Kabupaten)" => array(
+      ),
+      "Sumba Tengah" => array(
         "Katikutana" => 6006,
         "Katikutana Selatan" => 6007,
         "Mamboro" => 6008,
         "Umbu Ratu Nggay" => 6009,
         "Umbu Ratu Nggay Barat" => 6010,
-       ),
-      "Sumba Timur (Kabupaten)" => array(
+      ),
+      "Sumba Timur" => array(
         "Haharu" => 6011,
         "Kahaunguweti (Kahaungu Eti)" => 6012,
         "Kambata Mapambuhang" => 6013,
@@ -5050,8 +5050,8 @@ function commerce_rajaongkir_locality_block() {
         "Tabundung" => 6030,
         "Umalulu" => 6031,
         "Wula Waijelu" => 6032,
-       ),
-      "Timor Tengah Selatan (Kabupaten)" => array(
+      ),
+      "Timor Tengah Selatan" => array(
         "Amanatun Selatan" => 6596,
         "Amanatun Utara" => 6597,
         "Amanuban Barat" => 6598,
@@ -5084,8 +5084,8 @@ function commerce_rajaongkir_locality_block() {
         "Santian" => 6625,
         "Tobu" => 6626,
         "Toianas" => 6627,
-       ),
-      "Timor Tengah Utara (Kabupaten)" => array(
+      ),
+      "Timor Tengah Utara" => array(
         "Biboki Anleu" => 6628,
         "Biboki Feotleu" => 6629,
         "Biboki Moenleu" => 6630,
@@ -5110,10 +5110,10 @@ function commerce_rajaongkir_locality_block() {
         "Naibenu" => 6649,
         "Noemuti" => 6650,
         "Noemuti Timur" => 6651,
-       ),
+      ),
     ),
     "Papua" => array(
-      "Asmat (Kabupaten)" => array(
+      "Asmat" => array(
         "Agats" => 239,
         "Akat" => 240,
         "Atsy / Atsj" => 241,
@@ -5133,8 +5133,8 @@ function commerce_rajaongkir_locality_block() {
         "Suator" => 255,
         "Suru-suru" => 256,
         "Unir Sirau" => 257,
-       ),
-      "Biak Numfor (Kabupaten)" => array(
+      ),
+      "Biak Numfor" => array(
         "Aimando Padaido" => 892,
         "Andey (Andei)" => 893,
         "Biak Barat" => 894,
@@ -5154,8 +5154,8 @@ function commerce_rajaongkir_locality_block() {
         "Warsa" => 908,
         "Yawosi" => 909,
         "Yendidori" => 910,
-       ),
-      "Boven Digoel (Kabupaten)" => array(
+      ),
+      "Boven Digoel" => array(
         "Ambatkwi (Ambatkui)" => 1220,
         "Arimop" => 1221,
         "Bomakia" => 1222,
@@ -5176,15 +5176,15 @@ function commerce_rajaongkir_locality_block() {
         "Subur" => 1237,
         "Waropko" => 1238,
         "Yaniruma" => 1239,
-       ),
-      "Deiyai (Deliyai) (Kabupaten)" => array(
+      ),
+      "Deiyai (Deliyai)" => array(
         "Bowobado" => 1532,
         "Kapiraya" => 1533,
         "Tigi" => 1534,
         "Tigi Barat" => 1535,
         "Tigi Timur" => 1536,
-       ),
-      "Dogiyai (Kabupaten)" => array(
+      ),
+      "Dogiyai" => array(
         "Dogiyai" => 1599,
         "Kamu" => 1600,
         "Kamu Selatan" => 1601,
@@ -5195,15 +5195,15 @@ function commerce_rajaongkir_locality_block() {
         "Mapia Tengah" => 1606,
         "Piyaiye (Sukikai)" => 1607,
         "Sukikai Selatan" => 1608,
-       ),
-      "Intan Jaya (Kabupaten)" => array(
+      ),
+      "Intan Jaya" => array(
         "Agisiga" => 2081,
         "Biandoga" => 2082,
         "Hitadipa" => 2083,
         "Homeo (Homeyo)" => 2084,
         "Sugapa" => 2085,
         "Wandai" => 2086,
-       ),
+      ),
       "Jayapura (Kabupaten)" => array(
         "Airu" => 2137,
         "Demta" => 2138,
@@ -5224,15 +5224,15 @@ function commerce_rajaongkir_locality_block() {
         "Waibu" => 2153,
         "Yapsi" => 2154,
         "Yokari" => 2155,
-       ),
+      ),
       "Jayapura (Kota)" => array(
         "Abepura" => 2156,
         "Heram" => 2157,
         "Jayapura Selatan" => 2158,
         "Jayapura Utara" => 2159,
         "Muara Tami" => 2160,
-       ),
-      "Jayawijaya (Kabupaten)" => array(
+      ),
+      "Jayawijaya" => array(
         "Asologaima (Asalogaima)" => 2161,
         "Asolokobal" => 2162,
         "Asotipo" => 2163,
@@ -5273,8 +5273,8 @@ function commerce_rajaongkir_locality_block() {
         "Wollo (Wolo)" => 2198,
         "Wouma" => 2199,
         "Yalengga" => 2200,
-       ),
-      "Keerom (Kabupaten)" => array(
+      ),
+      "Keerom" => array(
         "Arso" => 2526,
         "Arso Timur" => 2527,
         "Senggi" => 2528,
@@ -5282,8 +5282,8 @@ function commerce_rajaongkir_locality_block() {
         "Towe" => 2530,
         "Waris" => 2531,
         "Web" => 2532,
-       ),
-      "Kepulauan Yapen (Yapen Waropen) (Kabupaten)" => array(
+      ),
+      "Kepulauan Yapen (Yapen Waropen)" => array(
         "Angkaisera" => 2672,
         "Kepulauan Ambai" => 2673,
         "Kosiwo" => 2674,
@@ -5298,8 +5298,8 @@ function commerce_rajaongkir_locality_block() {
         "Yapen Selatan" => 2683,
         "Yapen Timur" => 2684,
         "Yapen Utara" => 2685,
-       ),
-      "Lanny Jaya (Kabupaten)" => array(
+      ),
+      "Lanny Jaya" => array(
         "Balingga" => 3288,
         "Dimba" => 3289,
         "Gamelia" => 3290,
@@ -5310,8 +5310,8 @@ function commerce_rajaongkir_locality_block() {
         "Poga" => 3295,
         "Tiom" => 3296,
         "Tiomneri" => 3297,
-       ),
-      "Mamberamo Raya (Kabupaten)" => array(
+      ),
+      "Mamberamo Raya" => array(
         "Benuki" => 3727,
         "Mamberamo Hilir/Ilir" => 3728,
         "Mamberamo Hulu/Ulu" => 3729,
@@ -5320,15 +5320,15 @@ function commerce_rajaongkir_locality_block() {
         "Rofaer (Rufaer)" => 3732,
         "Sawai" => 3733,
         "Waropen Atas" => 3734,
-       ),
-      "Mamberamo Tengah (Kabupaten)" => array(
+      ),
+      "Mamberamo Tengah" => array(
         "Eragayam" => 3735,
         "Ilugwa" => 3736,
         "Kelila" => 3737,
         "Kobakma" => 3738,
         "Megabilis (Megambilis)" => 3739,
-       ),
-      "Mappi (Kabupaten)" => array(
+      ),
+      "Mappi" => array(
         "Assue" => 3847,
         "Bamgi" => 3848,
         "Citakmitak" => 3849,
@@ -5344,8 +5344,8 @@ function commerce_rajaongkir_locality_block() {
         "Ti Zain" => 3859,
         "Venaha" => 3860,
         "Yakomi" => 3861,
-       ),
-      "Merauke (Kabupaten)" => array(
+      ),
+      "Merauke" => array(
         "Animha" => 3962,
         "Eligobel" => 3963,
         "Ilyawab" => 3964,
@@ -5366,8 +5366,8 @@ function commerce_rajaongkir_locality_block() {
         "Tubang" => 3979,
         "Ulilin" => 3980,
         "Waan" => 3981,
-       ),
-      "Mimika (Kabupaten)" => array(
+      ),
+      "Mimika" => array(
         "Agimuga" => 3994,
         "Jila" => 3995,
         "Jita" => 3996,
@@ -5380,8 +5380,8 @@ function commerce_rajaongkir_locality_block() {
         "Mimika Timur Jauh" => 4003,
         "Mimika Timur Tengah" => 4004,
         "Tembagapura" => 4005,
-       ),
-      "Nabire (Kabupaten)" => array(
+      ),
+      "Nabire" => array(
         "Dipa" => 4235,
         "Makimi" => 4236,
         "Menou" => 4237,
@@ -5397,8 +5397,8 @@ function commerce_rajaongkir_locality_block() {
         "Wapoga" => 4247,
         "Yaro (Yaro Kabisay)" => 4248,
         "Yaur" => 4249,
-       ),
-      "Nduga (Kabupaten)" => array(
+      ),
+      "Nduga" => array(
         "Alama" => 4279,
         "Dal" => 4280,
         "Embetpen" => 4281,
@@ -5431,8 +5431,8 @@ function commerce_rajaongkir_locality_block() {
         "Yal" => 4308,
         "Yenggelo" => 4309,
         "Yigi" => 4310,
-       ),
-      "Paniai (Kabupaten)" => array(
+      ),
+      "Paniai" => array(
         "Aradide" => 4720,
         "Bibida" => 4721,
         "Bogobaida" => 4722,
@@ -5443,8 +5443,8 @@ function commerce_rajaongkir_locality_block() {
         "Paniai Timur" => 4727,
         "Siriwo" => 4728,
         "Yatamo" => 4729,
-       ),
-      "Pegunungan Bintang (Kabupaten)" => array(
+      ),
+      "Pegunungan Bintang" => array(
         "Aboy" => 4857,
         "Alemsom" => 4858,
         "Awinbon" => 4859,
@@ -5479,8 +5479,8 @@ function commerce_rajaongkir_locality_block() {
         "Tarup" => 4888,
         "Teiraplu" => 4889,
         "Weime" => 4890,
-       ),
-      "Puncak (Kabupaten)" => array(
+      ),
+      "Puncak" => array(
         "Agadugume" => 5183,
         "Beoga" => 5184,
         "Doufu" => 5185,
@@ -5489,8 +5489,8 @@ function commerce_rajaongkir_locality_block() {
         "Pogoma" => 5188,
         "Sinak" => 5189,
         "Wangbe" => 5190,
-       ),
-      "Puncak Jaya (Kabupaten)" => array(
+      ),
+      "Puncak Jaya" => array(
         "Fawi" => 5191,
         "Ilu" => 5192,
         "Jigonikme" => 5193,
@@ -5499,8 +5499,8 @@ function commerce_rajaongkir_locality_block() {
         "Tingginambut" => 5196,
         "Torere" => 5197,
         "Yamo" => 5198,
-       ),
-      "Sarmi (Kabupaten)" => array(
+      ),
+      "Sarmi" => array(
         "Apawer Hulu" => 5423,
         "Bonggo" => 5424,
         "Bonggo Timur" => 5425,
@@ -5511,15 +5511,15 @@ function commerce_rajaongkir_locality_block() {
         "Sarmi Selatan" => 5430,
         "Sarmi Timur" => 5431,
         "Tor Atas" => 5432,
-       ),
-      "Supiori (Kabupaten)" => array(
+      ),
+      "Supiori" => array(
         "Kepulauan Aruri" => 6126,
         "Supiori Barat" => 6127,
         "Supiori Selatan" => 6128,
         "Supiori Timur" => 6129,
         "Supiori Utara" => 6130,
-       ),
-      "Tolikara (Kabupaten)" => array(
+      ),
+      "Tolikara" => array(
         "Airgaram" => 6687,
         "Anawi" => 6688,
         "Aweku" => 6689,
@@ -5566,8 +5566,8 @@ function commerce_rajaongkir_locality_block() {
         "Wunin (Wumin)" => 6730,
         "Yuko" => 6731,
         "Yuneri" => 6732,
-       ),
-      "Waropen (Kabupaten)" => array(
+      ),
+      "Waropen" => array(
         "Demba Masirei" => 6862,
         "Inggerus" => 6863,
         "Kirihi" => 6864,
@@ -5577,8 +5577,8 @@ function commerce_rajaongkir_locality_block() {
         "Ureifasei" => 6868,
         "Wapoga Inggerus" => 6869,
         "Waropen Bawah" => 6870,
-       ),
-      "Yahukimo (Kabupaten)" => array(
+      ),
+      "Yahukimo" => array(
         "Amuma" => 6925,
         "Anggruk" => 6926,
         "Bomela" => 6927,
@@ -5630,17 +5630,17 @@ function commerce_rajaongkir_locality_block() {
         "Wusuma" => 6973,
         "Yahuliambut" => 6974,
         "Yogosem" => 6975,
-       ),
-      "Yalimo (Kabupaten)" => array(
+      ),
+      "Yalimo" => array(
         "Abenaho" => 6976,
         "Apalapsili" => 6977,
         "Benawa" => 6978,
         "Elelim" => 6979,
         "Welarek" => 6980,
-       ),
+      ),
     ),
     "Papua Barat" => array(
-      "Fakfak (Kabupaten)" => array(
+      "Fakfak" => array(
         "Bombarai (Bomberay)" => 1683,
         "Fakfak" => 1684,
         "Fakfak Barat" => 1685,
@@ -5650,8 +5650,8 @@ function commerce_rajaongkir_locality_block() {
         "Kokas" => 1689,
         "Kramongmongga (Kramamongga)" => 1690,
         "Teluk Patipi" => 1691,
-       ),
-      "Kaimana (Kabupaten)" => array(
+      ),
+      "Kaimana" => array(
         "Buruway" => 2285,
         "Kaimana" => 2286,
         "Kambraw (Kamberau)" => 2287,
@@ -5659,8 +5659,8 @@ function commerce_rajaongkir_locality_block() {
         "Teluk Arguni Bawah (Yerusi)" => 2289,
         "Teluk Etna" => 2290,
         "Yamor" => 2291,
-       ),
-      "Manokwari (Kabupaten)" => array(
+      ),
+      "Manokwari" => array(
         "Manokwari Barat" => 3832,
         "Manokwari Selatan" => 3833,
         "Manokwari Timur" => 3834,
@@ -5670,16 +5670,16 @@ function commerce_rajaongkir_locality_block() {
         "Sidey" => 3838,
         "Tanah Rubuh" => 3839,
         "Warmare" => 3840,
-       ),
-      "Manokwari Selatan (Kabupaten)" => array(
+      ),
+      "Manokwari Selatan" => array(
         "Dataran Isim" => 3841,
         "Momi Waren" => 3842,
         "Neney (Nenei)" => 3843,
         "Oransbari" => 3844,
         "Ransiki" => 3845,
         "Tahota (Tohota)" => 3846,
-       ),
-      "Maybrat (Kabupaten)" => array(
+      ),
+      "Maybrat" => array(
         "Aifat" => 3882,
         "Aifat Selatan" => 3883,
         "Aifat Timur" => 3884,
@@ -5704,8 +5704,8 @@ function commerce_rajaongkir_locality_block() {
         "Ayamaru Utara Timur" => 3903,
         "Mare" => 3904,
         "Mare Selatan" => 3905,
-       ),
-      "Pegunungan Arfak (Kabupaten)" => array(
+      ),
+      "Pegunungan Arfak" => array(
         "Anggi" => 4847,
         "Anggi Gida" => 4848,
         "Catubouw" => 4849,
@@ -5716,8 +5716,8 @@ function commerce_rajaongkir_locality_block() {
         "Sururey" => 4854,
         "Taige" => 4855,
         "Testega" => 4856,
-       ),
-      "Raja Ampat (Kabupaten)" => array(
+      ),
+      "Raja Ampat" => array(
         "Ayau" => 5250,
         "Batanta Selatan" => 5251,
         "Batanta Utara" => 5252,
@@ -5742,7 +5742,7 @@ function commerce_rajaongkir_locality_block() {
         "Waigeo Timur" => 5271,
         "Waigeo Utara" => 5272,
         "Warwabomi" => 5273,
-       ),
+      ),
       "Sorong (Kabupaten)" => array(
         "Aimas" => 5827,
         "Beraur" => 5828,
@@ -5761,7 +5761,7 @@ function commerce_rajaongkir_locality_block() {
         "Sayosa" => 5841,
         "Seget" => 5842,
         "Segun" => 5843,
-       ),
+      ),
       "Sorong (Kota)" => array(
         "Sorong" => 5844,
         "Sorong Barat" => 5845,
@@ -5769,8 +5769,8 @@ function commerce_rajaongkir_locality_block() {
         "Sorong Manoi" => 5847,
         "Sorong Timur" => 5848,
         "Sorong Utara" => 5849,
-       ),
-      "Sorong Selatan (Kabupaten)" => array(
+      ),
+      "Sorong Selatan" => array(
         "Fokour" => 5850,
         "Inanwatan (Inawatan)" => 5851,
         "Kais (Matemani Kais)" => 5852,
@@ -5784,8 +5784,8 @@ function commerce_rajaongkir_locality_block() {
         "Seremuk" => 5860,
         "Teminabuan" => 5861,
         "Wayer" => 5862,
-       ),
-      "Tambrauw (Kabupaten)" => array(
+      ),
+      "Tambrauw" => array(
         "Abun" => 6198,
         "Amberbaken" => 6199,
         "Fef (Peef)" => 6200,
@@ -5798,8 +5798,8 @@ function commerce_rajaongkir_locality_block() {
         "Senopi" => 6207,
         "Syujak" => 6208,
         "Yembun" => 6209,
-       ),
-      "Teluk Bintuni (Kabupaten)" => array(
+      ),
+      "Teluk Bintuni" => array(
         "Aranday" => 6524,
         "Aroba" => 6525,
         "Babo" => 6526,
@@ -5824,8 +5824,8 @@ function commerce_rajaongkir_locality_block() {
         "Tuhiba" => 6545,
         "Wamesa (Idoor)" => 6546,
         "Weriagar" => 6547,
-       ),
-      "Teluk Wondama (Kabupaten)" => array(
+      ),
+      "Teluk Wondama" => array(
         "Kuri Wamesa" => 6548,
         "Naikere (Wasior Barat)" => 6549,
         "Nikiwar" => 6550,
@@ -5839,10 +5839,10 @@ function commerce_rajaongkir_locality_block() {
         "Wasior" => 6558,
         "Windesi" => 6559,
         "Wondiboy (Wasior Selatan)" => 6560,
-       ),
+      ),
     ),
     "Riau" => array(
-      "Bengkalis (Kabupaten)" => array(
+      "Bengkalis" => array(
         "Bantan" => 807,
         "Bengkalis" => 808,
         "Bukit Batu" => 809,
@@ -5851,8 +5851,8 @@ function commerce_rajaongkir_locality_block() {
         "Rupat" => 812,
         "Rupat Utara" => 813,
         "Siak Kecil" => 814,
-       ),
-      "Dumai (Kota)" => array(
+      ),
+      "Dumai" => array(
         "Bukit Kapur" => 1633,
         "Dumai Barat" => 1634,
         "Dumai Kota" => 1635,
@@ -5860,8 +5860,8 @@ function commerce_rajaongkir_locality_block() {
         "Dumai Timur" => 1637,
         "Medang Kampai" => 1638,
         "Sungai Sembilan" => 1639,
-       ),
-      "Indragiri Hilir (Kabupaten)" => array(
+      ),
+      "Indragiri Hilir" => array(
         "Batang Tuaka" => 2016,
         "Concong" => 2017,
         "Enok" => 2018,
@@ -5882,8 +5882,8 @@ function commerce_rajaongkir_locality_block() {
         "Tembilahan" => 2033,
         "Tembilahan Hulu" => 2034,
         "Tempuling" => 2035,
-       ),
-      "Indragiri Hulu (Kabupaten)" => array(
+      ),
+      "Indragiri Hulu" => array(
         "Batang Cenaku" => 2036,
         "Batang Gansal" => 2037,
         "Batang Peranap" => 2038,
@@ -5898,8 +5898,8 @@ function commerce_rajaongkir_locality_block() {
         "Rengat Barat" => 2047,
         "Seberida" => 2048,
         "Sungai Lala" => 2049,
-       ),
-      "Kampar (Kabupaten)" => array(
+      ),
+      "Kampar" => array(
         "Bangkinang" => 2292,
         "Bangkinang Seberang" => 2293,
         "Gunung Sahilan" => 2294,
@@ -5921,8 +5921,8 @@ function commerce_rajaongkir_locality_block() {
         "Tapung Hilir" => 2310,
         "Tapung Hulu" => 2311,
         "XIII Koto Kampar" => 2312,
-       ),
-      "Kepulauan Meranti (Kabupaten)" => array(
+      ),
+      "Kepulauan Meranti" => array(
         "Merbau" => 2598,
         "Pulaumerbau" => 2599,
         "Rangsang" => 2600,
@@ -5932,8 +5932,8 @@ function commerce_rajaongkir_locality_block() {
         "Tebing Tinggi" => 2604,
         "Tebing Tinggi Barat" => 2605,
         "Tebing Tinggi Timur" => 2606,
-       ),
-      "Kuantan Singingi (Kabupaten)" => array(
+      ),
+      "Kuantan Singingi" => array(
         "Benai" => 2897,
         "Cerenti" => 2898,
         "Gunung Toar" => 2899,
@@ -5949,8 +5949,8 @@ function commerce_rajaongkir_locality_block() {
         "Sentajo Raya" => 2909,
         "Singingi" => 2910,
         "Singingi Hilir" => 2911,
-       ),
-      "Pekanbaru (Kota)" => array(
+      ),
+      "Pekanbaru" => array(
         "Bukit Raya" => 4914,
         "Lima Puluh" => 4915,
         "Marpoyan Damai" => 4916,
@@ -5963,8 +5963,8 @@ function commerce_rajaongkir_locality_block() {
         "Sukajadi" => 4923,
         "Tampan" => 4924,
         "Tenayan Raya" => 4925,
-       ),
-      "Pelalawan (Kabupaten)" => array(
+      ),
+      "Pelalawan" => array(
         "Bandar Petalangan" => 4926,
         "Bandar Sei Kijang" => 4927,
         "Bunut" => 4928,
@@ -5977,8 +5977,8 @@ function commerce_rajaongkir_locality_block() {
         "Pelalawan" => 4935,
         "Teluk Meranti" => 4936,
         "Ukui" => 4937,
-       ),
-      "Rokan Hilir (Kabupaten)" => array(
+      ),
+      "Rokan Hilir" => array(
         "Bagan Sinembah" => 5303,
         "Bangko" => 5304,
         "Bangko Pusaka (Pusako)" => 5305,
@@ -5994,8 +5994,8 @@ function commerce_rajaongkir_locality_block() {
         "Sinaboi (Senaboi)" => 5315,
         "Tanah Putih" => 5316,
         "Tanah Putih Tanjung Melawan" => 5317,
-       ),
-      "Rokan Hulu (Kabupaten)" => array(
+      ),
+      "Rokan Hulu" => array(
         "Bangun Purba" => 5318,
         "Bonai Darussalam" => 5319,
         "Kabun" => 5320,
@@ -6012,8 +6012,8 @@ function commerce_rajaongkir_locality_block() {
         "Tambusai Utara" => 5331,
         "Tandun" => 5332,
         "Ujung Batu" => 5333,
-       ),
-      "Siak (Kabupaten)" => array(
+      ),
+      "Siak" => array(
         "Bunga Raya" => 5602,
         "Dayun" => 5603,
         "Kandis" => 5604,
@@ -6028,10 +6028,10 @@ function commerce_rajaongkir_locality_block() {
         "Sungai Apit" => 5613,
         "Sungai Mandau" => 5614,
         "Tualang" => 5615,
-       ),
+      ),
     ),
     "Sulawesi Barat" => array(
-      "Majene (Kabupaten)" => array(
+      "Majene" => array(
         "Banggae" => 3579,
         "Banggae Timur" => 3580,
         "Malunda" => 3581,
@@ -6040,8 +6040,8 @@ function commerce_rajaongkir_locality_block() {
         "Tammeredo Sendana" => 3584,
         "Tubo (Tubo Sendana)" => 3585,
         "Ulumunda" => 3586,
-       ),
-      "Mamasa (Kabupaten)" => array(
+      ),
+      "Mamasa" => array(
         "Aralle (Arrale)" => 3710,
         "Balla" => 3711,
         "Bambang" => 3712,
@@ -6059,8 +6059,8 @@ function commerce_rajaongkir_locality_block() {
         "Tabulahan" => 3724,
         "Tanduk Kalua" => 3725,
         "Tawalian" => 3726,
-       ),
-      "Mamuju (Kabupaten)" => array(
+      ),
+      "Mamuju" => array(
         "Bonehau" => 3740,
         "Budong-Budong" => 3741,
         "Kalukku" => 3742,
@@ -6077,8 +6077,8 @@ function commerce_rajaongkir_locality_block() {
         "Tobadak" => 3753,
         "Tommo" => 3754,
         "Topoyo" => 3755,
-       ),
-      "Mamuju Utara (Kabupaten)" => array(
+      ),
+      "Mamuju Utara" => array(
         "Bambaira" => 3756,
         "Bambalamotu" => 3757,
         "Baras" => 3758,
@@ -6091,8 +6091,8 @@ function commerce_rajaongkir_locality_block() {
         "Sarjo" => 3765,
         "Sarudu" => 3766,
         "Tikke Raya" => 3767,
-       ),
-      "Polewali Mandar (Kabupaten)" => array(
+      ),
+      "Polewali Mandar" => array(
         "Alu (Allu)" => 5055,
         "Anreapi" => 5056,
         "Balanipa" => 5057,
@@ -6109,10 +6109,10 @@ function commerce_rajaongkir_locality_block() {
         "Tinambung" => 5068,
         "Tubbi Taramanu (Tutar/Tutallu)" => 5069,
         "Wonomulyo" => 5070,
-       ),
+      ),
     ),
     "Sulawesi Selatan" => array(
-      "Bantaeng (Kabupaten)" => array(
+      "Bantaeng" => array(
         "Bantaeng" => 529,
         "Bissappu" => 530,
         "Eremerasa" => 531,
@@ -6121,8 +6121,8 @@ function commerce_rajaongkir_locality_block() {
         "Sinoa" => 534,
         "Tompobulu" => 535,
         "Uluere" => 536,
-       ),
-      "Barru (Kabupaten)" => array(
+      ),
+      "Barru" => array(
         "Balusu" => 666,
         "Barru" => 667,
         "Mallusetasi" => 668,
@@ -6130,8 +6130,8 @@ function commerce_rajaongkir_locality_block() {
         "Soppeng Riaja" => 670,
         "Tanete Riaja" => 671,
         "Tanete Rilau" => 672,
-       ),
-      "Bone (Kabupaten)" => array(
+      ),
+      "Bone" => array(
         "Ajangale" => 1172,
         "Amali" => 1173,
         "Awangpone" => 1174,
@@ -6159,8 +6159,8 @@ function commerce_rajaongkir_locality_block() {
         "Tellu Siattinge" => 1196,
         "Tonra" => 1197,
         "Ulaweng" => 1198,
-       ),
-      "Bulukumba (Kabupaten)" => array(
+      ),
+      "Bulukumba" => array(
         "Bonto Bahari" => 1288,
         "Bontotiro" => 1289,
         "Bulukumba (Bulukumpa)" => 1290,
@@ -6171,8 +6171,8 @@ function commerce_rajaongkir_locality_block() {
         "Rilau Ale" => 1295,
         "Ujung Bulu" => 1296,
         "Ujung Loe" => 1297,
-       ),
-      "Enrekang (Kabupaten)" => array(
+      ),
+      "Enrekang" => array(
         "Alla" => 1671,
         "Anggeraja" => 1672,
         "Baraka" => 1673,
@@ -6185,8 +6185,8 @@ function commerce_rajaongkir_locality_block() {
         "Maiwa" => 1680,
         "Malua" => 1681,
         "Masalle" => 1682,
-       ),
-      "Gowa (Kabupaten)" => array(
+      ),
+      "Gowa" => array(
         "Bajeng" => 1810,
         "Bajeng Barat" => 1811,
         "Barombong" => 1812,
@@ -6205,8 +6205,8 @@ function commerce_rajaongkir_locality_block() {
         "Tinggimoncong" => 1825,
         "Tombolo Pao" => 1826,
         "Tompobulu" => 1827,
-       ),
-      "Jeneponto (Kabupaten)" => array(
+      ),
+      "Jeneponto" => array(
         "Arungkeke" => 2237,
         "Bangkala" => 2238,
         "Bangkala Barat" => 2239,
@@ -6218,8 +6218,8 @@ function commerce_rajaongkir_locality_block() {
         "Tamalatea" => 2245,
         "Tarowang" => 2246,
         "Turatea" => 2247,
-       ),
-      "Luwu (Kabupaten)" => array(
+      ),
+      "Luwu" => array(
         "Bajo" => 3448,
         "Bajo Barat" => 3449,
         "Basse Sangtempe Utara" => 3450,
@@ -6242,8 +6242,8 @@ function commerce_rajaongkir_locality_block() {
         "Walenrang Barat" => 3467,
         "Walenrang Timur" => 3468,
         "Walenrang Utara" => 3469,
-       ),
-      "Luwu Timur (Kabupaten)" => array(
+      ),
+      "Luwu Timur" => array(
         "Angkona" => 3470,
         "Burau" => 3471,
         "Kalaena" => 3472,
@@ -6255,8 +6255,8 @@ function commerce_rajaongkir_locality_block() {
         "Towuti" => 3478,
         "Wasuponda" => 3479,
         "Wotu" => 3480,
-       ),
-      "Luwu Utara (Kabupaten)" => array(
+      ),
+      "Luwu Utara" => array(
         "Baebunta" => 3481,
         "Bone-Bone" => 3482,
         "Limbong" => 3483,
@@ -6269,8 +6269,8 @@ function commerce_rajaongkir_locality_block() {
         "Seko" => 3490,
         "Sukamaju" => 3491,
         "Tana Lili" => 3492,
-       ),
-      "Makassar (Kota)" => array(
+      ),
+      "Makassar" => array(
         "Biring Kanaya" => 3587,
         "Bontoala" => 3588,
         "Makassar" => 3589,
@@ -6285,8 +6285,8 @@ function commerce_rajaongkir_locality_block() {
         "Ujung Pandang" => 3598,
         "Ujung Tanah" => 3599,
         "Wajo" => 3600,
-       ),
-      "Maros (Kabupaten)" => array(
+      ),
+      "Maros" => array(
         "Bantimurung" => 3862,
         "Bontoa (Maros Utara)" => 3863,
         "Camba" => 3864,
@@ -6301,8 +6301,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanralili" => 3873,
         "Tompu Bulu" => 3874,
         "Turikale" => 3875,
-       ),
-      "Palopo (Kota)" => array(
+      ),
+      "Palopo" => array(
         "Bara" => 4625,
         "Mungkajang" => 4626,
         "Sendana" => 4627,
@@ -6312,8 +6312,8 @@ function commerce_rajaongkir_locality_block() {
         "Wara Selatan" => 4631,
         "Wara Timur" => 4632,
         "Wara Utara" => 4633,
-       ),
-      "Pangkajene Kepulauan (Kabupaten)" => array(
+      ),
+      "Pangkajene Kepulauan" => array(
         "Balocci" => 4700,
         "Bungoro" => 4701,
         "Labakkang" => 4702,
@@ -6327,14 +6327,14 @@ function commerce_rajaongkir_locality_block() {
         "Pangkajene" => 4710,
         "Segeri" => 4711,
         "Tondong Tallasa" => 4712,
-       ),
-      "Parepare (Kota)" => array(
+      ),
+      "Parepare" => array(
         "Bacukiki" => 4730,
         "Bacukiki Barat" => 4731,
         "Soreang" => 4732,
         "Ujung" => 4733,
-       ),
-      "Pinrang (Kabupaten)" => array(
+      ),
+      "Pinrang" => array(
         "Batulappa" => 5030,
         "Cempa" => 5031,
         "Duampanua" => 5032,
@@ -6347,8 +6347,8 @@ function commerce_rajaongkir_locality_block() {
         "Suppa" => 5039,
         "Tiroang" => 5040,
         "Watang Sawitto" => 5041,
-       ),
-      "Selayar (Kepulauan Selayar) (Kabupaten)" => array(
+      ),
+      "Selayar (Kepulauan Selayar)" => array(
         "Benteng" => 5454,
         "Bontoharu" => 5455,
         "Bontomanai" => 5456,
@@ -6360,8 +6360,8 @@ function commerce_rajaongkir_locality_block() {
         "Pasimassunggu" => 5462,
         "Pasimasunggu Timur" => 5463,
         "Takabonerate" => 5464,
-       ),
-      "Sidenreng Rappang/Rapang (Kabupaten)" => array(
+      ),
+      "Sidenreng Rappang/Rapang" => array(
         "Baranti" => 5620,
         "Dua Pitue" => 5621,
         "Kulo" => 5622,
@@ -6373,8 +6373,8 @@ function commerce_rajaongkir_locality_block() {
         "Tellu Limpoe" => 5628,
         "Watang Pulu" => 5629,
         "Wattang Sidenreng (Watang Sidenreng)" => 5630,
-       ),
-      "Sinjai (Kabupaten)" => array(
+      ),
+      "Sinjai" => array(
         "Bulupoddo" => 5739,
         "Pulau Sembilan" => 5740,
         "Sinjai Barat" => 5741,
@@ -6384,8 +6384,8 @@ function commerce_rajaongkir_locality_block() {
         "Sinjai Timur" => 5745,
         "Sinjai Utara" => 5746,
         "Tellu Limpoe" => 5747,
-       ),
-      "Soppeng (Kabupaten)" => array(
+      ),
+      "Soppeng" => array(
         "Citta" => 5819,
         "Donri-Donri" => 5820,
         "Ganra" => 5821,
@@ -6394,8 +6394,8 @@ function commerce_rajaongkir_locality_block() {
         "Liliraja (Lili Riaja)" => 5824,
         "Mario Riawa" => 5825,
         "Mario Riwawo" => 5826,
-       ),
-      "Takalar (Kabupaten)" => array(
+      ),
+      "Takalar" => array(
         "Galesong" => 6189,
         "Galesong Selatan" => 6190,
         "Galesong Utara" => 6191,
@@ -6405,8 +6405,8 @@ function commerce_rajaongkir_locality_block() {
         "Polombangkeng Selatan (Polobangkeng)" => 6195,
         "Polombangkeng Utara (Polobangkeng)" => 6196,
         "Sanrobone" => 6197,
-       ),
-      "Tana Toraja (Kabupaten)" => array(
+      ),
+      "Tana Toraja" => array(
         "Bittuang" => 6214,
         "Bonggakaradeng" => 6215,
         "Gandang Batu Sillanan" => 6216,
@@ -6426,8 +6426,8 @@ function commerce_rajaongkir_locality_block() {
         "Sangalla Selatan" => 6230,
         "Sangalla Utara" => 6231,
         "Simbuang" => 6232,
-       ),
-      "Toraja Utara (Kabupaten)" => array(
+      ),
+      "Toraja Utara" => array(
         "Awan Rante Karua" => 6738,
         "Balusu" => 6739,
         "Bangkelekila" => 6740,
@@ -6449,8 +6449,8 @@ function commerce_rajaongkir_locality_block() {
         "Tallunglipu" => 6756,
         "Tikala" => 6757,
         "Tondon" => 6758,
-       ),
-      "Wajo (Kabupaten)" => array(
+      ),
+      "Wajo" => array(
         "Belawa" => 6840,
         "Bola" => 6841,
         "Gilireng" => 6842,
@@ -6465,10 +6465,10 @@ function commerce_rajaongkir_locality_block() {
         "Takkalalla" => 6851,
         "Tana Sitolo" => 6852,
         "Tempe" => 6853,
-       ),
+      ),
     ),
     "Sulawesi Tengah" => array(
-      "Banggai (Kabupaten)" => array(
+      "Banggai" => array(
         "Balantak" => 384,
         "Balantak Selatan" => 385,
         "Balantak Utara" => 386,
@@ -6492,8 +6492,8 @@ function commerce_rajaongkir_locality_block() {
         "Simpang Raya" => 404,
         "Toili" => 405,
         "Toili Barat" => 406,
-       ),
-      "Banggai Kepulauan (Kabupaten)" => array(
+      ),
+      "Banggai Kepulauan" => array(
         "Banggai" => 407,
         "Banggai Selatan" => 408,
         "Banggai Tengah" => 409,
@@ -6513,8 +6513,8 @@ function commerce_rajaongkir_locality_block() {
         "Tinangkung Utara" => 423,
         "Totikum (Totikung)" => 424,
         "Totikum Selatan" => 425,
-       ),
-      "Buol (Kabupaten)" => array(
+      ),
+      "Buol" => array(
         "Biau" => 1325,
         "Bokat" => 1326,
         "Bukal" => 1327,
@@ -6526,8 +6526,8 @@ function commerce_rajaongkir_locality_block() {
         "Paleleh" => 1333,
         "Paleleh Barat" => 1334,
         "Tiloan" => 1335,
-       ),
-      "Donggala (Kabupaten)" => array(
+      ),
+      "Donggala" => array(
         "Balaesang" => 1617,
         "Balaesang Tanjung" => 1618,
         "Banawa" => 1619,
@@ -6544,8 +6544,8 @@ function commerce_rajaongkir_locality_block() {
         "Sojol" => 1630,
         "Sojol Utara" => 1631,
         "Tanantovea" => 1632,
-       ),
-      "Morowali (Kabupaten)" => array(
+      ),
+      "Morowali" => array(
         "Bahodopi" => 4090,
         "Bumi Raya" => 4091,
         "Bungku Barat" => 4092,
@@ -6565,8 +6565,8 @@ function commerce_rajaongkir_locality_block() {
         "Petasia Timur" => 4106,
         "Soyo Jaya" => 4107,
         "Wita Ponda" => 4108,
-       ),
-      "Palu (Kota)" => array(
+      ),
+      "Palu" => array(
         "Mantikulore" => 4634,
         "Palu Barat" => 4635,
         "Palu Selatan" => 4636,
@@ -6575,8 +6575,8 @@ function commerce_rajaongkir_locality_block() {
         "Tatanga" => 4639,
         "Tawaeli" => 4640,
         "Ulujadi" => 4641,
-       ),
-      "Parigi Moutong (Kabupaten)" => array(
+      ),
+      "Parigi Moutong" => array(
         "Ampibabo" => 4738,
         "Balinggi" => 4739,
         "Bolano" => 4740,
@@ -6599,8 +6599,8 @@ function commerce_rajaongkir_locality_block() {
         "Tomini" => 4757,
         "Toribulu" => 4758,
         "Torue" => 4759,
-       ),
-      "Poso (Kabupaten)" => array(
+      ),
+      "Poso" => array(
         "Lage" => 5107,
         "Lore Barat" => 5108,
         "Lore Piore" => 5109,
@@ -6620,8 +6620,8 @@ function commerce_rajaongkir_locality_block() {
         "Poso Pesisir" => 5123,
         "Poso Pesisir Selatan" => 5124,
         "Poso Pesisir Utara" => 5125,
-       ),
-      "Sigi (Kabupaten)" => array(
+      ),
+      "Sigi" => array(
         "Dolo" => 5649,
         "Dolo Barat" => 5650,
         "Dolo Selatan" => 5651,
@@ -6637,8 +6637,8 @@ function commerce_rajaongkir_locality_block() {
         "Pipikoro" => 5661,
         "Sigi Biromaru" => 5662,
         "Tanambulava" => 5663,
-       ),
-      "Tojo Una-Una (Kabupaten)" => array(
+      ),
+      "Tojo Una-Una" => array(
         "Ampana Kota" => 6668,
         "Ampana Tete" => 6669,
         "Togean" => 6670,
@@ -6648,8 +6648,8 @@ function commerce_rajaongkir_locality_block() {
         "Una - Una" => 6674,
         "Walea Besar" => 6675,
         "Walea Kepulauan" => 6676,
-       ),
-      "Toli-Toli (Kabupaten)" => array(
+      ),
+      "Toli-Toli" => array(
         "Baolan" => 6677,
         "Basidondo" => 6678,
         "Dako Pamean" => 6679,
@@ -6660,10 +6660,10 @@ function commerce_rajaongkir_locality_block() {
         "Lampasio" => 6684,
         "Ogo Deide" => 6685,
         "Tolitoli Utara" => 6686,
-       ),
+      ),
     ),
     "Sulawesi Tenggara" => array(
-      "Bau-Bau (Kota)" => array(
+      "Bau-Bau" => array(
         "Batupoaro" => 718,
         "Betoambari" => 719,
         "Bungi" => 720,
@@ -6672,8 +6672,8 @@ function commerce_rajaongkir_locality_block() {
         "Murhum" => 723,
         "Sora Walio (Sorowalio)" => 724,
         "Wolio" => 725,
-       ),
-      "Bombana (Kabupaten)" => array(
+      ),
+      "Bombana" => array(
         "Kabaena" => 1127,
         "Kabaena Barat" => 1128,
         "Kabaena Selatan" => 1129,
@@ -6696,8 +6696,8 @@ function commerce_rajaongkir_locality_block() {
         "Rumbia" => 1146,
         "Rumbia Tengah" => 1147,
         "Tontonunu (Tontonuwu)" => 1148,
-       ),
-      "Buton (Kabupaten)" => array(
+      ),
+      "Buton" => array(
         "Batauga" => 1352,
         "Batu Atas" => 1353,
         "Gu" => 1354,
@@ -6719,16 +6719,16 @@ function commerce_rajaongkir_locality_block() {
         "Talaga Raya (Telaga Raya)" => 1370,
         "Wabula" => 1371,
         "Wolowa" => 1372,
-       ),
-      "Buton Utara (Kabupaten)" => array(
+      ),
+      "Buton Utara" => array(
         "Bonegunu" => 1373,
         "Kambowa" => 1374,
         "Kulisusu (Kalingsusu/Kalisusu)" => 1375,
         "Kulisusu Barat" => 1376,
         "Kulisusu Utara" => 1377,
         "Wakorumba Utara" => 1378,
-       ),
-      "Kendari (Kota)" => array(
+      ),
+      "Kendari" => array(
         "Abeli" => 2553,
         "Baruga" => 2554,
         "Kadia" => 2555,
@@ -6739,8 +6739,8 @@ function commerce_rajaongkir_locality_block() {
         "Poasia" => 2560,
         "Puuwatu" => 2561,
         "Wua-Wua" => 2562,
-       ),
-      "Kolaka (Kabupaten)" => array(
+      ),
+      "Kolaka" => array(
         "Baula" => 2752,
         "Kolaka" => 2753,
         "Ladongi" => 2754,
@@ -6761,8 +6761,8 @@ function commerce_rajaongkir_locality_block() {
         "Watumbangga (Watubanggo)" => 2769,
         "Wolo" => 2770,
         "Wundulako" => 2771,
-       ),
-      "Kolaka Utara (Kabupaten)" => array(
+      ),
+      "Kolaka Utara" => array(
         "Batu Putih" => 2772,
         "Katoi" => 2773,
         "Kodeoha" => 2774,
@@ -6778,8 +6778,8 @@ function commerce_rajaongkir_locality_block() {
         "Tolala" => 2784,
         "Watunohu" => 2785,
         "Wawo" => 2786,
-       ),
-      "Konawe (Kabupaten)" => array(
+      ),
+      "Konawe" => array(
         "Abuki" => 2787,
         "Amonggedo" => 2788,
         "Anggaberi" => 2789,
@@ -6810,8 +6810,8 @@ function commerce_rajaongkir_locality_block() {
         "Wawonii Utara" => 2814,
         "Wawotobi" => 2815,
         "Wonggeduku" => 2816,
-       ),
-      "Konawe Selatan (Kabupaten)" => array(
+      ),
+      "Konawe Selatan" => array(
         "Andoolo" => 2817,
         "Angata" => 2818,
         "Baito" => 2819,
@@ -6834,8 +6834,8 @@ function commerce_rajaongkir_locality_block() {
         "Ranomeeto Barat" => 2836,
         "Tinanggea" => 2837,
         "Wolasi" => 2838,
-       ),
-      "Konawe Utara (Kabupaten)" => array(
+      ),
+      "Konawe Utara" => array(
         "Andowia" => 2839,
         "Asera" => 2840,
         "Langgikima" => 2841,
@@ -6846,8 +6846,8 @@ function commerce_rajaongkir_locality_block() {
         "Oheo" => 2846,
         "Sawa" => 2847,
         "Wiwirano" => 2848,
-       ),
-      "Muna (Kabupaten)" => array(
+      ),
+      "Muna" => array(
         "Barangka" => 4157,
         "Batalaiwaru (Batalaiworu)" => 4158,
         "Batukara" => 4159,
@@ -6881,8 +6881,8 @@ function commerce_rajaongkir_locality_block() {
         "Wa Daga" => 4187,
         "Wakorumba Selatan" => 4188,
         "Watopute" => 4189,
-       ),
-      "Wakatobi (Kabupaten)" => array(
+      ),
+      "Wakatobi" => array(
         "Binongko" => 6854,
         "Kaledupa" => 6855,
         "Kaledupa Selatan" => 6856,
@@ -6891,10 +6891,10 @@ function commerce_rajaongkir_locality_block() {
         "Tomia Timur" => 6859,
         "Wangi-Wangi" => 6860,
         "Wangi-Wangi Selatan" => 6861,
-       ),
+      ),
     ),
     "Sulawesi Utara" => array(
-      "Bitung (Kota)" => array(
+      "Bitung" => array(
         "Aertembaga (Bitung Timur)" => 966,
         "Girian" => 967,
         "Lembeh Selatan (Bitung Selatan)" => 968,
@@ -6903,8 +6903,8 @@ function commerce_rajaongkir_locality_block() {
         "Maesa" => 971,
         "Matuari (Bitung Barat)" => 972,
         "Ranowulu (Bitung Utara)" => 973,
-       ),
-      "Bolaang Mongondow (Bolmong) (Kabupaten)" => array(
+      ),
+      "Bolaang Mongondow (Bolmong)" => array(
         "Bilalang" => 1096,
         "Bolaang" => 1097,
         "Bolaang Timur" => 1098,
@@ -6920,30 +6920,30 @@ function commerce_rajaongkir_locality_block() {
         "Passi Timur" => 1108,
         "Poigar" => 1109,
         "Sangtombolang" => 1110,
-       ),
-      "Bolaang Mongondow Selatan (Kabupaten)" => array(
+      ),
+      "Bolaang Mongondow Selatan" => array(
         "Bolaang Uki" => 1111,
         "Pinolosian" => 1112,
         "Pinolosian Tengah" => 1113,
         "Pinolosian Timur" => 1114,
         "Posigadan" => 1115,
-       ),
-      "Bolaang Mongondow Timur (Kabupaten)" => array(
+      ),
+      "Bolaang Mongondow Timur" => array(
         "Kotabunan" => 1116,
         "Modayag" => 1117,
         "Modayag Barat" => 1118,
         "Nuangan" => 1119,
         "Tutuyan" => 1120,
-       ),
-      "Bolaang Mongondow Utara (Kabupaten)" => array(
+      ),
+      "Bolaang Mongondow Utara" => array(
         "Bintauna" => 1121,
         "Bolang Itang Barat" => 1122,
         "Bolang Itang Timur" => 1123,
         "Kaidipang" => 1124,
         "Pinogaluman" => 1125,
         "Sangkub" => 1126,
-       ),
-      "Kepulauan Sangihe (Kabupaten)" => array(
+      ),
+      "Kepulauan Sangihe" => array(
         "Kendahe" => 2607,
         "Kepulauan Marore" => 2608,
         "Manganitu" => 2609,
@@ -6959,8 +6959,8 @@ function commerce_rajaongkir_locality_block() {
         "Tahuna Timur" => 2619,
         "Tamako" => 2620,
         "Tatoareng" => 2621,
-       ),
-      "Kepulauan Siau Tagulandang Biaro (Sitaro) (Kabupaten)" => array(
+      ),
+      "Kepulauan Siau Tagulandang Biaro (Sitaro)" => array(
         "Biaro" => 2624,
         "Siau Barat" => 2625,
         "Siau Barat Selatan" => 2626,
@@ -6971,8 +6971,8 @@ function commerce_rajaongkir_locality_block() {
         "Tagulandang" => 2631,
         "Tagulandang Selatan" => 2632,
         "Tagulandang Utara" => 2633,
-       ),
-      "Kepulauan Talaud (Kabupaten)" => array(
+      ),
+      "Kepulauan Talaud" => array(
         "Beo" => 2653,
         "Beo Selatan" => 2654,
         "Beo Utara" => 2655,
@@ -6992,14 +6992,14 @@ function commerce_rajaongkir_locality_block() {
         "Rainis" => 2669,
         "Salibabu" => 2670,
         "Tampan Amma" => 2671,
-       ),
-      "Kotamobagu (Kota)" => array(
+      ),
+      "Kotamobagu" => array(
         "Kotamobagu Barat" => 2870,
         "Kotamobagu Selatan" => 2871,
         "Kotamobagu Timur" => 2872,
         "Kotamobagu Utara" => 2873,
-       ),
-      "Manado (Kota)" => array(
+      ),
+      "Manado" => array(
         "Bunaken" => 3768,
         "Bunaken Kepulauan" => 3769,
         "Malalayang" => 3770,
@@ -7011,8 +7011,8 @@ function commerce_rajaongkir_locality_block() {
         "Tuminiting" => 3776,
         "Wanea" => 3777,
         "Wenang" => 3778,
-       ),
-      "Minahasa (Kabupaten)" => array(
+      ),
+      "Minahasa" => array(
         "Eris" => 4006,
         "Kakas" => 4007,
         "Kakas Barat" => 4008,
@@ -7038,8 +7038,8 @@ function commerce_rajaongkir_locality_block() {
         "Tondano Selatan" => 4028,
         "Tondano Timur" => 4029,
         "Tondano Utara" => 4030,
-       ),
-      "Minahasa Selatan (Kabupaten)" => array(
+      ),
+      "Minahasa Selatan" => array(
         "Amurang" => 4031,
         "Amurang Barat" => 4032,
         "Amurang Timur" => 4033,
@@ -7057,8 +7057,8 @@ function commerce_rajaongkir_locality_block() {
         "Tenga" => 4045,
         "Tompaso Baru" => 4046,
         "Tumpaan" => 4047,
-       ),
-      "Minahasa Tenggara (Kabupaten)" => array(
+      ),
+      "Minahasa Tenggara" => array(
         "Belang" => 4048,
         "Pasan" => 4049,
         "Pusomaen" => 4050,
@@ -7071,8 +7071,8 @@ function commerce_rajaongkir_locality_block() {
         "Tombatu Utara" => 4057,
         "Touluaan" => 4058,
         "Touluaan Selatan" => 4059,
-       ),
-      "Minahasa Utara (Kabupaten)" => array(
+      ),
+      "Minahasa Utara" => array(
         "Airmadidi" => 4060,
         "Dimembe" => 4061,
         "Kalawat" => 4062,
@@ -7083,17 +7083,17 @@ function commerce_rajaongkir_locality_block() {
         "Likupang Timur" => 4067,
         "Talawaan" => 4068,
         "Wori" => 4069,
-       ),
-      "Tomohon (Kota)" => array(
+      ),
+      "Tomohon" => array(
         "Tomohon Barat" => 6733,
         "Tomohon Selatan" => 6734,
         "Tomohon Tengah" => 6735,
         "Tomohon Timur" => 6736,
         "Tomohon Utara" => 6737,
-       ),
+      ),
     ),
     "Sumatera Barat" => array(
-      "Agam (Kabupaten)" => array(
+      "Agam" => array(
         "Ampek Nagari (IV Nagari )" => 176,
         "Banuhampu" => 177,
         "Baso" => 178,
@@ -7110,13 +7110,13 @@ function commerce_rajaongkir_locality_block() {
         "Tanjung Mutiara" => 189,
         "Tanjung Raya" => 190,
         "Tilatang Kamang" => 191,
-       ),
-      "Bukittinggi (Kota)" => array(
+      ),
+      "Bukittinggi" => array(
         "Aur Birugo Tigo Baleh" => 1276,
         "Guguk Panjang (Guguak Panjang)" => 1277,
         "Mandiangin Koto Selayan" => 1278,
-       ),
-      "Dharmasraya (Kabupaten)" => array(
+      ),
+      "Dharmasraya" => array(
         "Asam Jujuhan" => 1588,
         "Koto Baru" => 1589,
         "Koto Besar" => 1590,
@@ -7128,8 +7128,8 @@ function commerce_rajaongkir_locality_block() {
         "Sungai Rumbai" => 1596,
         "Timpeh" => 1597,
         "Tiumang" => 1598,
-       ),
-      "Kepulauan Mentawai (Kabupaten)" => array(
+      ),
+      "Kepulauan Mentawai" => array(
         "Pagai Selatan" => 2588,
         "Pagai Utara" => 2589,
         "Siberut Barat" => 2590,
@@ -7140,8 +7140,8 @@ function commerce_rajaongkir_locality_block() {
         "Sikakap" => 2595,
         "Sipora Selatan" => 2596,
         "Sipora Utara" => 2597,
-       ),
-      "Lima Puluh Koto/Kota (Kabupaten)" => array(
+      ),
+      "Lima Puluh Koto/Kota" => array(
         "Akabiluru" => 3351,
         "Bukik Barisan" => 3352,
         "Guguak (Gugu)" => 3353,
@@ -7155,8 +7155,8 @@ function commerce_rajaongkir_locality_block() {
         "Payakumbuh" => 3361,
         "Situjuah Limo/Lima Nagari" => 3362,
         "Suliki" => 3363,
-       ),
-      "Padang (Kota)" => array(
+      ),
+      "Padang" => array(
         "Bungus Teluk Kabung" => 4534,
         "Koto Tangah" => 4535,
         "Kuranji" => 4536,
@@ -7168,12 +7168,12 @@ function commerce_rajaongkir_locality_block() {
         "Padang Timur" => 4542,
         "Padang Utara" => 4543,
         "Pauh" => 4544,
-       ),
-      "Padang Panjang (Kota)" => array(
+      ),
+      "Padang Panjang" => array(
         "Padang Panjang Barat" => 4566,
         "Padang Panjang Timur" => 4567,
-       ),
-      "Padang Pariaman (Kabupaten)" => array(
+      ),
+      "Padang Pariaman" => array(
         "2 X 11 Enam Lingkung" => 4568,
         "2 X 11 Kayu Tanam" => 4569,
         "Batang Anai" => 4570,
@@ -7191,14 +7191,14 @@ function commerce_rajaongkir_locality_block() {
         "V Koto Kampung Dalam" => 4582,
         "V Koto Timur" => 4583,
         "VII Koto Sungai Sarik" => 4584,
-       ),
-      "Pariaman (Kota)" => array(
+      ),
+      "Pariaman" => array(
         "Pariaman Selatan" => 4734,
         "Pariaman Tengah" => 4735,
         "Pariaman Timur" => 4736,
         "Pariaman Utara" => 4737,
-       ),
-      "Pasaman (Kabupaten)" => array(
+      ),
+      "Pasaman" => array(
         "Bonjol" => 4760,
         "Duo Koto (II Koto)" => 4761,
         "Lubuk Sikaping" => 4762,
@@ -7211,8 +7211,8 @@ function commerce_rajaongkir_locality_block() {
         "Rao Utara" => 4769,
         "Simpang Alahan Mati" => 4770,
         "Tigo Nagari (III Nagari)" => 4771,
-       ),
-      "Pasaman Barat (Kabupaten)" => array(
+      ),
+      "Pasaman Barat" => array(
         "Gunung Tuleh" => 4772,
         "Kinali" => 4773,
         "Koto Balingka" => 4774,
@@ -7224,15 +7224,15 @@ function commerce_rajaongkir_locality_block() {
         "Sei Beremas" => 4780,
         "Sungai Aur" => 4781,
         "Talamau" => 4782,
-       ),
-      "Payakumbuh (Kota)" => array(
+      ),
+      "Payakumbuh" => array(
         "Lamposi Tigo Nagari" => 4842,
         "Payakumbuh Barat" => 4843,
         "Payakumbuh Selatan" => 4844,
         "Payakumbuh Timur" => 4845,
         "Payakumbuh Utara" => 4846,
-       ),
-      "Pesisir Selatan (Kabupaten)" => array(
+      ),
+      "Pesisir Selatan" => array(
         "Airpura" => 4984,
         "Basa Ampek Balai Tapan" => 4985,
         "Batang Kapas" => 4986,
@@ -7248,14 +7248,14 @@ function commerce_rajaongkir_locality_block() {
         "Ranah Pesisir" => 4996,
         "Silaut" => 4997,
         "Sutera" => 4998,
-       ),
-      "Sawah Lunto (Kota)" => array(
+      ),
+      "Sawah Lunto" => array(
         "Barangin" => 5443,
         "Lembah Segar" => 5444,
         "Silungkang" => 5445,
         "Talawi" => 5446,
-       ),
-      "Sijunjung (Sawah Lunto Sijunjung) (Kabupaten)" => array(
+      ),
+      "Sijunjung (Sawah Lunto Sijunjung)" => array(
         "IV Nagari" => 5664,
         "Kamang Baru" => 5665,
         "Koto VII" => 5666,
@@ -7264,7 +7264,7 @@ function commerce_rajaongkir_locality_block() {
         "Sijunjung" => 5669,
         "Sumpur Kudus" => 5670,
         "Tanjung Gadang" => 5671,
-       ),
+      ),
       "Solok (Kabupaten)" => array(
         "Bukit Sundi" => 5796,
         "Danau Kembar" => 5797,
@@ -7280,12 +7280,12 @@ function commerce_rajaongkir_locality_block() {
         "Tigo Lurah" => 5807,
         "X Koto Diatas" => 5808,
         "X Koto Singkarak" => 5809,
-       ),
+      ),
       "Solok (Kota)" => array(
         "Lubuk Sikarah" => 5810,
         "Tanjung Harapan" => 5811,
-       ),
-      "Solok Selatan (Kabupaten)" => array(
+      ),
+      "Solok Selatan" => array(
         "Koto Parik Gadang Diateh" => 5812,
         "Pauh Duo" => 5813,
         "Sangir" => 5814,
@@ -7293,8 +7293,8 @@ function commerce_rajaongkir_locality_block() {
         "Sangir Batang Hari" => 5816,
         "Sangir Jujuan" => 5817,
         "Sungai Pagu" => 5818,
-       ),
-      "Tanah Datar (Kabupaten)" => array(
+      ),
+      "Tanah Datar" => array(
         "Batipuh" => 6243,
         "Batipuh Selatan" => 6244,
         "Lima Kaum" => 6245,
@@ -7309,10 +7309,10 @@ function commerce_rajaongkir_locality_block() {
         "Sungayang" => 6254,
         "Tanjung Baru" => 6255,
         "Tanjung Emas" => 6256,
-       ),
+      ),
     ),
     "Sumatera Selatan" => array(
-      "Banyuasin (Kabupaten)" => array(
+      "Banyuasin" => array(
         "Air Kumbang" => 554,
         "Air Salek" => 555,
         "Banyuasin I" => 556,
@@ -7332,8 +7332,8 @@ function commerce_rajaongkir_locality_block() {
         "Talang Kelapa" => 570,
         "Tanjung Lago" => 571,
         "Tungkal Ilir" => 572,
-       ),
-      "Empat Lawang (Kabupaten)" => array(
+      ),
+      "Empat Lawang" => array(
         "Lintang Kanan" => 1640,
         "Muara Pinang" => 1641,
         "Pasemah Air Keruh" => 1642,
@@ -7344,8 +7344,8 @@ function commerce_rajaongkir_locality_block() {
         "Talang Padang" => 1647,
         "Tebing Tinggi" => 1648,
         "Ulu Musi" => 1649,
-       ),
-      "Lahat (Kabupaten)" => array(
+      ),
+      "Lahat" => array(
         "Gumay Talang" => 3083,
         "Gumay Ulu" => 3084,
         "Jarai" => 3085,
@@ -7368,8 +7368,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanjung Sakti Pumi" => 3102,
         "Tanjung Sakti Pumu" => 3103,
         "Tanjung Tebat" => 3104,
-       ),
-      "Lubuk Linggau (Kota)" => array(
+      ),
+      "Lubuk Linggau" => array(
         "Lubuk Linggau Barat Dua (II)" => 3419,
         "Lubuk Linggau Barat Satu (I)" => 3420,
         "Lubuk Linggau Selatan Dua (II)" => 3421,
@@ -7378,8 +7378,8 @@ function commerce_rajaongkir_locality_block() {
         "Lubuk Linggau Timur Satu (I)" => 3424,
         "Lubuk Linggau Utara Dua (II)" => 3425,
         "Lubuk Linggau Utara Satu (I)" => 3426,
-       ),
-      "Muara Enim (Kabupaten)" => array(
+      ),
+      "Muara Enim" => array(
         "Abab" => 4109,
         "Benakat" => 4110,
         "Gelumbang" => 4111,
@@ -7402,8 +7402,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanah Abang" => 4128,
         "Tanjung Agung" => 4129,
         "Ujan Mas" => 4130,
-       ),
-      "Musi Banyuasin (Kabupaten)" => array(
+      ),
+      "Musi Banyuasin" => array(
         "Babat Supat" => 4200,
         "Babat Toman" => 4201,
         "Batanghari Leko" => 4202,
@@ -7418,8 +7418,8 @@ function commerce_rajaongkir_locality_block() {
         "Sungai Keruh" => 4211,
         "Sungai Lilin" => 4212,
         "Tungkal Jaya" => 4213,
-       ),
-      "Musi Rawas (Kabupaten)" => array(
+      ),
+      "Musi Rawas" => array(
         "Batukuning Lakitan Ulu (BTS)/Cecar" => 4214,
         "Jaya Loka" => 4215,
         "Karang Dapo" => 4216,
@@ -7441,8 +7441,8 @@ function commerce_rajaongkir_locality_block() {
         "Tuah Negeri" => 4232,
         "Tugumulyo" => 4233,
         "Ulu Rawas" => 4234,
-       ),
-      "Ogan Ilir (Kabupaten)" => array(
+      ),
+      "Ogan Ilir" => array(
         "Indralaya" => 4437,
         "Indralaya Selatan" => 4438,
         "Indralaya Utara" => 4439,
@@ -7459,8 +7459,8 @@ function commerce_rajaongkir_locality_block() {
         "Sungai Pinang" => 4450,
         "Tanjung Batu" => 4451,
         "Tanjung Raja" => 4452,
-       ),
-      "Ogan Komering Ilir (Kabupaten)" => array(
+      ),
+      "Ogan Komering Ilir" => array(
         "Air Sugihan" => 4453,
         "Cengal" => 4454,
         "Jejawi" => 4455,
@@ -7479,8 +7479,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanjung Lubuk" => 4468,
         "Teluk Gelam" => 4469,
         "Tulung Selapan" => 4470,
-       ),
-      "Ogan Komering Ulu (Kabupaten)" => array(
+      ),
+      "Ogan Komering Ulu" => array(
         "Baturaja Barat" => 4471,
         "Baturaja Timur" => 4472,
         "Lengkiti" => 4473,
@@ -7493,8 +7493,8 @@ function commerce_rajaongkir_locality_block() {
         "Sinar Peninjauan" => 4480,
         "Sosoh Buay Rayap" => 4481,
         "Ulu Ogan" => 4482,
-       ),
-      "Ogan Komering Ulu Selatan (Kabupaten)" => array(
+      ),
+      "Ogan Komering Ulu Selatan" => array(
         "Banding Agung" => 4483,
         "Buana Pemaca" => 4484,
         "Buay Pemaca" => 4485,
@@ -7514,8 +7514,8 @@ function commerce_rajaongkir_locality_block() {
         "Sungai Are" => 4499,
         "Tiga Dihaji" => 4500,
         "Warkuk Ranau Selatan" => 4501,
-       ),
-      "Ogan Komering Ulu Timur (Kabupaten)" => array(
+      ),
+      "Ogan Komering Ulu Timur" => array(
         "Belitang" => 4502,
         "Belitang II" => 4503,
         "Belitang III" => 4504,
@@ -7536,15 +7536,15 @@ function commerce_rajaongkir_locality_block() {
         "Semendawai Barat" => 4519,
         "Semendawai Suku III" => 4520,
         "Semendawai Timur" => 4521,
-       ),
-      "Pagar Alam (Kota)" => array(
+      ),
+      "Pagar Alam" => array(
         "Dempo Selatan" => 4591,
         "Dempo Tengah" => 4592,
         "Dempo Utara" => 4593,
         "Pagar Alam Selatan" => 4594,
         "Pagar Alam Utara" => 4595,
-       ),
-      "Palembang (Kota)" => array(
+      ),
+      "Palembang" => array(
         "Alang-Alang Lebar" => 4609,
         "Bukit Kecil" => 4610,
         "Gandus" => 4611,
@@ -7561,18 +7561,18 @@ function commerce_rajaongkir_locality_block() {
         "Seberang Ulu II" => 4622,
         "Sematang Borang" => 4623,
         "Sukarami" => 4624,
-       ),
-      "Prabumulih (Kota)" => array(
+      ),
+      "Prabumulih" => array(
         "Cambai" => 5126,
         "Prabumulih Barat" => 5127,
         "Prabumulih Selatan" => 5128,
         "Prabumulih Timur" => 5129,
         "Prabumulih Utara" => 5130,
         "Rambang Kapak Tengah" => 5131,
-       ),
+      ),
     ),
     "Sumatera Utara" => array(
-      "Asahan (Kabupaten)" => array(
+      "Asahan" => array(
         "Aek Kuasan" => 214,
         "Aek Ledong" => 215,
         "Aek Songsongan" => 216,
@@ -7598,8 +7598,8 @@ function commerce_rajaongkir_locality_block() {
         "Tanjung Balai" => 236,
         "Teluk Dalam" => 237,
         "Tinggi Raja" => 238,
-       ),
-      "Batu Bara (Kabupaten)" => array(
+      ),
+      "Batu Bara" => array(
         "Air Putih" => 711,
         "Limapuluh" => 712,
         "Medang Deras" => 713,
@@ -7607,15 +7607,15 @@ function commerce_rajaongkir_locality_block() {
         "Sei Suka" => 715,
         "Talawi" => 716,
         "Tanjung Tiram" => 717,
-       ),
-      "Binjai (Kota)" => array(
+      ),
+      "Binjai" => array(
         "Binjai Barat" => 934,
         "Binjai Kota" => 935,
         "Binjai Selatan" => 936,
         "Binjai Timur" => 937,
         "Binjai Utara" => 938,
-       ),
-      "Dairi (Kabupaten)" => array(
+      ),
+      "Dairi" => array(
         "Berampu (Brampu)" => 1517,
         "Gunung Sitember" => 1518,
         "Lae Parira" => 1519,
@@ -7631,8 +7631,8 @@ function commerce_rajaongkir_locality_block() {
         "Sumbul" => 1529,
         "Tanah Pinem" => 1530,
         "Tiga Lingga" => 1531,
-       ),
-      "Deli Serdang (Kabupaten)" => array(
+      ),
+      "Deli Serdang" => array(
         "Bangun Purba" => 1537,
         "Batang Kuis" => 1538,
         "Beringin" => 1539,
@@ -7655,16 +7655,16 @@ function commerce_rajaongkir_locality_block() {
         "Sinembah Tanjung Muda Hulu" => 1556,
         "Sunggal" => 1557,
         "Tanjung Morawa" => 1558,
-       ),
-      "Gunungsitoli (Kota)" => array(
+      ),
+      "Gunungsitoli" => array(
         "Gunungsitoli" => 1895,
         "Gunungsitoli Alo'oa" => 1896,
         "Gunungsitoli Barat" => 1897,
         "Gunungsitoli Idanoi" => 1898,
         "Gunungsitoli Selatan" => 1899,
         "Gunungsitoli Utara" => 1900,
-       ),
-      "Humbang Hasundutan (Kabupaten)" => array(
+      ),
+      "Humbang Hasundutan" => array(
         "Bakti Raja" => 2006,
         "Dolok Sanggul" => 2007,
         "Lintong Nihuta" => 2008,
@@ -7675,8 +7675,8 @@ function commerce_rajaongkir_locality_block() {
         "Pollung" => 2013,
         "Sijama Polang" => 2014,
         "Tara Bintang" => 2015,
-       ),
-      "Karo (Kabupaten)" => array(
+      ),
+      "Karo" => array(
         "Barus Jahe" => 2420,
         "Brastagi (Berastagi)" => 2421,
         "Dolat Rayat" => 2422,
@@ -7694,8 +7694,8 @@ function commerce_rajaongkir_locality_block() {
         "Tiga Binanga" => 2434,
         "Tiga Panah" => 2435,
         "Tiganderket" => 2436,
-       ),
-      "Labuhan Batu (Kabupaten)" => array(
+      ),
+      "Labuhan Batu" => array(
         "Bilah Barat" => 3061,
         "Bilah Hilir" => 3062,
         "Bilah Hulu" => 3063,
@@ -7705,15 +7705,15 @@ function commerce_rajaongkir_locality_block() {
         "Pangkatan" => 3067,
         "Rantau Selatan" => 3068,
         "Rantau Utara" => 3069,
-       ),
-      "Labuhan Batu Selatan (Kabupaten)" => array(
+      ),
+      "Labuhan Batu Selatan" => array(
         "Kampung Rakyat" => 3070,
         "Kota Pinang" => 3071,
         "Sei/Sungai Kanan" => 3072,
         "Silangkitang" => 3073,
         "Torgamba" => 3074,
-       ),
-      "Labuhan Batu Utara (Kabupaten)" => array(
+      ),
+      "Labuhan Batu Utara" => array(
         "Aek Kuo" => 3075,
         "Aek Natas" => 3076,
         "Kuala Ledong (Kualuh Leidong)" => 3077,
@@ -7722,8 +7722,8 @@ function commerce_rajaongkir_locality_block() {
         "Kualuh Selatan" => 3080,
         "Marbau" => 3081,
         "Na IX-X" => 3082,
-       ),
-      "Langkat (Kabupaten)" => array(
+      ),
+      "Langkat" => array(
         "Babalan" => 3260,
         "Bahorok" => 3261,
         "Batang Serangan" => 3262,
@@ -7747,8 +7747,8 @@ function commerce_rajaongkir_locality_block() {
         "Stabat" => 3280,
         "Tanjungpura" => 3281,
         "Wampu" => 3282,
-       ),
-      "Mandailing Natal (Kabupaten)" => array(
+      ),
+      "Mandailing Natal" => array(
         "Batahan" => 3779,
         "Batang Natal" => 3780,
         "Bukit Malintang" => 3781,
@@ -7772,8 +7772,8 @@ function commerce_rajaongkir_locality_block() {
         "Sinunukan" => 3799,
         "Tambangan" => 3800,
         "Ulu Pungkut" => 3801,
-       ),
-      "Medan (Kota)" => array(
+      ),
+      "Medan" => array(
         "Medan Amplas" => 3906,
         "Medan Area" => 3907,
         "Medan Barat" => 3908,
@@ -7795,8 +7795,8 @@ function commerce_rajaongkir_locality_block() {
         "Medan Tembung" => 3924,
         "Medan Timur" => 3925,
         "Medan Tuntungan" => 3926,
-       ),
-      "Nias (Kabupaten)" => array(
+      ),
+      "Nias" => array(
         "Bawolato" => 4362,
         "Botomuzoi" => 4363,
         "Gido" => 4364,
@@ -7807,8 +7807,8 @@ function commerce_rajaongkir_locality_block() {
         "Sogae Adu (Sogaeadu)" => 4369,
         "Somolo-Molo (Samolo)" => 4370,
         "Ulugawo" => 4371,
-       ),
-      "Nias Barat (Kabupaten)" => array(
+      ),
+      "Nias Barat" => array(
         "Lahomi (Gahori)" => 4372,
         "Lolofitu Moi" => 4373,
         "Mandrehe" => 4374,
@@ -7817,8 +7817,8 @@ function commerce_rajaongkir_locality_block() {
         "Moro'o" => 4377,
         "Sirombu" => 4378,
         "Ulu Moro'o (Ulu Narwo)" => 4379,
-       ),
-      "Nias Selatan (Kabupaten)" => array(
+      ),
+      "Nias Selatan" => array(
         "Amandraya" => 4380,
         "Aramo" => 4381,
         "Boronadu" => 4382,
@@ -7850,8 +7850,8 @@ function commerce_rajaongkir_locality_block() {
         "Ulunoyo" => 4408,
         "Ulususua" => 4409,
         "Umbunasi" => 4410,
-       ),
-      "Nias Utara (Kabupaten)" => array(
+      ),
+      "Nias Utara" => array(
         "Afulu" => 4411,
         "Alasa" => 4412,
         "Alasa Talumuzoi" => 4413,
@@ -7863,8 +7863,8 @@ function commerce_rajaongkir_locality_block() {
         "Sitolu Ori" => 4419,
         "Tugala Oyo" => 4420,
         "Tuhemberua" => 4421,
-       ),
-      "Padang Lawas (Kabupaten)" => array(
+      ),
+      "Padang Lawas" => array(
         "Aek Nabara Barumun" => 4545,
         "Barumun" => 4546,
         "Barumun Selatan" => 4547,
@@ -7877,8 +7877,8 @@ function commerce_rajaongkir_locality_block() {
         "Sosa" => 4554,
         "Sosopan" => 4555,
         "Ulu Barumun" => 4556,
-       ),
-      "Padang Lawas Utara (Kabupaten)" => array(
+      ),
+      "Padang Lawas Utara" => array(
         "Batang Onang" => 4557,
         "Dolok" => 4558,
         "Dolok Sigompulon" => 4559,
@@ -7888,16 +7888,16 @@ function commerce_rajaongkir_locality_block() {
         "Padang Bolak Julu" => 4563,
         "Portibi" => 4564,
         "Simangambat" => 4565,
-       ),
-      "Padang Sidempuan (Kota)" => array(
+      ),
+      "Padang Sidempuan" => array(
         "Padang Sidempuan Angkola Julu" => 4585,
         "Padang Sidempuan Batunadua" => 4586,
         "Padang Sidempuan Hutaimbaru" => 4587,
         "Padang Sidempuan Selatan" => 4588,
         "Padang Sidempuan Tenggara" => 4589,
         "Padang Sidempuan Utara (Padangsidimpuan)" => 4590,
-       ),
-      "Pakpak Bharat (Kabupaten)" => array(
+      ),
+      "Pakpak Bharat" => array(
         "Kerajaan" => 4596,
         "Pagindar" => 4597,
         "Pergetteng Getteng Sengkut" => 4598,
@@ -7906,8 +7906,8 @@ function commerce_rajaongkir_locality_block() {
         "Sitellu Tali Urang Jehe" => 4601,
         "Sitellu Tali Urang Julu" => 4602,
         "Tinada" => 4603,
-       ),
-      "Pematang Siantar (Kota)" => array(
+      ),
+      "Pematang Siantar" => array(
         "Siantar Barat" => 4952,
         "Siantar Marihat" => 4953,
         "Siantar Marimbun" => 4954,
@@ -7916,8 +7916,8 @@ function commerce_rajaongkir_locality_block() {
         "Siantar Sitalasari" => 4957,
         "Siantar Timur" => 4958,
         "Siantar Utara" => 4959,
-       ),
-      "Samosir (Kabupaten)" => array(
+      ),
+      "Samosir" => array(
         "Harian" => 5385,
         "Nainggolan" => 5386,
         "Onan Runggu" => 5387,
@@ -7927,8 +7927,8 @@ function commerce_rajaongkir_locality_block() {
         "Sianjur Mula-Mula" => 5391,
         "Simanindo" => 5392,
         "Sitio-Tio" => 5393,
-       ),
-      "Serdang Bedagai (Kabupaten)" => array(
+      ),
+      "Serdang Bedagai" => array(
         "Bandar Khalifah" => 5575,
         "Bintang Bayu" => 5576,
         "Dolok Masihul" => 5577,
@@ -7946,14 +7946,14 @@ function commerce_rajaongkir_locality_block() {
         "Tebing Syahbandar" => 5589,
         "Tebing Tinggi" => 5590,
         "Teluk Mengkudu" => 5591,
-       ),
-      "Sibolga (Kota)" => array(
+      ),
+      "Sibolga" => array(
         "Sibolga Kota" => 5616,
         "Sibolga Sambas" => 5617,
         "Sibolga Selatan" => 5618,
         "Sibolga Utara" => 5619,
-       ),
-      "Simalungun (Kabupaten)" => array(
+      ),
+      "Simalungun" => array(
         "Bandar" => 5693,
         "Bandar Huluan" => 5694,
         "Bandar Masilam" => 5695,
@@ -7985,16 +7985,16 @@ function commerce_rajaongkir_locality_block() {
         "Tanah Jawa" => 5721,
         "Tapian Dolok" => 5722,
         "Ujung Padang" => 5723,
-       ),
-      "Tanjung Balai (Kota)" => array(
+      ),
+      "Tanjung Balai" => array(
         "Datuk Bandar" => 6337,
         "Datuk Bandar Timur" => 6338,
         "Sei Tualang Raso" => 6339,
         "Tanjung Balai Selatan" => 6340,
         "Tanjung Balai Utara" => 6341,
         "Teluk Nibung" => 6342,
-       ),
-      "Tapanuli Selatan (Kabupaten)" => array(
+      ),
+      "Tapanuli Selatan" => array(
         "Aek Bilah" => 6371,
         "Angkola Barat (Padang Sidempuan)" => 6372,
         "Angkola Sangkunur" => 6373,
@@ -8009,8 +8009,8 @@ function commerce_rajaongkir_locality_block() {
         "Sayur Matinggi" => 6382,
         "Sipirok" => 6383,
         "Tano Tombangan Angkola" => 6384,
-       ),
-      "Tapanuli Tengah (Kabupaten)" => array(
+      ),
+      "Tapanuli Tengah" => array(
         "Andam Dewi" => 6385,
         "Badiri" => 6386,
         "Barus" => 6387,
@@ -8031,8 +8031,8 @@ function commerce_rajaongkir_locality_block() {
         "Suka Bangun" => 6402,
         "Tapian Nauli" => 6403,
         "Tukka" => 6404,
-       ),
-      "Tapanuli Utara (Kabupaten)" => array(
+      ),
+      "Tapanuli Utara" => array(
         "Adian Koting" => 6405,
         "Garoga" => 6406,
         "Muara" => 6407,
@@ -8048,15 +8048,15 @@ function commerce_rajaongkir_locality_block() {
         "Sipahutar" => 6417,
         "Sipoholon" => 6418,
         "Tarutung" => 6419,
-       ),
-      "Tebing Tinggi (Kota)" => array(
+      ),
+      "Tebing Tinggi" => array(
         "Bajenis" => 6485,
         "Padang Hilir" => 6486,
         "Padang Hulu" => 6487,
         "Rambutan" => 6488,
         "Tebing Tinggi Kota" => 6489,
-       ),
-      "Toba Samosir (Kabupaten)" => array(
+      ),
+      "Toba Samosir" => array(
         "Ajibata" => 6652,
         "Balige" => 6653,
         "Bonatua Lunasi" => 6654,
@@ -8073,7 +8073,7 @@ function commerce_rajaongkir_locality_block() {
         "Silaen" => 6665,
         "Tampahan" => 6666,
         "Uluan" => 6667,
-       ),
+      ),
     ),
   );
 
