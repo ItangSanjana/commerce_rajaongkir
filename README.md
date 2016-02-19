@@ -23,27 +23,35 @@ _This module requires an active RajaOngkir.com account in order to obtain estima
 
 ## Installation
 - Using [drush](https://github.com/drush-ops/drush)
-```Shell
-cd to/your/drupal/project
-drush dl commerce_rajaongkir
-drush en commerce_rajaongkir
-```
+
+  ```Shell
+  cd to/your/drupal/project
+  drush dl commerce_rajaongkir
+  drush en commerce_rajaongkir
+  ```
+
 - Manual install [Installing modules (Drupal 7)](https://www.drupal.org/documentation/install/modules-themes/modules-7).
 
 ## Configuration
 - Enable physical field (dimensions and weight) e.g.
-```Shell
-admin/commerce/products/types/product/fields
-```
+
+  ```Shell
+  admin/commerce/products/types/product/fields
+  ```
+
 - Enable addressfield_id format handlers e.g.
-```Shell
-admin/commerce/customer-profiles/types/billing/fields/commerce_customer_address
-admin/commerce/customer-profiles/types/shipping/fields/commerce_customer_address
-```
+
+  ```Shell
+  admin/commerce/customer-profiles/types/billing/fields/commerce_customer_address
+  admin/commerce/customer-profiles/types/shipping/fields/commerce_customer_address
+  ```
+
 - Configure this module e.g.
-```Shell
-admin/commerce/config/shipping/methods/commerce-rajaongkir/edit
-```
+
+  ```Shell
+  admin/commerce/config/shipping/methods/commerce-rajaongkir/edit
+  ```
+
 and provide:
   - API key
   - Account type

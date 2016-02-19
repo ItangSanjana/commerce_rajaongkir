@@ -62,13 +62,15 @@ function commerce_rajaongkir_commerce_shipping_method_info() {
  * Implements hook_commerce_shipping_service_info().
  */
 function commerce_rajaongkir_commerce_shipping_service_info() {
-  $couriers = array_diff(variable_get('commerce_rajaongkir_courier', array()), array(0));
+  $couriers = variable_get('commerce_rajaongkir_courier', array());
+  $couriers = array_diff($couriers, array(0));
 
   if (variable_get('commerce_rajaongkir_account_type') == 'starter') {
     $couriers = array_diff($couriers, array('ESL', 'PCP', 'RPX'));
   }
 
-  $services = array_intersect_key(commerce_rajaongkir_service(), $couriers);
+  $services = commerce_rajaongkir_service();
+  $services = array_intersect_key($services, $couriers);
   $shipping_services = array();
 
   if ($services) {
@@ -161,6 +163,80 @@ function commerce_rajaongkir_service() {
  *   Calculated shipping rates for a given order.
  */
 function commerce_rajaongkir_service_rate($shipping_service, $order) {
+  $cost = commerce_rajaongkir_service_rate_cost($shipping_service, $order);
+
+  if ($cost) {
+    if (isset($cost->data) && $cost->data) {
+      $cost_data = drupal_json_decode($cost->data);
+      $rajaongkir = $cost_data['rajaongkir'];
+      $status = $rajaongkir['status'];
+      $status_code = $status['code'];
+
+      if ($status_code == 200) {
+        $results = $rajaongkir['results'];
+        $currency_rates = isset($rajaongkir['currency']['value']) ? $rajaongkir['currency']['value'] : NULL;
+        $rates_timeout = variable_get('commerce_rajaongkir_rates_timeout', 60);
+        $rates = commerce_shipping_rates_cache_get('commerce_rajaongkir' . '_' . $shipping_service['title'], $order, $rates_timeout);
+
+        if (empty($rates)) {
+          $rates = array();
+          foreach ($results as $result) {
+            foreach ($result['costs'] as $rcost) {
+              if (is_array($rcost['cost'])) {
+                foreach ($rcost['cost'] as $rcost_cost) {
+                  $rates[$rcost['service']] = array(
+                    'amount' => commerce_currency_decimal_to_amount($rcost_cost['value'], 'IDR'),
+                    'currency_code' => 'IDR',
+                    'data' => array(),
+                  );
+                }
+                unset($rcost_cost);
+              }
+              else {
+                $rcost_rates = $rcost['cost'] * $currency_rates;
+                $rcost_rates = ceil($rcost_rates);
+                $rates[$rcost['service']] = array(
+                  'amount' => commerce_currency_decimal_to_amount($rcost_rates, 'IDR'),
+                  'currency_code' => 'IDR',
+                  'data' => array(),
+                );
+              }
+            }
+            unset($rcost);
+          }
+          unset($result);
+
+          if ($rates) {
+            commerce_shipping_rates_cache_set('commerce_rajaongkir' . '_' . $shipping_service['title'], $order, $rates);
+          }
+        }
+      }
+      else {
+        if ($status['description']) {
+          drupal_set_message(t('Commerce RajaOngkir warning: @warning', array('@warning' => $status['description'])), 'warning', FALSE);
+        }
+        else {
+          drupal_set_message(t('Commerce RajaOngkir HTTP request error: @error', array('@error' => $cost->error)), 'error', FALSE);
+        }
+      }
+    }
+    else {
+      drupal_set_message(t('Commerce RajaOngkir HTTP request error: @error', array('@error' => $cost->error)), 'error', FALSE);
+    }
+  }
+
+  return isset($rates[$shipping_service['title']]) ? $rates[$shipping_service['title']] : FALSE;
+}
+
+/**
+ * @param $shipping_service
+ *   Selected shipping service.
+ * @param $order
+ *   Current order.
+ * @return
+ *   RajaOngkir API results.
+ */
+function commerce_rajaongkir_service_rate_cost($shipping_service, $order) {
   module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.restful');
 
   $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
@@ -201,7 +277,8 @@ function commerce_rajaongkir_service_rate($shipping_service, $order) {
   $shipping_length = '';
   $shipping_width = '';
   $shipping_height = '';
-  $shipping_diameter = '';
+  $volume = commerce_physical_order_volume($order, $unit = 'cm');
+  $shipping_diameter = $volume['volume'];
 
   foreach ($order_wrapper->commerce_line_items as $line_item_wrapper) {
     if (in_array($line_item_wrapper->type->value(), commerce_product_line_item_types())) {
@@ -212,10 +289,11 @@ function commerce_rajaongkir_service_rate($shipping_service, $order) {
         $shipping_length = $converted_dimensions['length'] * $line_item_wrapper->quantity->value();
         $shipping_width = $converted_dimensions['width'] * $line_item_wrapper->quantity->value();
         $shipping_height = $converted_dimensions['height'] * $line_item_wrapper->quantity->value();
-        $shipping_diameter = $converted_dimensions['length'] * $converted_dimensions['width'] * $converted_dimensions['height'] * $line_item_wrapper->quantity->value();
       }
     }
   }
+
+  $cost = FALSE;
 
   if ($address['country'] == 'ID') {
     $cost = commerce_rajaongkir_restful_cost($shipping_origin, $shipping_origin_type, $shipping_destination, $shipping_destination_type, $shipping_weight, $shipping_courier, $shipping_length, $shipping_width, $shipping_height, $shipping_diameter);
@@ -225,72 +303,9 @@ function commerce_rajaongkir_service_rate($shipping_service, $order) {
       $shipping_destination = commerce_rajaongkir_country_code($address['country']);
       $cost = commerce_rajaongkir_restful_internationalcost($shipping_origin, $shipping_destination, $shipping_weight, $shipping_courier, $shipping_length, $shipping_width, $shipping_height);
     }
-    else {
-      $cost = FALSE;
-    }
   }
 
-  $rates = array();
-
-  if ($cost) {
-    if (isset($cost->data) && $cost->data) {
-      $cost_data = drupal_json_decode($cost->data);
-      $rajaongkir = $cost_data['rajaongkir'];
-      $status = $rajaongkir['status'];
-
-      if ($status['code'] == 200) {
-        $results = $rajaongkir['results'];
-        $currency_rates = isset($rajaongkir['currency']['value']) ? $rajaongkir['currency']['value'] : NULL;
-        $rates_timeout = variable_get('commerce_rajaongkir_rates_timeout', 60);
-        $rates = commerce_shipping_rates_cache_get('commerce_rajaongkir_' . $shipping_service['title'], $order, $rates_timeout);
-
-        if (empty($rates)) {
-          foreach ($results as $result) {
-            foreach ($result['costs'] as $rcost) {
-              if (is_array($rcost['cost'])) {
-                foreach ($rcost['cost'] as $rcost_cost) {
-                  $rates[$rcost['service']] = array(
-                    'amount' => commerce_currency_decimal_to_amount($rcost_cost['value'], 'IDR'),
-                    'currency_code' => 'IDR',
-                    'data' => array(),
-                  );
-                }
-                unset($rcost_cost);
-              }
-              else {
-                $rcost_rates = $rcost['cost'] * $currency_rates;
-                $rcost_rates = ceil($rcost_rates);
-                $rates[$rcost['service']] = array(
-                  'amount' => commerce_currency_decimal_to_amount($rcost_rates, 'IDR'),
-                  'currency_code' => 'IDR',
-                  'data' => array(),
-                );
-              }
-            }
-            unset($rcost);
-          }
-          unset($result);
-
-          if ($rates) {
-            commerce_shipping_rates_cache_set('commerce_rajaongkir_' . $shipping_service['title'], $order, $rates);
-          }
-        }
-      }
-      else {
-        if ($status['description']) {
-          drupal_set_message(t('Commerce RajaOngkir warning: @warning', array('@warning' => $status['description'])), 'warning', FALSE);
-        }
-        else {
-          drupal_set_message(t('Commerce RajaOngkir HTTP request error: @error', array('@error' => $cost->error)), 'error', FALSE);
-        }
-      }
-    }
-    else {
-      drupal_set_message(t('Commerce RajaOngkir HTTP request error II: @error', array('@error' => $cost->error)), 'error', FALSE);
-    }
-  }
-
-  return isset($rates[$shipping_service['title']]) ? $rates[$shipping_service['title']] : FALSE;
+  return $cost;
 }
 
 /**
