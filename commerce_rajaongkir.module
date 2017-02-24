@@ -11,10 +11,8 @@
 function commerce_rajaongkir_help($path, $arg) {
   switch ($path) {
     case 'admin/help#commerce_rajaongkir':
-
     $output = FALSE;
     $filepath = dirname(__FILE__) . '/README.txt';
-
     if (file_exists($filepath)) {
       $readme = file_get_contents($filepath);
       $output = '<pre>' . $readme . '</pre>';
@@ -29,7 +27,6 @@ function commerce_rajaongkir_help($path, $arg) {
  */
 function commerce_rajaongkir_menu() {
   $items = array();
-
   $items['admin/commerce/config/shipping/methods/commerce-rajaongkir/edit'] = array(
     'title' => 'Edit',
     'description' => 'Configure Commerce RajaOngkir shipping method.',
@@ -49,7 +46,6 @@ function commerce_rajaongkir_menu() {
  */
 function commerce_rajaongkir_commerce_shipping_method_info() {
   $shipping_methods = array();
-
   $shipping_methods['commerce_rajaongkir'] = array(
     'title' => t('Commerce RajaOngkir'),
     'description' => t('Integrates RajaOngkir shipping service API with Commerce shipping.'),
@@ -62,33 +58,27 @@ function commerce_rajaongkir_commerce_shipping_method_info() {
  * Implements hook_commerce_shipping_service_info().
  */
 function commerce_rajaongkir_commerce_shipping_service_info() {
-  $couriers = variable_get('commerce_rajaongkir_courier', array());
-  $couriers = array_diff($couriers, array(0));
-
-  if (variable_get('commerce_rajaongkir_account_type') == 'starter') {
-    $couriers = array_diff($couriers, array('ESL', 'PCP', 'RPX'));
+  $services = commerce_rajaongkir_service_list();
+  $couriers = array_filter(variable_get('commerce_rajaongkir_courier', array()));
+  if (variable_get('commerce_rajaongkir_account_type', array()) === 'starter') {
+    $couriers = array_intersect($couriers, array('JNE', 'POS', 'TIKI'));
   }
-
-  $services = commerce_rajaongkir_service();
-  $services = array_intersect_key($services, $couriers);
+  $services_couriers = array_intersect_key($services, $couriers);
   $shipping_services = array();
-
-  if ($services) {
-    foreach ($services as $service) {
-      foreach ($service as $key => $value) {
-        $shipping_services[$key] = array(
-          'title' => $value['service'],
-          'display_title' => drupal_strtoupper($value['code']) . ' ' . $value['service'],
-          'code' => $value['code'],
+  if ($services_couriers) {
+    foreach ($services_couriers as $services_courier) {
+      foreach ($services_courier as $service_courier) {
+        $shipping_services[$service_courier] = array(
+          'title' => $service_courier,
           'shipping_method' => 'commerce_rajaongkir',
           'callbacks' => array(
             'rate' => 'commerce_rajaongkir_service_rate',
           ),
         );
       }
-      unset($key, $value);
+      unset($service_courier);
     }
-    unset($service);
+    unset($services_courier);
   }
 
   return $shipping_services;
@@ -98,60 +88,99 @@ function commerce_rajaongkir_commerce_shipping_service_info() {
  * @return
  *   Service option list.
  */
-function commerce_rajaongkir_service() {
-  $services = array(
+function commerce_rajaongkir_service_list() {
+  return array(
+    'CAHAYA' => array(
+      t('CAHAYA REG (Regular Service)'),
+    ),
     'ESL' => array(
-      'ESL.RPX_RDX' => array('code' => t('esl'), 'service' => t('RPX/RDX')),
+      t('ESL RPX/RDX (Paket Dokumen/Barang)'),
+    ),
+    'INDAH' => array(
+      t('INDAH Paket Darat (HARGA PER 1-10 KG PRIORITAS)'),
+      t('INDAH Paket Darat (PRIORITAS)'),
+      t('INDAH Paket Motor (MOTOR BESAR)'),
+      t('INDAH Paket Motor (MOTOR KECIL)'),
+      t('INDAH Paket Udara (UDARA REGULER)'),
+      t('INDAH Trucking (TRUCKING CDD)'),
+      t('INDAH Trucking (TRUCKING FUSO)'),
+    ),
+    'JET' => array(
+      t('JET CRG (Cargo)'),
+      t('JET PRI (Priority)'),
+      t('JET REG (Regular)'),
     ),
     'JNE' => array(
-      'JNE.PELIK' => array('code' => t('jne'), 'service' => t('PELIK')),
-      'JNE.CTCBDO' => array('code' => t('jne'), 'service' => t('CTCBDO')),
-      'JNE.CTC' => array('code' => t('jne'), 'service' => t('CTC')),
-      'JNE.CTCOKE' => array('code' => t('jne'), 'service' => t('CTCOKE')),
-      'JNE.CTCSPS' => array('code' => t('jne'), 'service' => t('CTCSPS')),
-      'JNE.CTCYES' => array('code' => t('jne'), 'service' => t('CTCYES')),
-      'JNE.OKE' => array('code' => t('jne'), 'service' => t('OKE')),
-      'JNE.REG' => array('code' => t('jne'), 'service' => t('REG')),
-      'JNE.YES' => array('code' => t('jne'), 'service' => t('YES')),
-      'JNE.SPS' => array('code' => t('jne'), 'service' => t('SPS')),
+      t('JNE CTC (JNE City Courier)'),
+      t('JNE CTCBDO (Unknown service)'),
+      t('JNE CTCOKE (JNE City Courier)'),
+      t('JNE CTCSPS (JNE City Courier)'),
+      t('JNE CTCYES (JNE City Courier)'),
+      t('JNE JTR<150 (JNE Trucking)'),
+      t('JNE JTR>250 (JNE Trucking)'),
+      t('JNE JTR250 (JNE Trucking)'),
+      t('JNE JTR (JNE Trucking)'),
+      t('JNE OKE (Ongkos Kirim Ekonomis)'),
+      t('JNE PELIKAN (Unknown service)'),
+      t('JNE POPBOX (Unknown service)'),
+      t('JNE REG (Layanan Reguler)'),
+      t('JNE SPS (Super Speed)'),
+      t('JNE YES (Yakin Esok Sampai)'),
+    ),
+    'J&T' => array(
+      t('J&T EZ (Regular Service)'),
+    ),
+    'PAHALA' => array(
+      t('PAHALA EXPRESS'),
+      t('PAHALA PRIMA EXPRESS'),
+      t('PAHALA SUPER EXPRESS'),
+    ),
+    'PANDU' => array(
+      t('PANDU REG (Regular Service)'),
     ),
     'PCP' => array(
-      'PCP.ECO' => array('code' => t('pcp'), 'service' => t('ECO')),
-      'PCP.ONP' => array('code' => t('pcp'), 'service' => t('ONP')),
-      'PCP.ONS' => array('code' => t('pcp'), 'service' => t('ONS')),
-      'PCP.REG' => array('code' => t('pcp'), 'service' => t('REG')),
+      t('PCP ECO (Economic Service)'),
+      t('PCP NFS (Next Flight Service)'),
+      t('PCP ONP (Overnight Service Premium)'),
+      t('PCP ONS (Overnight Service)'),
+      t('PCP REG (Regular Service)'),
     ),
     'POS' => array(
-      'POS.SURAT_KILAT' => array('code' => t('pos'), 'service' => t('Surat Kilat')),
-      'POS.SURAT_KILAT_KHUSUS' => array('code' => t('pos'), 'service' => t('Surat Kilat Khusus')),
-      'POS.EXPRESS_NEXT_DAY' => array('code' => t('pos'), 'service' => t('Express Next Day')),
-      'POS.EMS_PRIORITY_DOCUMENT' => array('code' => t('pos'), 'service' => t('EMS Priority Document')),
-      'POS.EMS_PRIORITY_MERCHANDISE' => array('code' => t('pos'), 'service' => t('EMS Priority Merchandise')),
-      'POS.EMS_DOCUMENT' => array('code' => t('pos'), 'service' => t('EMS Document')),
-      'POS.EMS_MERCHANDISE' => array('code' => t('pos'), 'service' => t('EMS Merchandise')),
-      'POS.SURAT_R_LN' => array('code' => t('pos'), 'service' => t('Surat R LN')),
-      'POS.PAKET_CEPAT' => array('code' => t('pos'), 'service' => t('Paket Cepat')),
-      'POS.PAKET_BIASA' => array('code' => t('pos'), 'service' => t('Paket Biasa')),
-      'POS.PREPAID_PARCEL' => array('code' => t('pos'), 'service' => t('Prepaid Parcel')),
+      t('POS EMS BARANG'),
+      t('POS EMS DOKUMEN'),
+      t('POS Express Next Day'),
+      t('POS Express Sameday Dokumen'),
+      t('POS PAKETPOS BIASA LN'),
+      t('POS PAKETPOS CEPAT LN'),
+      t('POS Surat Kilat Khusus'),
+      t('POS Surat R LN'),
     ),
     'RPX' => array(
-      'RPX.SDP' => array('code' => t('rpx'), 'service' => t('SDP')),
-      'RPX.MDP' => array('code' => t('rpx'), 'service' => t('MDP')),
-      'RPX.NDP' => array('code' => t('rpx'), 'service' => t('NDP')),
-      'RPX.RGP' => array('code' => t('rpx'), 'service' => t('RGP')),
-      'RPX.REP' => array('code' => t('rpx'), 'service' => t('REP')),
+      t('RPX ERP (Ecommerce Package)'),
+      t('RPX MDP (MidDay Package)'),
+      t('RPX NDP (Next Day Package)'),
+      t('RPX REP (Retail Package)'),
+      t('RPX RGP (Regular Package)'),
+      t('RPX SDP (SameDay Package)'),
+    ),
+    'SAP' => array(
+      t('SAP ODS (One Day Service)'),
+      t('SAP REG (Regular Service)'),
+      t('SAP SDS (Same Day Service)'),
     ),
     'TIKI' => array(
-      'TIKI.SDS' => array('code' => t('tiki'), 'service' => t('SDS')),
-      'TIKI.HDS' => array('code' => t('tiki'), 'service' => t('HDS')),
-      'TIKI.ONS' => array('code' => t('tiki'), 'service' => t('ONS')),
-      'TIKI.REG' => array('code' => t('tiki'), 'service' => t('REG')),
-      'TIKI.ECO' => array('code' => t('tiki'), 'service' => t('ECO')),
-      'TIKI.TDS' => array('code' => t('tiki'), 'service' => t('TDS')),
+      t('TIKI Dokumen'),
+      t('TIKI ECO (ECONOMY SERVICE)'),
+      t('TIKI HDS (HOLIDAY SERVICE)'),
+      t('TIKI ONS (OVER NIGHT SERVICE)'),
+      t('TIKI Paket'),
+      t('TIKI REG (REGULAR SERVICE)'),
+      t('TIKI SDS (SAMEDAY SERVICE)'),
+    ),
+    'WAHANA' => array(
+      t('WAHANA DES (Domestic Express Service)'),
     ),
   );
-
-  return $services;
 }
 
 /**
@@ -160,88 +189,46 @@ function commerce_rajaongkir_service() {
  * @param $order
  *   Current order.
  * @return
- *   Calculated shipping rates for a given order.
+ *   Shipping rates for a given order.
  */
 function commerce_rajaongkir_service_rate($shipping_service, $order) {
-  $cost = commerce_rajaongkir_service_rate_cost($shipping_service, $order);
-
-  if ($cost) {
-    if (isset($cost->data) && $cost->data) {
-      $cost_data = drupal_json_decode($cost->data);
-      $rajaongkir = $cost_data['rajaongkir'];
-      $status = $rajaongkir['status'];
-      $status_code = $status['code'];
-
-      if ($status_code == 200) {
-        $results = $rajaongkir['results'];
-        $currency_rates = isset($rajaongkir['currency']['value']) ? $rajaongkir['currency']['value'] : NULL;
-        $rates_timeout = variable_get('commerce_rajaongkir_rates_timeout', 60);
-        $rates = commerce_shipping_rates_cache_get('commerce_rajaongkir' . '_' . $shipping_service['title'], $order, $rates_timeout);
-
-        if (empty($rates)) {
-          $rates = array();
-          foreach ($results as $result) {
-            foreach ($result['costs'] as $rcost) {
-              if (is_array($rcost['cost'])) {
-                foreach ($rcost['cost'] as $rcost_cost) {
-                  $rates[$rcost['service']] = array(
-                    'amount' => commerce_currency_decimal_to_amount($rcost_cost['value'], 'IDR'),
-                    'currency_code' => 'IDR',
-                    'data' => array(),
-                  );
-                }
-                unset($rcost_cost);
-              }
-              else {
-                $rcost_rates = $rcost['cost'] * $currency_rates;
-                $rcost_rates = ceil($rcost_rates);
-                $rates[$rcost['service']] = array(
-                  'amount' => commerce_currency_decimal_to_amount($rcost_rates, 'IDR'),
-                  'currency_code' => 'IDR',
-                  'data' => array(),
-                );
-              }
-            }
-            unset($rcost);
-          }
-          unset($result);
-
-          if ($rates) {
-            commerce_shipping_rates_cache_set('commerce_rajaongkir' . '_' . $shipping_service['title'], $order, $rates);
-          }
-        }
+  module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.restful');
+  $rates_dependent_locality = variable_get('commerce_rajaongkir_rates_dependent_locality', 0);
+  $administrative_area = variable_get('commerce_rajaongkir_administrative_area', array());
+  $locality = variable_get('commerce_rajaongkir_locality', array());
+  $dependent_locality = variable_get('commerce_rajaongkir_dependent_locality', array());
+  $origin = commerce_rajaongkir_locality_code($locality);
+  $origintype = 'city';
+  if ($rates_dependent_locality) {
+    $origin = commerce_rajaongkir_dependent_locality_code($administrative_area, $locality, $dependent_locality);
+    $origintype = 'subdistrict';
+  }
+  $weight = commerce_physical_order_weight($order, 'g');
+  $weight = $weight['weight'];
+  $courier = drupal_strtolower(strtok($shipping_service['title'], ' '));
+  if ($courier === 'j&t') {
+    $courier = 'jnt';
+  }
+  $length = '';
+  $width = '';
+  $height = '';
+  $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+  foreach ($order_wrapper->commerce_line_items as $line_item_wrapper) {
+    if (in_array($line_item_wrapper->type->value(), commerce_product_line_item_types())) {
+      $line_item_dimensions = commerce_physical_product_line_item_dimensions($line_item_wrapper->value());
+      $line_item_dimensions = is_array($line_item_dimensions) ? reset($line_item_dimensions) : $line_item_dimensions;
+      if (!physical_field_is_empty($line_item_dimensions, array('type' => 'physical_dimensions'))) {
+        $converted_dimensions = physical_dimensions_convert($line_item_dimensions, 'cm');
+        $length = $converted_dimensions['length'] * $line_item_wrapper->quantity->value();
+        $width = $converted_dimensions['width'] * $line_item_wrapper->quantity->value();
+        $height = $converted_dimensions['height'] * $line_item_wrapper->quantity->value();
       }
-      else {
-        if ($status['description']) {
-          drupal_set_message(t('Commerce RajaOngkir warning: @warning', array('@warning' => $status['description'])), 'warning', FALSE);
-        }
-        else {
-          drupal_set_message(t('Commerce RajaOngkir HTTP request error: @error', array('@error' => $cost->error)), 'error', FALSE);
-        }
-      }
-    }
-    else {
-      drupal_set_message(t('Commerce RajaOngkir HTTP request error: @error', array('@error' => $cost->error)), 'error', FALSE);
     }
   }
-
-  return isset($rates[$shipping_service['title']]) ? $rates[$shipping_service['title']] : FALSE;
-}
-
-/**
- * @param $shipping_service
- *   Selected shipping service.
- * @param $order
- *   Current order.
- * @return
- *   RajaOngkir API results.
- */
-function commerce_rajaongkir_service_rate_cost($shipping_service, $order) {
-  module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.restful');
-
-  $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+  unset($line_item_wrapper);
+  //$volume = commerce_physical_order_volume($order, 'cm');
+  $diameter = ''; //$volume['volume']
   $field_name = commerce_physical_order_shipping_field_name($order);
-
   if (!empty($order_wrapper->{$field_name}->commerce_customer_address)) {
     $address = $order_wrapper->{$field_name}->commerce_customer_address->value();
   }
@@ -263,49 +250,65 @@ function commerce_rajaongkir_service_rate_cost($shipping_service, $order) {
       'data' => '',
     );
   }
-
-  $account_type = variable_get('commerce_rajaongkir_account_type', array());
-  $locality = variable_get('commerce_rajaongkir_locality');
-  $dependent_locality = variable_get('commerce_rajaongkir_dependent_locality');
-  $shipping_origin = commerce_rajaongkir_locality($locality);
-  $shipping_origin_type = 'city';
-  $shipping_destination = commerce_rajaongkir_locality($address['locality']);
-  $shipping_destination_type = 'city';
-  $weight = commerce_physical_order_weight($order, 'g');
-  $shipping_weight = $weight['weight'];
-  $shipping_courier = $shipping_service['code'];
-  $shipping_length = '';
-  $shipping_width = '';
-  $shipping_height = '';
-  $volume = commerce_physical_order_volume($order, $unit = 'cm');
-  $shipping_diameter = $volume['volume'];
-
-  foreach ($order_wrapper->commerce_line_items as $line_item_wrapper) {
-    if (in_array($line_item_wrapper->type->value(), commerce_product_line_item_types())) {
-      $line_item_dimensions = commerce_physical_product_line_item_dimensions($line_item_wrapper->value());
-
-      if (!physical_field_is_empty($line_item_dimensions, array('type' => 'physical_dimensions'))) {
-        $converted_dimensions = physical_dimensions_convert($line_item_dimensions, 'cm');
-        $shipping_length = $converted_dimensions['length'] * $line_item_wrapper->quantity->value();
-        $shipping_width = $converted_dimensions['width'] * $line_item_wrapper->quantity->value();
-        $shipping_height = $converted_dimensions['height'] * $line_item_wrapper->quantity->value();
+  if ($address['country'] === 'ID') {
+    $destination = commerce_rajaongkir_locality_code($address['locality']);
+    $destinationtype = 'city';
+    if ($rates_dependent_locality) {
+      $destination = commerce_rajaongkir_dependent_locality_code($address['administrative_area'], $address['locality'], $address['dependent_locality']);
+      $destinationtype = 'subdistrict';
+    }
+    $cost = commerce_rajaongkir_restful_cost($origin, $origintype, $destination, $destinationtype, $weight, $courier, $length, $width, $height, $diameter);
+  }
+  else {
+    if ($courier === 'pos' || $courier === 'tiki') {
+      $destination = commerce_rajaongkir_country_code($address['country']);
+      $cost = commerce_rajaongkir_restful_internationalcost($origin, $destination, $weight, $courier, $length, $width, $height);
+    }
+  }
+  $results = array();
+  if (isset($cost->data)) {
+    $cost_data = drupal_json_decode($cost->data);
+    if (isset($cost_data['rajaongkir']['results'])) {
+      $results = reset($cost_data['rajaongkir']['results']);
+    }
+    else {
+      if (isset($cost_data['rajaongkir']['status']['description'])) {
+        drupal_set_message(t('Commerce RajaOngkir error: @error :(', array('@error' => $cost_data['rajaongkir']['status']['description'])), 'error', FALSE);
       }
     }
   }
-
-  $cost = FALSE;
-
-  if ($address['country'] == 'ID') {
-    $cost = commerce_rajaongkir_restful_cost($shipping_origin, $shipping_origin_type, $shipping_destination, $shipping_destination_type, $shipping_weight, $shipping_courier, $shipping_length, $shipping_width, $shipping_height, $shipping_diameter);
-  }
   else {
-    if ($shipping_courier == 'pos' || $shipping_courier == 'tiki') {
-      $shipping_destination = commerce_rajaongkir_country_code($address['country']);
-      $cost = commerce_rajaongkir_restful_internationalcost($shipping_origin, $shipping_destination, $shipping_weight, $shipping_courier, $shipping_length, $shipping_width, $shipping_height);
+    if (isset($cost->error)) {
+      drupal_set_message(t('Commerce RajaOngkir HTTP request error: @error :(', array('@error' => $cost->error)), 'error', FALSE);
     }
   }
+  $rates = commerce_shipping_rates_cache_get('commerce_rajaongkir' . '_' . $shipping_service['title'], $order, variable_get('commerce_rajaongkir_rates_timeout', 60));
+  if ($results && empty($rates)) {
+    $results_code = drupal_strtoupper($results['code']);
+    $rates = array();
+    foreach ($results['costs'] as $results_costs) {
+      $results_costs_service_description = $results_costs['service'];
+      if (is_array($results_costs['cost'])) {
+        if ($results_costs_service_description !== $results_costs['description']) {
+          $results_costs_service_description .= ' (' . $results_costs['description'] . ')';
+        }
+        $results_costs_cost = reset($results_costs['cost']);
+        $amount = $results_costs_cost['value'];
+      }
+      else {
+        $amount = $results_costs['cost'];
+      }
+      $rates[$results_code . ' ' . $results_costs_service_description] = array(
+        'amount' => commerce_currency_decimal_to_amount($amount, 'IDR'),
+        'currency_code' => 'IDR',
+        'data' => array(),
+      );
+    }
+    unset($results_costs);
+    commerce_shipping_rates_cache_set('commerce_rajaongkir' . '_' . $shipping_service['title'], $order, $rates);
+  }
 
-  return $cost;
+  return isset($rates[$shipping_service['title']]) ? $rates[$shipping_service['title']] : FALSE;
 }
 
 /**
@@ -316,15 +319,9 @@ function commerce_rajaongkir_service_rate_cost($shipping_service, $order) {
  */
 function commerce_rajaongkir_country_code($country) {
   module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.country');
+  $countries = commerce_rajaongkir_countries();
 
-  $countries = commerce_rajaongkir_country();
-  $country_code = FALSE;
-
-  if ($country) {
-    $country_code = $countries[$country];
-  }
-
-  return $country_code;
+  return isset($countries[$country]) ? $countries[$country] : FALSE;
 }
 
 /**
@@ -333,32 +330,24 @@ function commerce_rajaongkir_country_code($country) {
  * @return
  *   Code for selected Locality.
  */
-function commerce_rajaongkir_locality($locality) {
+function commerce_rajaongkir_locality_code($city) {
   module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.locality_block_list');
-
   $locality_blocks = commerce_rajaongkir_locality_block();
-  $locality_code = FALSE;
-
-  if ($locality) {
-    $code = array();
-
-    foreach ($locality_blocks as $locality_block) {
-      foreach ($locality_block as $localities => $dependent_localities) {
-        $code[$localities] = $dependent_localities;
-      }
-      unset($localities, $dependent_localities);
+  $localities = array();
+  foreach ($locality_blocks as $administrative_area) {
+    foreach ($administrative_area as $locality => $dependent_locality) {
+      $localities[$locality] = $dependent_locality;
     }
-    unset($locality_block);
-
-    $code = array_keys($code);
-    sort($code);
-    array_unshift($code, '');
-    unset($code[0]);
-    $code = array_flip($code);
-    $locality_code = $code[$locality];
+    unset($locality, $dependent_locality);
   }
+  unset($administrative_area);
+  $localities = array_keys($localities);
+  sort($localities);
+  $localities = array_merge(array(0), $localities);
+  $localities = array_filter($localities);
+  $localities = array_flip($localities);
 
-  return $locality_code;
+  return isset($localities[$city]) ? $localities[$city] : FALSE;
 }
 
 /**
@@ -369,25 +358,9 @@ function commerce_rajaongkir_locality($locality) {
  * @return
  *   Code for selected dependent locality.
  */
-function commerce_rajaongkir_dependent_locality($locality, $dependent_locality) {
+function commerce_rajaongkir_dependent_locality_code($province, $city, $district) {
   module_load_include('inc', 'commerce_rajaongkir', 'includes/commerce_rajaongkir.locality_block_list');
-
   $locality_blocks = commerce_rajaongkir_locality_block();
-  $dependent_locality_code = FALSE;
 
-  if ($locality && $dependent_locality) {
-    $code = array();
-
-    foreach ($locality_blocks as $locality_block) {
-      foreach ($locality_block as $localities => $dependent_localities) {
-        $code[$localities] = $dependent_localities;
-      }
-      unset($localities, $dependent_localities);
-    }
-    unset($locality_block);
-
-    $dependent_locality_code = $code[$locality][$dependent_locality];
-  }
-
-  return $dependent_locality_code;
+  return isset($locality_blocks[$province][$city][$district]) ? $locality_blocks[$province][$city][$district] : FALSE;
 }

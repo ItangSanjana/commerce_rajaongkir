@@ -14,9 +14,8 @@
 function commerce_rajaongkir_restful_province($province_id = NULL) {
   $endpoint = 'province';
   $params['id'] = isset($province_id) ? $province_id : array();
-  $rest_client = commerce_rajaongkir_restful_get($endpoint, $params);
 
-  return $rest_client;
+  return commerce_rajaongkir_restful_get($endpoint, $params);
 }
 
 /**
@@ -31,9 +30,8 @@ function commerce_rajaongkir_restful_city($city_id = NULL, $province_id = NULL) 
   $endpoint = 'city';
   $params['id'] = isset($city_id) ? $city_id : array();
   $params['province'] = isset($province_id) ? $province_id : array();
-  $rest_client = commerce_rajaongkir_restful_get($endpoint, $params);
 
-  return $rest_client;
+  return commerce_rajaongkir_restful_get($endpoint, $params);
 }
 
 /**
@@ -48,9 +46,8 @@ function commerce_rajaongkir_restful_subdistrict($city_id = NULL, $subdistrict_i
   $endpoint = 'subdistrict';
   $params['city'] = isset($city_id) ? $city_id : array();
   $params['id'] = isset($subdistrict_id) ? $subdistrict_id : array();
-  $rest_client = commerce_rajaongkir_restful_get($endpoint, $params);
 
-  return $rest_client;
+  return commerce_rajaongkir_restful_get($endpoint, $params);
 }
 
 /**
@@ -91,9 +88,8 @@ function commerce_rajaongkir_restful_cost($origin, $origintype, $destination, $d
     'height' => $height,
     'diameter' => $diameter,
   );
-  $rest_client = commerce_rajaongkir_restful_post($endpoint, $params);
 
-  return $rest_client;
+  return commerce_rajaongkir_restful_post($endpoint, $params);
 }
 
 /**
@@ -110,9 +106,8 @@ function commerce_rajaongkir_restful_internationalorigin($city_id = NULL, $provi
   $endpoint = 'internationalOrigin';
   $params['id'] = isset($city_id) ? $city_id : array();
   $params['province'] = isset($province_id) ? $province_id : array();
-  $rest_client = commerce_rajaongkir_restful_get($endpoint, $params);
 
-  return $rest_client;
+  return commerce_rajaongkir_restful_get($endpoint, $params);
 }
 
 /**
@@ -126,9 +121,8 @@ function commerce_rajaongkir_restful_internationalorigin($city_id = NULL, $provi
 function commerce_rajaongkir_restful_internationaldestination($country_id = NULL) {
   $endpoint = 'internationalDestination';
   $params['id'] = isset($country_id) ? $country_id : array();
-  $rest_client = commerce_rajaongkir_restful_get($endpoint, $params);
 
-  return $rest_client;
+  return commerce_rajaongkir_restful_get($endpoint, $params);
 }
 
 /**
@@ -160,9 +154,8 @@ function commerce_rajaongkir_restful_internationalcost($origin, $destination, $w
     'width' => $width,
     'height' => $height,
   );
-  $rest_client = commerce_rajaongkir_restful_post($endpoint, $params);
 
-  return $rest_client;
+  return commerce_rajaongkir_restful_post($endpoint, $params);
 }
 
 /**
@@ -171,9 +164,8 @@ function commerce_rajaongkir_restful_internationalcost($origin, $destination, $w
 function commerce_rajaongkir_restful_currency() {
   $endpoint = 'currency';
   $params = array();
-  $rest_client = commerce_rajaongkir_restful_get($endpoint, $params);
 
-  return $rest_client;
+  return commerce_rajaongkir_restful_get($endpoint, $params);
 }
 
 /**
@@ -192,80 +184,73 @@ function commerce_rajaongkir_restful_waybill($waybill_number, $courier) {
     'waybill' => $waybill_number,
     'courier' => $courier,
   );
-  $rest_client = commerce_rajaongkir_restful_post($endpoint, $params);
 
-  return $rest_client;
+  return commerce_rajaongkir_restful_post($endpoint, $params);
 }
 
 /**
- * CURL post.
+ * HTTP post.
  *
  * @param $endpoint
  *   Endpoint.
  * @param $params
  *   Params.
  * @return
- *   CURL post results.
+ *   HTTP post request results.
  */
 function commerce_rajaongkir_restful_post($endpoint, $params) {
   $account_type = variable_get('commerce_rajaongkir_account_type', array());
-  $query = drupal_http_build_query($params);
-
-  if ($account_type == 'pro') {
-    $url = 'http://' . $account_type . '.rajaongkir.com/api/' . $endpoint;
+  $url = '';
+  $options = array();
+  if ($account_type) {
+    if ($account_type === 'pro') {
+      $url = 'http://' . $account_type . '.rajaongkir.com/api/' . $endpoint;
+    }
+    else {
+      $url = 'http://rajaongkir.com/api/' . $account_type . '/' . $endpoint;
+    }
+    $query = drupal_http_build_query($params);
+    $options = array(
+      'method' => 'POST',
+      'data' => $query,
+      'headers' => array(
+        'Content-Type' => 'application/x-www-form-urlencoded',
+        'key' => variable_get('commerce_rajaongkir_api_key', ''),
+      ),
+    );
   }
-  elseif ($account_type == 'starter' || $account_type == 'basic') {
-    $url = 'http://rajaongkir.com/api/' . $account_type . '/' . $endpoint;
-  }
-  else {
-    $url = NULL;
-  }
 
-  $options = array(
-    'method' => 'POST',
-    'data' => $query,
-    'headers' => array(
-      'Content-Type' => 'application/x-www-form-urlencoded',
-      'key' => variable_get('commerce_rajaongkir_api_key'),
-    ),
-  );
-
-  $request = drupal_http_request($url, $options);
-
-  return $request;
+  return drupal_http_request($url, $options);
 }
 
 /**
-* CURL get.
+* HTTP get.
 *
 * @param $endpoint
 *   Endpoint.
 * @param $params
 *   Params.
 * @return
-*   CURL get results.
+*   HTTP get request results.
 */
 function commerce_rajaongkir_restful_get($endpoint, $params) {
   $account_type = variable_get('commerce_rajaongkir_account_type', array());
-  $query = drupal_http_build_query($params);
-
-  if ($account_type == 'pro') {
-    $url = 'http://' . $account_type . '.rajaongkir.com/api/' . $endpoint . '?' . $query;
+  $url = '';
+  $options = array();
+  if ($account_type) {
+    $query = drupal_http_build_query($params);
+    if ($account_type === 'pro') {
+      $url = 'http://' . $account_type . '.rajaongkir.com/api/' . $endpoint . '?' . $query;
+    }
+    else {
+      $url = 'http://rajaongkir.com/api/' . $account_type . '/' . $endpoint . '?' . $query;
+    }
+    $options = array(
+      'headers' => array(
+        'key' => variable_get('commerce_rajaongkir_api_key', ''),
+      ),
+    );
   }
-  elseif ($account_type == 'starter' || $account_type == 'basic') {
-    $url = 'http://rajaongkir.com/api/' . $account_type . '/' . $endpoint . '?' . $query;
-  }
-  else {
-    $url = NULL;
-  }
 
-  $options = array(
-    'headers' => array(
-      'key' => variable_get('commerce_rajaongkir_api_key'),
-    ),
-  );
-
-  $request = drupal_http_request($url, $options);
-
-  return $request;
+  return drupal_http_request($url, $options);
 }
